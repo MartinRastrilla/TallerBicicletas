@@ -2,13 +2,17 @@ package Modelo;
 
 
 public class Cliente {
-    private int dni;
+    private String dni;
     private String nombreCompleto;
     private String domicilio;
     private String telefono;
     private boolean activo;
 
-    public Cliente(int dni, String nombreCompleto, String domicilio, String telefono, boolean activo) {
+    public Cliente() {
+    }
+
+    
+    public Cliente(String dni, String nombreCompleto, String domicilio, String telefono, boolean activo) {
         this.dni = dni;
         this.nombreCompleto = nombreCompleto;
         this.domicilio = domicilio;
@@ -16,11 +20,11 @@ public class Cliente {
         this.activo = activo;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

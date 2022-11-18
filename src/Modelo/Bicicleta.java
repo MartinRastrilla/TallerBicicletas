@@ -2,13 +2,13 @@ package Modelo;
 
 
 public class Bicicleta {
-    private int numSerie;
+    private String numSerie;
     private String tipo;
     private String color;
     private Cliente dniDuenio;
     private boolean activo;
 
-    public Bicicleta(int numSerie, String tipo, String color, Cliente dniDuenio, boolean activo) {
+    public Bicicleta(String numSerie, String tipo, String color, Cliente dniDuenio, boolean activo) {
         this.numSerie = numSerie;
         this.tipo = tipo;
         this.color = color;
@@ -16,11 +16,11 @@ public class Bicicleta {
         this.activo = activo;
     }
 
-    public int getNumSerie() {
+    public String getNumSerie() {
         return numSerie;
     }
-
-    public void setNumSerie(int numSerie) {
+    
+    public void setNumSerie(String numSerie) {
         this.numSerie = numSerie;
     }
 
