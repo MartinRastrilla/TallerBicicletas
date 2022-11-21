@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UmlTaller">
+  <ClassDiagramComponents>
+    <Class name="Repuesto" package="" visibility="public" xPosition="19.0" yPosition="395.0">
+      <Fields>
+        <Field name="num_serie" type="String" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="precio" type="float" visibility="private"/>
+        <Field name="activo" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="num_serie"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="float" name="precio"/>
+          <Argument type="boolean" name="activo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="settersAtributos" returnType="void" visibility="public"/>
+        <Method name="gettersAtributos" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ItemRepuesto" package="" visibility="public" xPosition="500.0" yPosition="116.0">
+      <Fields>
+        <Field name="num_serie" type="String" visibility="private"/>
+        <Field name="id_repuesto" type="int" visibility="private"/>
+        <Field name="cantidad" type="int" visibility="private"/>
+        <Field name="activo" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="settersCantidadyActivo" returnType="void" visibility="public"/>
+        <Method name="gettersCantidadyActivo" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Reparacion" package="" visibility="public" xPosition="855.0" yPosition="116.0">
+      <Fields>
+        <Field name="id_reparacion" type="int" visibility="private"/>
+        <Field name="id_servicio" type="int" visibility="private"/>
+        <Field name="numSerieBicicleta" type="String" visibility="private"/>
+        <Field name="fecha_entrada" type="LocalDate" visibility="private"/>
+        <Field name="costo" type="float" visibility="private"/>
+        <Field name="estado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id_reparacion"/>
+          <Argument type="int" name="id_servicio"/>
+          <Argument type="String" name="numSerieBicicleta"/>
+          <Argument type="LocalDate" name="fecha_entrada"/>
+          <Argument type="float" name="costo"/>
+          <Argument type="boolean" name="estado"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="id_servicio"/>
+          <Argument type="String" name="numSerieBicicleta"/>
+          <Argument type="LocalDate" name="fecha_entrada"/>
+          <Argument type="float" name="costo"/>
+          <Argument type="boolean" name="estado"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="settersAtributos" returnType="void" visibility="public"/>
+        <Method name="gettersAtributos" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="costoFinal" returnType="float" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cliente" package="" visibility="public" xPosition="885.0" yPosition="869.0">
+      <Fields>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="domicilio" type="String" visibility="private"/>
+        <Field name="telefono" type="String" visibility="private"/>
+        <Field name="activo" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="dni"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="domicilio"/>
+          <Argument type="String" name="telefono"/>
+          <Argument type="boolean" name="activo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="settersAtributos" returnType="void" visibility="public"/>
+        <Method name="gettersAtributos" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Bicicleta" package="" visibility="public" xPosition="1057.0" yPosition="534.0">
+      <Fields>
+        <Field name="num_serie" type="String" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="dni_duenio" type="String" visibility="private"/>
+        <Field name="activo" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="num_serie"/>
+          <Argument type="String" name="tipo"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="dni_duenio"/>
+          <Argument type="boolean" name="activo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="settersAtributos" returnType="void" visibility="public"/>
+        <Method name="gettersAtributos" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Servicio" package="" visibility="public" xPosition="1684.0" yPosition="192.0">
+      <Fields>
+        <Field name="codigo" type="int" visibility="private"/>
+        <Field name="precio" type="float" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="activo" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="codigo"/>
+          <Argument type="float" name="precio"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="boolean" name="activo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="gettersAtributos" returnType="void" visibility="public"/>
+        <Method name="settersAtributos" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="ItemRepuesto" target="Repuesto" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="Servicio" source="Reparacion" target="Servicio" sourceCardinality="1..1" targetCardinality="1..*"/>
+    <HasRelation name="Necesita" source="Reparacion" target="Bicicleta" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Bicicleta" target="Cliente" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="contiene" source="Reparacion" target="ItemRepuesto" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
