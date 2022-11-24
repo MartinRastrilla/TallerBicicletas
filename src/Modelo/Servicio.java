@@ -14,6 +14,12 @@ private boolean activo;
         this.activo = activo;
     }
 
+    public Servicio(float precio, String descripcion, boolean activo) {
+        this.precio = precio;
+        this.descripcion = descripcion;
+        this.activo = activo;
+    }
+
     public Servicio() {
     }
 

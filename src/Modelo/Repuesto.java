@@ -51,7 +51,7 @@ private boolean activo;
 
     @Override
     public String toString() {
-        return "Repuesto{" + "num_serie=" + num_serie + ", descripcion=" + descripcion + ", precio=" + precio + '}';
+        return "Repuesto{" + "num_serie:" + num_serie + ", Nombre:" + descripcion.toUpperCase() + ", precio:" + precio + '}';
     }
 
 
