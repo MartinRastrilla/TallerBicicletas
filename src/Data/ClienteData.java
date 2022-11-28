@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -19,19 +20,25 @@ public class ClienteData {
     }
     
     public void agregarCliente(Cliente cliente){
-        String query = "INSERT INTO cliente (dni, nombreCompleto, domicilio, telefono, activo) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO cliente (dni, nombre, apellido, domicilio, telefono, activo) VALUES (?, ?, ?, ?, ?, ?)";
         
         try {
             PreparedStatement ps = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, cliente.getDni());
-            ps.setString(2, cliente.getNombreCompleto());
-            ps.setString(3, cliente.getDomicilio());
-            ps.setString(4, cliente.getTelefono());
-            ps.setBoolean(5, cliente.isActivo());
+            ps.setString(2, cliente.getNombre());
+            ps.setString(3, cliente.getApellido());
+            ps.setString(4, cliente.getDomicilio());
+            ps.setString(5, cliente.getTelefono());
+            ps.setBoolean(6, cliente.isActivo());
             if (ps.executeUpdate() > 0) {
                 JOptionPane.showMessageDialog(null, "Cliente Agregado");
             } else {
                 JOptionPane.showMessageDialog(null, "No se ha podido agregar al cliente");
+            }
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                cliente.setDni(rs.getString(1));
+
             }
             ps.close();
         } catch (SQLException ex) {
@@ -49,7 +56,8 @@ public class ClienteData {
             while (rs.next()) {
                 cliente = new Cliente();
                 cliente.setDni(rs.getString("dni"));
-                cliente.setNombreCompleto(rs.getString("nombreCompleto"));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellido(rs.getString("apellido"));
                 cliente.setDomicilio(rs.getString("domicilio"));
                 cliente.setTelefono(rs.getString("telefono"));
                 cliente.setActivo(rs.getBoolean("activo"));
@@ -61,26 +69,29 @@ public class ClienteData {
         return cliente;
     }
     
-    public Cliente buscarClienteNombre(String nombre){
-        Cliente cliente  =  null;
-        String query = "SELECT * FROM cliente WHERE nombreCompleto LIKE '?%' ";
+    public ArrayList<Cliente> buscarClienteApellido(String nombre){
+        String query = "SELECT * FROM cliente WHERE apellido LIKE ?;";
+        ArrayList<Cliente> listaClientes = new ArrayList();
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, nombre);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                cliente = new Cliente();
+                Cliente cliente = new Cliente();
                 cliente.setDni(rs.getString("dni"));
-                cliente.setNombreCompleto(rs.getString("nombreCompleto"));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellido(rs.getString("apellido"));
                 cliente.setDomicilio(rs.getString("domicilio"));
                 cliente.setTelefono(rs.getString("telefono"));
                 cliente.setActivo(rs.getBoolean("activo"));
+                
+                listaClientes.add(cliente);
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-buscarClienteNombre");
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-buscarClienteApellido");
         }
-        return cliente;
+        return listaClientes;
     }
     
     public void borrarCliente(String dni){

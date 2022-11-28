@@ -1,9 +1,10 @@
 package Modelo;
 
-
 public class Cliente {
+
     private String dni;
-    private String nombreCompleto;
+    private String nombre;
+    private String apellido;
     private String domicilio;
     private String telefono;
     private boolean activo;
@@ -11,10 +12,10 @@ public class Cliente {
     public Cliente() {
     }
 
-    
-    public Cliente(String dni, String nombreCompleto, String domicilio, String telefono, boolean activo) {
+    public Cliente(String dni, String nombre, String apellido, String domicilio, String telefono, boolean activo) {
         this.dni = dni;
-        this.nombreCompleto = nombreCompleto;
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.domicilio = domicilio;
         this.telefono = telefono;
         this.activo = activo;
@@ -28,12 +29,20 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getDomicilio() {
@@ -59,6 +68,10 @@ public class Cliente {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Cliente:" + " DNI = " + dni + " | Nombre = " + nombre + " | Apellido = " + apellido + " | Domicilio = " + domicilio;
+    }
+
 }

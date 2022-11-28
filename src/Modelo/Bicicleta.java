@@ -1,25 +1,35 @@
 package Modelo;
 
-
 public class Bicicleta {
+
     private String numSerie;
     private String tipo;
     private String color;
+    private String marca;
     private Cliente dniDuenio;
     private boolean activo;
 
-    public Bicicleta(String numSerie, String tipo, String color, Cliente dniDuenio, boolean activo) {
+    public Bicicleta(String numSerie, String tipo, String color, String marca, Cliente dniDuenio, boolean activo) {
         this.numSerie = numSerie;
         this.tipo = tipo;
         this.color = color;
+        this.marca = marca;
         this.dniDuenio = dniDuenio;
         this.activo = activo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     public String getNumSerie() {
         return numSerie;
     }
-    
+
     public void setNumSerie(String numSerie) {
         this.numSerie = numSerie;
     }
@@ -55,6 +65,5 @@ public class Bicicleta {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    
-    
+
 }
