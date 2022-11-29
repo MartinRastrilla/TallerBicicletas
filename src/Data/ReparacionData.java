@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ReparacionData {
 
@@ -48,19 +50,19 @@ public class ReparacionData {
         }
     }
 
-    public Reparacion buscarReparacion(int id_bicicleta) {
+    public Reparacion buscarReparacion(int dni) {
         Reparacion r = null;
         String sql = "SELECT * FROM reparacion WHERE id_bicicleta = ?";
-        PreparedStatement ps;
         try {
-            ps = con.prepareStatement(sql);
-            ps.setInt(1, id_bicicleta);
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, dni);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
+                ServicioData sD = new ServicioData();
                 r = new Reparacion();
                 r.setId_reparacion(rs.getInt("id_reparacion"));
-                r.setId_servicio(sData.obtenerServicio(rs.getInt("codigo")));
-                r.setId_bicicleta(bData.obtenerBicicleta(rs.getString("dni_duenio")));
+//                r.setId_servicio(sData.obtenerServicio());
+//                r.setId_bicicleta(bData.obtenerBicicleta(rs.getString("dni_duenio")));
                 r.setFecha_entrada(rs.getDate("fecha_entrada").toLocalDate());
                 r.setCosto(rs.getFloat("costo"));
                 r.setActivo(rs.getBoolean("activo"));
@@ -116,8 +118,8 @@ public class ReparacionData {
             while (rs.next()) {
                 Reparacion r = new Reparacion();
                 r.setId_reparacion(rs.getInt("id_reparacion"));
-                r.setId_servicio(sData.obtenerServicio(rs.getInt("codigo")));
-                r.setId_bicicleta(bData.obtenerBicicleta(rs.getString("dni_duenio")));
+//                r.setId_servicio(sData.obtenerServicio(rs.getInt("codigo")));
+//                r.setId_bicicleta(bData.obtenerBicicleta(rs.getString("dni_duenio")));
                 r.setFecha_entrada(rs.getDate("fecha_entrada").toLocalDate());
                 r.setCosto(rs.getFloat("costo"));
                 r.setEstado(rs.getBoolean("estado"));

@@ -86,7 +86,7 @@ public class RepuestoData {
 
     }
 
-    public void obtenerRepuesto(String num_serie) {
+    public Repuesto obtenerRepuesto(String num_serie) {
 
         String sql = "SELECT * FROM `repuesto` WHERE num_serie= ?";
         Repuesto repuesto = new Repuesto();
@@ -106,6 +106,7 @@ public class RepuestoData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
+        return repuesto;
     }
 
     public void modificarRepuesto(Repuesto repuesto) {

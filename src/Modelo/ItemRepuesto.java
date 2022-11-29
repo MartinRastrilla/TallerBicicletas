@@ -5,11 +5,12 @@ public class ItemRepuesto {
     private Repuesto num_serie;
     private Reparacion id_reparacion;
     private int cantidad;
+    private boolean activo;
 
     public ItemRepuesto() {
     }
 
-    public ItemRepuesto(Repuesto num_serie, Reparacion id_reparacion, int cantidad) {
+    public ItemRepuesto(Repuesto num_serie, Reparacion id_reparacion, int cantidad, boolean activo) {
         this.num_serie = num_serie;
         this.id_reparacion = id_reparacion;
         this.cantidad = cantidad;
@@ -21,6 +22,14 @@ public class ItemRepuesto {
 
     public void setNum_serie(Repuesto num_serie) {
         this.num_serie = num_serie;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
     public Reparacion getId_reparacion() {
