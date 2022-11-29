@@ -27,13 +27,14 @@ public class TallerBicicletas {
         
         
         Cliente c = new Cliente("41911000", "Gustavo", "Orozco", "Calle A veces Viva 123", "2664119944", true);
-        Bicicleta b = new Bicicleta("a434w98", "BMX", "Negra", "Loud", c, true);
+        Bicicleta b = new Bicicleta("a434w98", "Mountain", "Rosa", "Loud", c, true);
         //bData.agregarBicicleta(b);
-        for (Bicicleta aux : bData.obtenerBiciCliente("41911000")) {
-            System.out.println(aux.toString());
-        }
+//        for (Bicicleta aux : bData.obtenerBiciCliente("41911000")) {
+//            System.out.println(aux.toString());
+//        }
         //bData.borrarBicicleta("a434w98");
-        bData.actualizarBicicleta("a434w98", b);
+        //bData.actualizarBicicleta("a434w98", b);
+        System.out.println(bData.buscarBiciNumSerie("13"));
     }
 
 }

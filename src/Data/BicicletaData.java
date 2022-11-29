@@ -104,6 +104,7 @@ public class BicicletaData {
             ps.setString(4, bici.getMarca());
             ps.setString(5, bici.getDniDuenio().getDni());
             ps.setBoolean(6, bici.isActivo());
+            ps.setString(7, numSerie);
             
             if (ps.executeUpdate() > 0) {
                 JOptionPane.showMessageDialog(null, "Bicicleta Actualizada");
@@ -115,5 +116,30 @@ public class BicicletaData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-ActualizarBicicleta");
         }
+    }
+    
+    public Bicicleta buscarBiciNumSerie(String numSerie){
+        String query = "SELECT * FROM bicicleta WHERE num_serie = ?;";
+        Bicicleta b = null;
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, numSerie);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                b = new Bicicleta();
+                Cliente c = new Cliente();
+                c.setDni(rs.getString("dni_duenio"));
+                b.setNumSerie(rs.getString("num_serie"));
+                b.setTipo(rs.getString("tipo"));
+                b.setColor(rs.getString("color"));
+                b.setMarca(rs.getString("marca"));
+                b.setDniDuenio(c);
+                b.setActivo(rs.getBoolean("activo"));
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-BuscarBicicleta");
+        }
+        return b;
     }
 }
