@@ -10,6 +10,7 @@ public class Reparacion {
     private LocalDate fecha_entrada;
     private float costo;
     private boolean estado;
+    private boolean activo;
 
     public Reparacion() {
     }
@@ -66,6 +67,15 @@ public class Reparacion {
     public float getCosto() {
         return costo;
     }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+    
 
     public void setCosto(float costo) {
         this.costo = costo;
