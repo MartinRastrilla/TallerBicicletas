@@ -38,8 +38,11 @@ public class ServicioData {
             } else {
                 mensaje = "Error al añadir Servicio";
             }
-
             JOptionPane.showMessageDialog(null, mensaje);
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                svc.setCodigo(rs.getInt(1));
+            }
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-AgregaServicio");
@@ -102,7 +105,7 @@ public class ServicioData {
 
             if (rs.next()) {
                 sv = new Servicio();
-                sv.setCodigo(codigo);
+                sv.setCodigo(rs.getInt("codigo"));
                 sv.setDescripcion(rs.getString("descripcion"));
                 sv.setPrecio(rs.getFloat("precio"));
                 sv.setActivo(rs.getBoolean("activo"));

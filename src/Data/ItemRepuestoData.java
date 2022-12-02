@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class ItemRepuestoData {
@@ -14,8 +15,10 @@ public class ItemRepuestoData {
     private ReparacionData repData;
     private RepuestoData rData;
 
-    public ItemRepuestoData(Connection con) {
-        this.con = con;
+    public ItemRepuestoData() {
+        this.con = Conexion.getConexion();
+        this.repData = new ReparacionData();
+        this.rData = new RepuestoData();
     }
 
     public void ingresarItems(ItemRepuesto i) {

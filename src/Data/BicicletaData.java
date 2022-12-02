@@ -43,7 +43,6 @@ public class BicicletaData {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 bici.setNumSerie(rs.getString(1));
-
             }
             ps.close();
         } catch (SQLException ex) {

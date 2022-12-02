@@ -40,6 +40,10 @@ public class RepuestoData {
                 mensaje = "No se pudo realizar el ingreso del Repuesto";
             }
             JOptionPane.showMessageDialog(null, mensaje);
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                repuesto.setNum_serie(rs.getString(1));
+            }
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);

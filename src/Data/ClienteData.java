@@ -38,7 +38,6 @@ public class ClienteData {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 cliente.setDni(rs.getString(1));
-
             }
             ps.close();
         } catch (SQLException ex) {
