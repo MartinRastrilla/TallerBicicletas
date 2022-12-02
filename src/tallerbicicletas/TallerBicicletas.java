@@ -80,13 +80,16 @@ public class TallerBicicletas {
         Cliente c = new Cliente("17303438", "Julio", "Bersia", "Los Pochoclos 6328", "2665131944", true);
         Bicicleta b = new Bicicleta("B932B", "Speed", "Blanca", "Spin", c, true);
         Reparacion reparacion = new Reparacion(servicio, b, LocalDate.now(), 4100, true, true);
-        repData.ingresarReparacion(reparacion);
+//        repData.ingresarReparacion(reparacion);
 //        System.out.println(repData.buscarReparacion(10));
 //        repData.BorrarReparacion(10);
 //        repData.actualizarReparacion(reparacion, 10, 5);
 //        for (Reparacion aux : repData.obtenerReparaciones()) {
 //            System.out.println(aux.toString());
 //        }
+        for (Reparacion aux : repData.filtrarReparacionPorDNI("17303438")) {
+            System.out.println(aux.toString());
+        }
         
         ItemRepuesto item = new ItemRepuesto();
     }
