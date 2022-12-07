@@ -3,6 +3,7 @@ package tallerbicicletas;
 import Data.BicicletaData;
 import Data.ClienteData;
 import Data.Conexion;
+import Data.ItemRepuestoData;
 import Data.ReparacionData;
 import Data.RepuestoData;
 import Data.ServicioData;
@@ -25,6 +26,7 @@ public class TallerBicicletas {
         RepuestoData repuestoData = new RepuestoData();
         ServicioData servicioData = new ServicioData();
         ReparacionData repData = new ReparacionData();
+        ItemRepuestoData itemData = new ItemRepuestoData();
         
         //PRUEBAS CLIENTE-DATA
         
@@ -65,7 +67,7 @@ public class TallerBicicletas {
 
         //PRUEBAS SERVICIO-DATA
         
-        Servicio servicio = servicioData.obtenerServicio(4);
+//        Servicio servicio = servicioData.obtenerServicio(4);
 //        servicioData.agregarServicio(servicio);
 //        servicioData.eliminarServicioPorCodigo(1);
 //        System.out.println(servicioData.obtenerServicio(3));
@@ -77,18 +79,39 @@ public class TallerBicicletas {
         
         //PRUEBAS REPARACIÓN-DATA
 //        Servicio servicio = new Servicio(2500, "Ajuste de Frenos", true);
-        Cliente c = new Cliente("17303438", "Julio", "Bersia", "Los Pochoclos 6328", "2665131944", true);
-        Bicicleta b = new Bicicleta("B932B", "Speed", "Blanca", "Spin", c, true);
-        Reparacion reparacion = new Reparacion(servicio, b, LocalDate.now(), 4100, true, true);
-        repData.ingresarReparacion(reparacion);
+//        Cliente c = new Cliente("17303438", "Julio", "Bersia", "Los Pochoclos 6328", "2665131944", true);
+//        Bicicleta b = new Bicicleta("B932B", "Speed", "Blanca", "Spin", c, true);
+//        Reparacion reparacion = new Reparacion(servicio, b, LocalDate.now(), 4100, true, true);
+//        repData.ingresarReparacion(reparacion);
 //        System.out.println(repData.buscarReparacion(10));
 //        repData.BorrarReparacion(10);
 //        repData.actualizarReparacion(reparacion, 10, 5);
 //        for (Reparacion aux : repData.obtenerReparaciones()) {
 //            System.out.println(aux.toString());
 //        }
+//        for (Reparacion aux : repData.filtrarReparacionPorDNI("17303438")) {
+//            System.out.println(aux.toString());
+//        }
+        System.out.println(repData.costoReparacion(10));
         
-        ItemRepuesto item = new ItemRepuesto();
+        
+        //PRUEBAS ITEMREPUESTO-DATA
+        Repuesto rep = repuestoData.obtenerRepuesto("zxy123");
+        Reparacion reparacion = repData.buscarReparacion(10);
+        ItemRepuesto item = new ItemRepuesto(rep, reparacion, 1, true);
+//        itemData.ingresarItems(item);
+//        System.out.println(itemData.obtenerItem("1234"));
+//        itemData.borrarItem("1234");
+//        itemData.actualizarItem(item);
+//        for (ItemRepuesto aux : itemData.obtenerRepuestosDeReparacion(10)) {
+//            System.out.println(aux.toString());
+//        }
+//        for (ItemRepuesto aux : itemData.obtenerRepuestos()) {
+//            System.out.println(aux.toString());
+//        }
+        System.out.println(itemData.costoRepuestos(10));
+        float costoFinal =itemData.costoRepuestos(10)+repData.costoReparacion(10);
+        System.out.println(costoFinal);
     }
 
 }

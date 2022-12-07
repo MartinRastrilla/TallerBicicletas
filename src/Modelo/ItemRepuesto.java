@@ -51,6 +51,6 @@ public class ItemRepuesto {
 
     @Override
     public String toString() {
-        return "ItemRepuesto: " + "N° Serie: " + num_serie + " | N° Reparación: " + id_reparacion + " | Cantidad: " + cantidad;
+        return "ItemRepuesto: " + "N° Serie: " + num_serie.getNum_serie() + " | N° Reparación: " + id_reparacion.getId_reparacion() + " | Cantidad: " + cantidad;
     }
 }

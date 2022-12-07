@@ -1,6 +1,7 @@
 package Data;
 
 import Modelo.Bicicleta;
+import Modelo.ItemRepuesto;
 import Modelo.Reparacion;
 import Modelo.Servicio;
 import java.sql.Connection;
@@ -138,7 +139,7 @@ public class ReparacionData {
     
     public ArrayList<Reparacion> filtrarReparacionPorDNI(String dni){
         ArrayList<Reparacion> listaDuenios = new ArrayList();
-        String sql = "SELECT b.dni_duenio, r.id_reparacion, r.id_bicicleta, r.fecha_entrada, r.costo, r.estado, r.activo FROM cliente AS c, reparacion AS r, bicicleta AS b WHERE c.dni=? b.dni_duenio = c.dni AND b.num_serie = r.id_bicicleta;";
+        String sql = "SELECT r.id_reparacion, r.id_servicio, r.id_bicicleta, r.fecha_entrada, r.costo, r.estado, r.activo FROM cliente AS c, reparacion AS r, bicicleta AS b WHERE c.dni=? AND b.dni_duenio = c.dni AND b.num_serie = r.id_bicicleta;";
         
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -146,6 +147,7 @@ public class ReparacionData {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Reparacion r = new Reparacion();
+                r.setId_reparacion(rs.getInt("id_reparacion"));
                 r.setId_servicio(sData.obtenerServicio(rs.getInt("id_servicio")));
                 r.setId_bicicleta(bData.buscarBiciNumSerie(rs.getString("id_bicicleta")));
                 r.setFecha_entrada(rs.getDate("fecha_entrada").toLocalDate());
@@ -156,16 +158,25 @@ public class ReparacionData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-obtenerReparaciones ");
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-obtenerReparaciones | "+ ex.getMessage());
         }
-        
+        return listaDuenios;
     }
     
-    public void costoTotal(){
-        String sql="SELECT SUM(precio*itemrepuesto.cantidad)\n" +
-                    "FROM repuesto, itemrepuesto\n" +
-                    "WHERE repuesto.num_serie = itemrepuesto.num_serie\n" +
-                    "AND itemrepuesto.id_reparacion = 20;"; 
+    public float costoReparacion(int id){
+        String sql = "SELECT SUM(reparacion.costo+servicio.precio) FROM servicio, reparacion WHERE servicio.codigo = reparacion.id_servicio AND reparacion.id_reparacion = ?;";
+        float costo=0;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+              costo = rs.getFloat("SUM(reparacion.costo+servicio.precio)");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ReparacionData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return costo;
     }
 
 }
