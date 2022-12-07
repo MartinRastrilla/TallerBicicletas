@@ -1,6 +1,7 @@
 package Data;
 
 import Modelo.Bicicleta;
+import Modelo.ItemRepuesto;
 import Modelo.Reparacion;
 import Modelo.Servicio;
 import java.sql.Connection;
@@ -162,11 +163,20 @@ public class ReparacionData {
         return listaDuenios;
     }
     
-    public void costoTotal(){
-        String sql="SELECT SUM(precio*itemrepuesto.cantidad)\n" +
-                    "FROM repuesto, itemrepuesto\n" +
-                    "WHERE repuesto.num_serie = itemrepuesto.num_serie\n" +
-                    "AND itemrepuesto.id_reparacion = 20;"; 
+    public float costoReparacion(int id){
+        String sql = "SELECT SUM(reparacion.costo+servicio.precio) FROM servicio, reparacion WHERE servicio.codigo = reparacion.id_servicio AND reparacion.id_reparacion = ?;";
+        float costo=0;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+              costo = rs.getFloat("SUM(reparacion.costo+servicio.precio)");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ReparacionData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return costo;
     }
 
 }

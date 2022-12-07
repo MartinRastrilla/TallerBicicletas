@@ -5,9 +5,8 @@
         <group>
             <file>file:/C:/Users/Martin/Documents/NetBeansProjects/TallerBicicletas/src/tallerbicicletas/TallerBicicletas.java</file>
             <file>file:/C:/Users/Martin/Documents/NetBeansProjects/TallerBicicletas/src/Data/ServicioData.java</file>
-            <file>file:/C:/Users/Martin/Documents/NetBeansProjects/TallerBicicletas/src/Data/ReparacionData.java</file>
-            <file>file:/C:/Users/Martin/Documents/NetBeansProjects/TallerBicicletas/src/Data/RepuestoData.java</file>
-            <file>file:/C:/Users/Martin/Documents/NetBeansProjects/TallerBicicletas/src/Modelo/Reparacion.java</file>
+            <file>file:/C:/Users/Martin/Documents/NetBeansProjects/TallerBicicletas/src/Vistas/MainForm.java</file>
+            <file>file:/C:/Users/Martin/Documents/NetBeansProjects/TallerBicicletas/src/Data/ItemRepuestoData.java</file>
         </group>
     </open-files>
 </project-private>

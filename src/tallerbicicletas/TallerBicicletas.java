@@ -92,10 +92,11 @@ public class TallerBicicletas {
 //        for (Reparacion aux : repData.filtrarReparacionPorDNI("17303438")) {
 //            System.out.println(aux.toString());
 //        }
+        System.out.println(repData.costoReparacion(10));
         
         
         //PRUEBAS ITEMREPUESTO-DATA
-        Repuesto rep = repuestoData.obtenerRepuesto("1234");
+        Repuesto rep = repuestoData.obtenerRepuesto("zxy123");
         Reparacion reparacion = repData.buscarReparacion(10);
         ItemRepuesto item = new ItemRepuesto(rep, reparacion, 1, true);
 //        itemData.ingresarItems(item);
@@ -105,9 +106,12 @@ public class TallerBicicletas {
 //        for (ItemRepuesto aux : itemData.obtenerRepuestosDeReparacion(10)) {
 //            System.out.println(aux.toString());
 //        }
-        for (ItemRepuesto aux : itemData.obtenerRepuestos()) {
-            System.out.println(aux.toString());
-        }
+//        for (ItemRepuesto aux : itemData.obtenerRepuestos()) {
+//            System.out.println(aux.toString());
+//        }
+        System.out.println(itemData.costoRepuestos(10));
+        float costoFinal =itemData.costoRepuestos(10)+repData.costoReparacion(10);
+        System.out.println(costoFinal);
     }
 
 }

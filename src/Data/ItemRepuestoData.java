@@ -2,6 +2,7 @@ package Data;
 
 
 import Modelo.ItemRepuesto;
+import Modelo.Reparacion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -166,5 +167,21 @@ public class ItemRepuestoData {
             JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-obtenerRepuestos | "+ex.getMessage());
         }
         return itemsReparacion;
+    }
+    
+    public float costoRepuestos(int idReparacion){
+        String sql="SELECT SUM(precio*itemrepuesto.cantidad) FROM repuesto, itemrepuesto WHERE repuesto.num_serie = itemrepuesto.num_serie AND itemrepuesto.id_reparacion = ?;"; 
+        float costo=0;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idReparacion);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+              costo = rs.getFloat("SUM(precio*itemrepuesto.cantidad)");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ReparacionData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return costo;
     }
 }
