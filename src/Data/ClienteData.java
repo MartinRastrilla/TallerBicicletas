@@ -69,7 +69,7 @@ public class ClienteData {
     }
     
     public ArrayList<Cliente> buscarClienteApellido(String nombre){
-        String query = "SELECT * FROM cliente WHERE apellido LIKE ?;";
+        String query = "SELECT * FROM cliente WHERE apellido LIKE ?";
         ArrayList<Cliente> listaClientes = new ArrayList();
         try {
             PreparedStatement ps = con.prepareStatement(query);

@@ -10,12 +10,15 @@ import Data.Conexion;
 import Data.ReparacionData;
 import Data.RepuestoData;
 import Data.ServicioData;
+import Modelo.Bicicleta;
 import Modelo.Reparacion;
 import Modelo.Repuesto;
 import Modelo.Servicio;
 import java.awt.Color;
 import java.sql.Connection;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,16 +27,20 @@ import javax.swing.table.DefaultTableModel;
  * @author Martin
  */
 public class MainForm extends javax.swing.JFrame {
-
+    
     Connection con = Conexion.getConexion();
     BicicletaData bData = new BicicletaData();
     ReparacionData repData = new ReparacionData();
     RepuestoData repuestoData = new RepuestoData();
     ServicioData sData = new ServicioData();
+    List<Servicio> listServicio;
+    List<Bicicleta> listBici;
     private DefaultTableModel tabla;
-
+    
     public MainForm() {
         initComponents();
+        llenarComboServicio();
+        llenarComboBicicleta();
         tabla = new DefaultTableModel();
     }
 
@@ -127,20 +134,20 @@ public class MainForm extends javax.swing.JFrame {
         jTextField11 = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
+        jLActReparacion = new javax.swing.JLabel();
         jPanel24 = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
+        jLBorrarRepa = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
-        jLabel28 = new javax.swing.JLabel();
+        jLAgregarReparacion = new javax.swing.JLabel();
         jTextField14 = new javax.swing.JTextField();
         jSeparator18 = new javax.swing.JSeparator();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBici = new javax.swing.JComboBox<>();
         jTextField15 = new javax.swing.JTextField();
         jSeparator19 = new javax.swing.JSeparator();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jTextField16 = new javax.swing.JTextField();
+        jDCFecha = new com.toedter.calendar.JDateChooser();
+        jTFPrecioRepa = new javax.swing.JTextField();
         jSeparator20 = new javax.swing.JSeparator();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboServ = new javax.swing.JComboBox<>();
         jPanel22 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         jTextField25 = new javax.swing.JTextField();
@@ -737,33 +744,48 @@ public class MainForm extends javax.swing.JFrame {
         jPanel25.setBackground(new java.awt.Color(0, 134, 190));
         jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel33.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("Actualizar");
-        jPanel25.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+        jLActReparacion.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLActReparacion.setForeground(new java.awt.Color(255, 255, 255));
+        jLActReparacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLActReparacion.setText("Actualizar");
+        jLActReparacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLActReparacionMouseClicked(evt);
+            }
+        });
+        jPanel25.add(jLActReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
 
         jPanel20.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 90, 30));
 
         jPanel24.setBackground(new java.awt.Color(0, 134, 190));
         jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel32.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setText("Borrar");
-        jPanel24.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
+        jLBorrarRepa.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLBorrarRepa.setForeground(new java.awt.Color(255, 255, 255));
+        jLBorrarRepa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLBorrarRepa.setText("Borrar");
+        jLBorrarRepa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLBorrarRepaMouseClicked(evt);
+            }
+        });
+        jPanel24.add(jLBorrarRepa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
 
         jPanel20.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 90, 30));
 
         jPanel21.setBackground(new java.awt.Color(0, 134, 190));
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel28.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("Agregar");
-        jPanel21.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
+        jLAgregarReparacion.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLAgregarReparacion.setForeground(new java.awt.Color(255, 255, 255));
+        jLAgregarReparacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLAgregarReparacion.setText("Agregar");
+        jLAgregarReparacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLAgregarReparacionMouseClicked(evt);
+            }
+        });
+        jPanel21.add(jLAgregarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
 
         jPanel20.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 90, 30));
 
@@ -782,8 +804,7 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator18.setForeground(new java.awt.Color(0, 134, 190));
         jPanel20.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 160, 140, 20));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel20.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 160, 30));
+        jPanel20.add(jComboBici, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 160, 30));
 
         jTextField15.setBackground(new java.awt.Color(51, 51, 51));
         jTextField15.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -800,26 +821,25 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator19.setForeground(new java.awt.Color(0, 134, 190));
         jPanel20.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 250, 140, 20));
 
-        jDateChooser1.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel20.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 160, 30));
+        jDCFecha.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel20.add(jDCFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 160, 30));
 
-        jTextField16.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField16.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField16.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField16.setText("Ingrese Precio");
-        jTextField16.setBorder(null);
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        jTFPrecioRepa.setBackground(new java.awt.Color(51, 51, 51));
+        jTFPrecioRepa.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jTFPrecioRepa.setForeground(new java.awt.Color(123, 123, 123));
+        jTFPrecioRepa.setText("Ingrese Precio");
+        jTFPrecioRepa.setBorder(null);
+        jTFPrecioRepa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                jTFPrecioRepaActionPerformed(evt);
             }
         });
-        jPanel20.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 300, 140, 20));
+        jPanel20.add(jTFPrecioRepa, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 300, 140, 20));
 
         jSeparator20.setForeground(new java.awt.Color(0, 134, 190));
         jPanel20.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 320, 140, 20));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel20.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 46, 160, 30));
+        jPanel20.add(jComboServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 46, 160, 30));
 
         jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 350, 450));
 
@@ -1053,9 +1073,9 @@ public class MainForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField22ActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void jTFPrecioRepaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFPrecioRepaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_jTFPrecioRepaActionPerformed
 
     private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
         // TODO add your handling code here:
@@ -1165,7 +1185,7 @@ public class MainForm extends javax.swing.JFrame {
     private void jLBuscarServicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLBuscarServicioMouseClicked
         int serv = Integer.parseInt(jTFCodServ.getText());
         sData.obtenerServicio(serv);
-        
+
     }//GEN-LAST:event_jLBuscarServicioMouseClicked
 
     private void jLBorrarServMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLBorrarServMouseClicked
@@ -1184,8 +1204,32 @@ public class MainForm extends javax.swing.JFrame {
         sData.modificarServicio(servicio, codSer);
         jTFServicioB.setText("");
         jTFPrecioB.setText("");
-        
+
     }//GEN-LAST:event_jLActServMouseClicked
+
+    private void jLAgregarReparacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLAgregarReparacionMouseClicked
+        Reparacion reparacion = new Reparacion();
+        Servicio s = (Servicio) jComboServ.getSelectedItem();
+        Bicicleta b = (Bicicleta) jComboBici.getSelectedItem();
+        int dia = jDCFecha.getCalendar().get(Calendar.DAY_OF_MONTH);
+        int mes = jDCFecha.getCalendar().get(Calendar.MONTH);
+        int anio = jDCFecha.getCalendar().get(Calendar.YEAR);
+        reparacion.setId_servicio(s);
+        reparacion.setId_bicicleta(b);
+        reparacion.setFecha_entrada(LocalDate.of(anio, mes + 1, dia));
+        reparacion.setCosto(Float.parseFloat(jTFPrecioRepa.getText()));
+        reparacion.setEstado(true);
+        reparacion.setActivo(true);
+        repData.ingresarReparacion(reparacion);
+    }//GEN-LAST:event_jLAgregarReparacionMouseClicked
+
+    private void jLBorrarRepaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLBorrarRepaMouseClicked
+
+    }//GEN-LAST:event_jLBorrarRepaMouseClicked
+
+    private void jLActReparacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLActReparacionMouseClicked
+        
+    }//GEN-LAST:event_jLActReparacionMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1221,13 +1265,27 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
     }
-
+    
     private void borrarFilasTabla() {
         if (tabla != null) {
             int aux = tabla.getRowCount() - 1;
             for (int i = aux; i >= 0; i--) {
                 tabla.removeRow(i);
             }
+        }
+    }
+    
+    private void llenarComboServicio() {
+        listServicio = sData.listarServicios();
+        for (Servicio s : listServicio) {
+            jComboServ.addItem(s);
+        }
+    }
+    
+    private void llenarComboBicicleta() {
+        //listBici = bData.listarBicicletas();
+        for (Bicicleta b : listBici) {
+            jComboBici.addItem(b);
         }
     }
 
@@ -1238,16 +1296,19 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel homeBtn;
     private javax.swing.JButton jBSalir;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<Bicicleta> jComboBici;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JComboBox<Servicio> jComboServ;
+    private com.toedter.calendar.JDateChooser jDCFecha;
+    private javax.swing.JLabel jLActReparacion;
     private javax.swing.JLabel jLActServ;
     private javax.swing.JLabel jLActualizarRepuesto;
     private javax.swing.JLabel jLAgregarRep;
+    private javax.swing.JLabel jLAgregarReparacion;
     private javax.swing.JLabel jLAgregarServicio;
+    private javax.swing.JLabel jLBorrarRepa;
     private javax.swing.JLabel jLBorrarServ;
     private javax.swing.JLabel jLBuscarDni;
     private javax.swing.JLabel jLBuscarRepuesto;
@@ -1264,11 +1325,8 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel5;
@@ -1333,6 +1391,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTFBuscarRepuesto;
     private javax.swing.JTextField jTFCodServ;
     private javax.swing.JTextField jTFPrecioB;
+    private javax.swing.JTextField jTFPrecioRepa;
     private javax.swing.JTextField jTFRepNSerie;
     private javax.swing.JTextField jTFServicioB;
     private javax.swing.JTextField jTFServicioPrecio;
@@ -1348,7 +1407,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
