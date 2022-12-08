@@ -30,126 +30,188 @@ public class MainForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        reparacionBtn = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        btnSalir = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaReparaciones = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        radioBtnRepNoEntregadas = new javax.swing.JRadioButton();
+        radioBtnRepNoTerminadas = new javax.swing.JRadioButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscarDNIduenioRep = new javax.swing.JTextField();
         btnBuscarXdni = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        btnBuscarReparacionxDNI = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jSeparator3 = new javax.swing.JSeparator();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtRepuestoNumSerie = new javax.swing.JTextField();
+        txtNombreRepuesto = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
-        jTextField4 = new javax.swing.JTextField();
+        txtPrecioRepuesto = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
+        panelBtnAggRepuesto = new javax.swing.JPanel();
+        btnAggRepuesto = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaRepuestos = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtBuscarRepuestoXnumSerie = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        panelBorrarRepuesto = new javax.swing.JPanel();
+        btnBorrarRepuesto = new javax.swing.JLabel();
+        txtNombreRepuestoActualizar = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
-        jTextField7 = new javax.swing.JTextField();
+        txtPrecioRepuestoActualizar = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
+        panelActualizarRepuesto = new javax.swing.JPanel();
+        btnActualizarRepuesto = new javax.swing.JLabel();
+        panelBuscarRepuesto = new javax.swing.JPanel();
+        btnBuscarRepuesto = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtNombreServicio = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
-        jTextField9 = new javax.swing.JTextField();
+        txtPrecioServicio = new javax.swing.JTextField();
         jSeparator11 = new javax.swing.JSeparator();
-        jPanel14 = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
+        panelAggServicio = new javax.swing.JPanel();
+        btnAggServicio = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tablaServicios = new javax.swing.JTable();
         jPanel15 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        txtCodServicioBuscar = new javax.swing.JTextField();
         jSeparator13 = new javax.swing.JSeparator();
-        jPanel18 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jPanel17 = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
-        jPanel16 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
+        panelActualizarServicio = new javax.swing.JPanel();
+        btnActualizarServicio = new javax.swing.JLabel();
+        panelBorrarServicio = new javax.swing.JPanel();
+        btnBorrarServicio = new javax.swing.JLabel();
+        panelBuscarServicio = new javax.swing.JPanel();
+        btnBuscarServicio = new javax.swing.JLabel();
         jSeparator15 = new javax.swing.JSeparator();
         jSeparator16 = new javax.swing.JSeparator();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
+        txtServicioPrecioActualizar = new javax.swing.JTextField();
+        txtServicioNombreActualizar = new javax.swing.JTextField();
         jSeparator17 = new javax.swing.JSeparator();
         jPanel19 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         jSeparator14 = new javax.swing.JSeparator();
-        jTextField11 = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        jPanel25 = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
-        jPanel24 = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
-        jPanel21 = new javax.swing.JPanel();
-        jLabel28 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        panelActualizarReparacion = new javax.swing.JPanel();
+        btnActualizarReparacion = new javax.swing.JLabel();
+        panelBorrarReparacion = new javax.swing.JPanel();
+        btnBorrarReparacion = new javax.swing.JLabel();
+        panelAggReparacion = new javax.swing.JPanel();
+        btnAgregarReparacion = new javax.swing.JLabel();
         jSeparator18 = new javax.swing.JSeparator();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField15 = new javax.swing.JTextField();
+        comboBicicleta = new javax.swing.JComboBox<>();
         jSeparator19 = new javax.swing.JSeparator();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jTextField16 = new javax.swing.JTextField();
+        calendarFechaEntrada = new com.toedter.calendar.JDateChooser();
+        txtPrecioReparacion = new javax.swing.JTextField();
         jSeparator20 = new javax.swing.JSeparator();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        comboServicio = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtBuscarReparacionID = new javax.swing.JTextField();
+        jSeparator31 = new javax.swing.JSeparator();
+        panelBuscarReparacion = new javax.swing.JPanel();
+        btnBuscarReparacion = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        jTextField25 = new javax.swing.JTextField();
         jSeparator29 = new javax.swing.JSeparator();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        comboRepuestos = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tablaItemRepuesto = new javax.swing.JTable();
+        jLabel40 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jSeparator26 = new javax.swing.JSeparator();
-        jTextField22 = new javax.swing.JTextField();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jTextField23 = new javax.swing.JTextField();
+        comboItemRepuesto = new javax.swing.JComboBox<>();
         jSeparator27 = new javax.swing.JSeparator();
-        jSpinner3 = new javax.swing.JSpinner();
-        jPanel27 = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
-        jTextField24 = new javax.swing.JTextField();
+        cantRepuestos = new javax.swing.JSpinner();
+        panelAggItemRepuesto = new javax.swing.JPanel();
+        btnAggItemRepuesto = new javax.swing.JLabel();
+        panelActualizarItemRepuesto = new javax.swing.JPanel();
+        btnActualizarItemRepuesto = new javax.swing.JLabel();
+        panelBorrarItemRepuesto = new javax.swing.JPanel();
+        btnBorrarItemRepuesto = new javax.swing.JLabel();
         jSeparator28 = new javax.swing.JSeparator();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        homeBtn = new javax.swing.JLabel();
-        repuestoBtn = new javax.swing.JLabel();
-        clientBtn = new javax.swing.JLabel();
-        servicioBtn = new javax.swing.JLabel();
+        comboReparacionXitemRepuesto = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        txtDniCliente = new javax.swing.JTextField();
+        jSeparator21 = new javax.swing.JSeparator();
+        txtNombre = new javax.swing.JTextField();
+        jSeparator22 = new javax.swing.JSeparator();
+        txtTelefono = new javax.swing.JTextField();
+        jSeparator23 = new javax.swing.JSeparator();
+        jSeparator24 = new javax.swing.JSeparator();
+        txtDomicilio = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
+        jSeparator25 = new javax.swing.JSeparator();
+        jSeparator30 = new javax.swing.JSeparator();
+        panelBorrarBicicleta = new javax.swing.JPanel();
+        btnBorrarBicicleta = new javax.swing.JLabel();
+        panelAggBicicleta = new javax.swing.JPanel();
+        btnAggBicicleta = new javax.swing.JLabel();
+        panelActualizarBicicleta = new javax.swing.JPanel();
+        btnActualizarBicicleta = new javax.swing.JLabel();
+        panelAggCliente = new javax.swing.JPanel();
+        btnAggCliente = new javax.swing.JLabel();
+        panelBuscarCliente = new javax.swing.JPanel();
+        btnBuscarCliente = new javax.swing.JLabel();
+        panelBorrarCliente = new javax.swing.JPanel();
+        btnBorrarCliente = new javax.swing.JLabel();
+        panelActualizarCliente = new javax.swing.JPanel();
+        btnActualizarCliente = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jSeparator32 = new javax.swing.JSeparator();
+        comboDuenioBici = new javax.swing.JComboBox<>();
+        jLabel47 = new javax.swing.JLabel();
+        jSeparator33 = new javax.swing.JSeparator();
+        comboTipoBici = new javax.swing.JComboBox<>();
+        jSeparator34 = new javax.swing.JSeparator();
+        txtColor = new javax.swing.JTextField();
+        txtMarca = new javax.swing.JTextField();
+        jSeparator35 = new javax.swing.JSeparator();
+        txtNumSerieBicicleta = new javax.swing.JTextField();
+        jSeparator36 = new javax.swing.JSeparator();
+        jPanel37 = new javax.swing.JPanel();
+        txtBuscarxNumSertieBicicleta = new javax.swing.JTextField();
+        jSeparator37 = new javax.swing.JSeparator();
+        panelBuscarBicicleta = new javax.swing.JPanel();
+        btnBuscarBicicleta = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
+        btnHome = new javax.swing.JPanel();
+        homeBtn = new javax.swing.JLabel();
+        btnirServicios = new javax.swing.JPanel();
+        servicioBtn = new javax.swing.JLabel();
+        btnirBiciCliente = new javax.swing.JPanel();
+        clientBtn = new javax.swing.JLabel();
+        btnirReparaciones = new javax.swing.JPanel();
+        reparacionBtn = new javax.swing.JLabel();
+        btnirRepuesto = new javax.swing.JPanel();
+        repuestoBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -160,19 +222,43 @@ public class MainForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(35, 35, 35));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSalirMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSalirMouseExited(evt);
+            }
+        });
+        btnSalir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("X");
+        btnSalir.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 40, 20));
+
+        jPanel4.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 40, 40));
+
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Taller de Bicicletas");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 50));
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 50));
 
-        reparacionBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        reparacionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/reparacion.png"))); // NOI18N
-        jPanel1.add(reparacionBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 360, 40, 40));
+        jLabel1.setFont(new java.awt.Font("Ink Free", 3, 28)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("El Pepe");
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 120, 40));
 
-        jLabel3.setBackground(new java.awt.Color(35, 35, 35));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/banner.jpg"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 1000, 40));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
 
         jTabbedPane1.setBackground(new java.awt.Color(35, 35, 35));
         jTabbedPane1.setForeground(new java.awt.Color(35, 35, 35));
@@ -185,8 +271,8 @@ public class MainForm extends javax.swing.JFrame {
         jPanel3.setForeground(new java.awt.Color(103, 103, 103));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaReparaciones.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        tablaReparaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -197,7 +283,7 @@ public class MainForm extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaReparaciones);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 660, 250));
 
@@ -207,30 +293,30 @@ public class MainForm extends javax.swing.JFrame {
         jLabel5.setText("Historial de Reparaciones");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 290, 30));
 
-        jRadioButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("Reparaciones No Entregadas");
-        jPanel3.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, -1, -1));
+        radioBtnRepNoEntregadas.setBackground(new java.awt.Color(51, 51, 51));
+        radioBtnRepNoEntregadas.setForeground(new java.awt.Color(255, 255, 255));
+        radioBtnRepNoEntregadas.setText("Reparaciones No Entregadas");
+        jPanel3.add(radioBtnRepNoEntregadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, -1, -1));
 
-        jRadioButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setText("Reparaciones No Terminadas");
-        jPanel3.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
+        radioBtnRepNoTerminadas.setBackground(new java.awt.Color(51, 51, 51));
+        radioBtnRepNoTerminadas.setForeground(new java.awt.Color(255, 255, 255));
+        radioBtnRepNoTerminadas.setText("Reparaciones No Terminadas");
+        jPanel3.add(radioBtnRepNoTerminadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
 
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 160, 20));
 
-        jTextField1.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField1.setText("Ingrese el DNI del dueño");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscarDNIduenioRep.setBackground(new java.awt.Color(51, 51, 51));
+        txtBuscarDNIduenioRep.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        txtBuscarDNIduenioRep.setForeground(new java.awt.Color(123, 123, 123));
+        txtBuscarDNIduenioRep.setText("Ingrese el DNI del dueño");
+        txtBuscarDNIduenioRep.setBorder(null);
+        txtBuscarDNIduenioRep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtBuscarDNIduenioRepActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 160, 20));
+        jPanel3.add(txtBuscarDNIduenioRep, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 160, 20));
 
         btnBuscarXdni.setBackground(new java.awt.Color(0, 134, 190));
         btnBuscarXdni.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -243,11 +329,11 @@ public class MainForm extends javax.swing.JFrame {
         });
         btnBuscarXdni.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Buscar");
-        btnBuscarXdni.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 80, 20));
+        btnBuscarReparacionxDNI.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnBuscarReparacionxDNI.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarReparacionxDNI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBuscarReparacionxDNI.setText("Buscar");
+        btnBuscarXdni.add(btnBuscarReparacionxDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 80, 40));
 
         jPanel3.add(btnBuscarXdni, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 80, 30));
 
@@ -270,44 +356,44 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel6.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, 230, 20));
 
-        jTextField2.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField2.setText("Ingrese N° de Serie");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtRepuestoNumSerie.setBackground(new java.awt.Color(51, 51, 51));
+        txtRepuestoNumSerie.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtRepuestoNumSerie.setForeground(new java.awt.Color(123, 123, 123));
+        txtRepuestoNumSerie.setText("Ingrese N° de Serie");
+        txtRepuestoNumSerie.setBorder(null);
+        txtRepuestoNumSerie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtRepuestoNumSerieActionPerformed(evt);
             }
         });
-        jPanel6.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 50, 230, 20));
+        jPanel6.add(txtRepuestoNumSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 50, 230, 20));
 
-        jTextField3.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField3.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField3.setText("Ingrese Repuesto");
-        jTextField3.setBorder(null);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreRepuesto.setBackground(new java.awt.Color(51, 51, 51));
+        txtNombreRepuesto.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtNombreRepuesto.setForeground(new java.awt.Color(123, 123, 123));
+        txtNombreRepuesto.setText("Ingrese Repuesto");
+        txtNombreRepuesto.setBorder(null);
+        txtNombreRepuesto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtNombreRepuestoActionPerformed(evt);
             }
         });
-        jPanel6.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 100, 230, 20));
+        jPanel6.add(txtNombreRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 100, 230, 20));
 
         jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel6.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 120, 230, 20));
 
-        jTextField4.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField4.setText("Ingrese el Precio");
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtPrecioRepuesto.setBackground(new java.awt.Color(51, 51, 51));
+        txtPrecioRepuesto.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtPrecioRepuesto.setForeground(new java.awt.Color(123, 123, 123));
+        txtPrecioRepuesto.setText("Ingrese el Precio");
+        txtPrecioRepuesto.setBorder(null);
+        txtPrecioRepuesto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtPrecioRepuestoActionPerformed(evt);
             }
         });
-        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 150, 230, 20));
+        jPanel6.add(txtPrecioRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 150, 230, 20));
 
         jSeparator5.setForeground(new java.awt.Color(60, 63, 65));
         jPanel6.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 350, 20));
@@ -318,21 +404,29 @@ public class MainForm extends javax.swing.JFrame {
         jLabel13.setText("Agregar");
         jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 30));
 
-        jPanel7.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelBtnAggRepuesto.setBackground(new java.awt.Color(0, 134, 190));
+        panelBtnAggRepuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel14.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Agregar");
-        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+        btnAggRepuesto.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnAggRepuesto.setForeground(new java.awt.Color(255, 255, 255));
+        btnAggRepuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAggRepuesto.setText("Agregar");
+        btnAggRepuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAggRepuestoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAggRepuestoMouseExited(evt);
+            }
+        });
+        panelBtnAggRepuesto.add(btnAggRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
 
-        jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 90, 30));
+        jPanel6.add(panelBtnAggRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 90, 30));
 
         jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
         jPanel6.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 170, 230, 20));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaRepuestos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -343,7 +437,7 @@ public class MainForm extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tablaRepuestos);
 
         jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 350, 200));
 
@@ -358,83 +452,107 @@ public class MainForm extends javax.swing.JFrame {
         jLabel12.setText("Buscar");
         jPanel8.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
-        jTextField5.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField5.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField5.setText("Ingrese N° de Serie");
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscarRepuestoXnumSerie.setBackground(new java.awt.Color(51, 51, 51));
+        txtBuscarRepuestoXnumSerie.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtBuscarRepuestoXnumSerie.setForeground(new java.awt.Color(123, 123, 123));
+        txtBuscarRepuestoXnumSerie.setText("Ingrese N° de Serie");
+        txtBuscarRepuestoXnumSerie.setBorder(null);
+        txtBuscarRepuestoXnumSerie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtBuscarRepuestoXnumSerieActionPerformed(evt);
             }
         });
-        jPanel8.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 50, 230, 20));
+        jPanel8.add(txtBuscarRepuestoXnumSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 50, 230, 20));
 
         jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
         jPanel8.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, 230, 20));
 
-        jPanel9.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelBorrarRepuesto.setBackground(new java.awt.Color(0, 134, 190));
+        panelBorrarRepuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel15.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("Borrar");
-        jPanel9.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
-
-        jPanel8.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 90, 30));
-
-        jTextField6.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField6.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField6.setText("Repuesto");
-        jTextField6.setBorder(null);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+        btnBorrarRepuesto.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBorrarRepuesto.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrarRepuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBorrarRepuesto.setText("Borrar");
+        btnBorrarRepuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBorrarRepuestoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBorrarRepuestoMouseExited(evt);
             }
         });
-        jPanel8.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 130, 230, 20));
+        panelBorrarRepuesto.add(btnBorrarRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel8.add(panelBorrarRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 90, 30));
+
+        txtNombreRepuestoActualizar.setBackground(new java.awt.Color(51, 51, 51));
+        txtNombreRepuestoActualizar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtNombreRepuestoActualizar.setForeground(new java.awt.Color(123, 123, 123));
+        txtNombreRepuestoActualizar.setText("Repuesto");
+        txtNombreRepuestoActualizar.setBorder(null);
+        txtNombreRepuestoActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreRepuestoActualizarActionPerformed(evt);
+            }
+        });
+        jPanel8.add(txtNombreRepuestoActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 130, 230, 20));
 
         jSeparator8.setForeground(new java.awt.Color(255, 255, 255));
         jPanel8.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 150, 230, 20));
 
-        jTextField7.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField7.setText("Precio");
-        jTextField7.setBorder(null);
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        txtPrecioRepuestoActualizar.setBackground(new java.awt.Color(51, 51, 51));
+        txtPrecioRepuestoActualizar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtPrecioRepuestoActualizar.setForeground(new java.awt.Color(123, 123, 123));
+        txtPrecioRepuestoActualizar.setText("Precio");
+        txtPrecioRepuestoActualizar.setBorder(null);
+        txtPrecioRepuestoActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                txtPrecioRepuestoActualizarActionPerformed(evt);
             }
         });
-        jPanel8.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 180, 230, 20));
+        jPanel8.add(txtPrecioRepuestoActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 180, 230, 20));
 
         jSeparator9.setForeground(new java.awt.Color(255, 255, 255));
         jPanel8.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 200, 230, 20));
 
-        jPanel10.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelActualizarRepuesto.setBackground(new java.awt.Color(0, 134, 190));
+        panelActualizarRepuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel16.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("Actualizar");
-        jPanel10.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+        btnActualizarRepuesto.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnActualizarRepuesto.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarRepuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnActualizarRepuesto.setText("Actualizar");
+        btnActualizarRepuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnActualizarRepuestoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnActualizarRepuestoMouseExited(evt);
+            }
+        });
+        panelActualizarRepuesto.add(btnActualizarRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
 
-        jPanel8.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 90, 30));
+        jPanel8.add(panelActualizarRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 90, 30));
 
-        jPanel12.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelBuscarRepuesto.setBackground(new java.awt.Color(0, 134, 190));
+        panelBuscarRepuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel18.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("Buscar");
-        jPanel12.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
+        btnBuscarRepuesto.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBuscarRepuesto.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarRepuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBuscarRepuesto.setText("Buscar");
+        btnBuscarRepuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBuscarRepuestoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBuscarRepuestoMouseExited(evt);
+            }
+        });
+        panelBuscarRepuesto.add(btnBuscarRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
 
-        jPanel8.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 90, 30));
+        jPanel8.add(panelBuscarRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 90, 30));
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/la-carretera.png"))); // NOI18N
@@ -462,52 +580,60 @@ public class MainForm extends javax.swing.JFrame {
         jLabel20.setText("Agregar");
         jPanel13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 30));
 
-        jTextField8.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField8.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField8.setText("Ingrese Servicio");
-        jTextField8.setBorder(null);
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreServicio.setBackground(new java.awt.Color(51, 51, 51));
+        txtNombreServicio.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtNombreServicio.setForeground(new java.awt.Color(123, 123, 123));
+        txtNombreServicio.setText("Ingrese Servicio");
+        txtNombreServicio.setBorder(null);
+        txtNombreServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                txtNombreServicioActionPerformed(evt);
             }
         });
-        jPanel13.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, 230, 20));
+        jPanel13.add(txtNombreServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, 230, 20));
 
         jSeparator10.setForeground(new java.awt.Color(255, 255, 255));
         jPanel13.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 60, 230, 20));
 
-        jTextField9.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField9.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField9.setText("Ingrese Precio");
-        jTextField9.setBorder(null);
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        txtPrecioServicio.setBackground(new java.awt.Color(51, 51, 51));
+        txtPrecioServicio.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtPrecioServicio.setForeground(new java.awt.Color(123, 123, 123));
+        txtPrecioServicio.setText("Ingrese Precio");
+        txtPrecioServicio.setBorder(null);
+        txtPrecioServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                txtPrecioServicioActionPerformed(evt);
             }
         });
-        jPanel13.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, 230, 20));
+        jPanel13.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, 230, 20));
 
         jSeparator11.setForeground(new java.awt.Color(255, 255, 255));
         jPanel13.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 130, 230, 20));
 
-        jPanel14.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelAggServicio.setBackground(new java.awt.Color(0, 134, 190));
+        panelAggServicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel21.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("Agregar");
-        jPanel14.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 30));
+        btnAggServicio.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnAggServicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnAggServicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAggServicio.setText("Agregar");
+        btnAggServicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAggServicioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAggServicioMouseExited(evt);
+            }
+        });
+        panelAggServicio.add(btnAggServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
 
-        jPanel13.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 100, 30));
+        jPanel13.add(panelAggServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 100, 30));
 
         jSeparator1.setForeground(new java.awt.Color(125, 125, 125));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel13.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 20, 140));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tablaServicios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -518,7 +644,7 @@ public class MainForm extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tablaServicios);
 
         jPanel13.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 410, 150));
 
@@ -533,53 +659,77 @@ public class MainForm extends javax.swing.JFrame {
         jLabel22.setText("Buscar");
         jPanel15.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 30));
 
-        jTextField10.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField10.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField10.setText("Ingrese Código de Servicio");
-        jTextField10.setBorder(null);
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        txtCodServicioBuscar.setBackground(new java.awt.Color(51, 51, 51));
+        txtCodServicioBuscar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtCodServicioBuscar.setForeground(new java.awt.Color(123, 123, 123));
+        txtCodServicioBuscar.setText("Ingrese Código de Servicio");
+        txtCodServicioBuscar.setBorder(null);
+        txtCodServicioBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                txtCodServicioBuscarActionPerformed(evt);
             }
         });
-        jPanel15.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, 230, 20));
+        jPanel15.add(txtCodServicioBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, 230, 20));
 
         jSeparator13.setForeground(new java.awt.Color(255, 255, 255));
         jPanel15.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 60, 230, 20));
 
-        jPanel18.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelActualizarServicio.setBackground(new java.awt.Color(0, 134, 190));
+        panelActualizarServicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel25.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Actualizar");
-        jPanel18.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 30));
+        btnActualizarServicio.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnActualizarServicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarServicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnActualizarServicio.setText("Actualizar");
+        btnActualizarServicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnActualizarServicioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnActualizarServicioMouseExited(evt);
+            }
+        });
+        panelActualizarServicio.add(btnActualizarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
 
-        jPanel15.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 100, 30));
+        jPanel15.add(panelActualizarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 100, 30));
 
-        jPanel17.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelBorrarServicio.setBackground(new java.awt.Color(0, 134, 190));
+        panelBorrarServicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel24.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("Borrar");
-        jPanel17.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 30));
+        btnBorrarServicio.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBorrarServicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrarServicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBorrarServicio.setText("Borrar");
+        btnBorrarServicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBorrarServicioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBorrarServicioMouseExited(evt);
+            }
+        });
+        panelBorrarServicio.add(btnBorrarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
 
-        jPanel15.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 100, 30));
+        jPanel15.add(panelBorrarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 100, 30));
 
-        jPanel16.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelBuscarServicio.setBackground(new java.awt.Color(0, 134, 190));
+        panelBuscarServicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel23.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("Buscar");
-        jPanel16.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 30));
+        btnBuscarServicio.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBuscarServicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarServicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBuscarServicio.setText("Buscar");
+        btnBuscarServicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBuscarServicioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBuscarServicioMouseExited(evt);
+            }
+        });
+        panelBuscarServicio.add(btnBuscarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
 
-        jPanel15.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 100, 30));
+        jPanel15.add(panelBuscarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 100, 30));
 
         jSeparator15.setForeground(new java.awt.Color(125, 125, 125));
         jSeparator15.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -588,29 +738,29 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator16.setForeground(new java.awt.Color(255, 255, 255));
         jPanel15.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 170, 20));
 
-        jTextField12.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField12.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField12.setText("Precio");
-        jTextField12.setBorder(null);
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        txtServicioPrecioActualizar.setBackground(new java.awt.Color(51, 51, 51));
+        txtServicioPrecioActualizar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtServicioPrecioActualizar.setForeground(new java.awt.Color(123, 123, 123));
+        txtServicioPrecioActualizar.setText("Precio");
+        txtServicioPrecioActualizar.setBorder(null);
+        txtServicioPrecioActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                txtServicioPrecioActualizarActionPerformed(evt);
             }
         });
-        jPanel15.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 170, 20));
+        jPanel15.add(txtServicioPrecioActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 170, 20));
 
-        jTextField13.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField13.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField13.setText("Servicio");
-        jTextField13.setBorder(null);
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        txtServicioNombreActualizar.setBackground(new java.awt.Color(51, 51, 51));
+        txtServicioNombreActualizar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtServicioNombreActualizar.setForeground(new java.awt.Color(123, 123, 123));
+        txtServicioNombreActualizar.setText("Servicio");
+        txtServicioNombreActualizar.setBorder(null);
+        txtServicioNombreActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                txtServicioNombreActualizarActionPerformed(evt);
             }
         });
-        jPanel15.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 280, 20));
+        jPanel15.add(txtServicioNombreActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 280, 20));
 
         jSeparator17.setForeground(new java.awt.Color(255, 255, 255));
         jPanel15.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 280, 20));
@@ -634,110 +784,147 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator14.setForeground(new java.awt.Color(0, 134, 190));
         jPanel20.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, 140, 20));
 
-        jTextField11.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField11.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField11.setText("Elija Servicio");
-        jTextField11.setBorder(null);
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
-            }
-        });
-        jPanel20.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 50, 140, 20));
-
         jLabel27.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel27.setText("Reparación");
         jPanel20.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 30));
 
-        jPanel25.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelActualizarReparacion.setBackground(new java.awt.Color(0, 134, 190));
+        panelActualizarReparacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel33.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("Actualizar");
-        jPanel25.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
-
-        jPanel20.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 90, 30));
-
-        jPanel24.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel32.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setText("Borrar");
-        jPanel24.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
-
-        jPanel20.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 90, 30));
-
-        jPanel21.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel28.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("Agregar");
-        jPanel21.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
-
-        jPanel20.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 90, 30));
-
-        jTextField14.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField14.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField14.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField14.setText("Elija Bicileta");
-        jTextField14.setBorder(null);
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
+        btnActualizarReparacion.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnActualizarReparacion.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarReparacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnActualizarReparacion.setText("Actualizar");
+        btnActualizarReparacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnActualizarReparacionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnActualizarReparacionMouseExited(evt);
             }
         });
-        jPanel20.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 140, 140, 20));
+        panelActualizarReparacion.add(btnActualizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel20.add(panelActualizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, 90, 30));
+
+        panelBorrarReparacion.setBackground(new java.awt.Color(0, 134, 190));
+        panelBorrarReparacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBorrarReparacion.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBorrarReparacion.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrarReparacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBorrarReparacion.setText("Borrar");
+        btnBorrarReparacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBorrarReparacionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBorrarReparacionMouseExited(evt);
+            }
+        });
+        panelBorrarReparacion.add(btnBorrarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel20.add(panelBorrarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 90, 30));
+
+        panelAggReparacion.setBackground(new java.awt.Color(0, 134, 190));
+        panelAggReparacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnAgregarReparacion.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnAgregarReparacion.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregarReparacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAgregarReparacion.setText("Agregar");
+        btnAgregarReparacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAgregarReparacionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAgregarReparacionMouseExited(evt);
+            }
+        });
+        panelAggReparacion.add(btnAgregarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel20.add(panelAggReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 90, 30));
 
         jSeparator18.setForeground(new java.awt.Color(0, 134, 190));
         jPanel20.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 160, 140, 20));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel20.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 160, 30));
-
-        jTextField15.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField15.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField15.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField15.setText("Fecha de Entrada");
-        jTextField15.setBorder(null);
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
-            }
-        });
-        jPanel20.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 230, 140, 20));
+        comboBicicleta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel20.add(comboBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 160, 30));
 
         jSeparator19.setForeground(new java.awt.Color(0, 134, 190));
         jPanel20.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 250, 140, 20));
 
-        jDateChooser1.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel20.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 160, 30));
+        calendarFechaEntrada.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel20.add(calendarFechaEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 160, 30));
 
-        jTextField16.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField16.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField16.setForeground(new java.awt.Color(123, 123, 123));
-        jTextField16.setText("Ingrese Precio");
-        jTextField16.setBorder(null);
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        txtPrecioReparacion.setBackground(new java.awt.Color(51, 51, 51));
+        txtPrecioReparacion.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtPrecioReparacion.setForeground(new java.awt.Color(123, 123, 123));
+        txtPrecioReparacion.setText("Ingrese Precio");
+        txtPrecioReparacion.setBorder(null);
+        txtPrecioReparacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                txtPrecioReparacionActionPerformed(evt);
             }
         });
-        jPanel20.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 300, 140, 20));
+        jPanel20.add(txtPrecioReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 300, 140, 20));
 
         jSeparator20.setForeground(new java.awt.Color(0, 134, 190));
         jPanel20.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 320, 140, 20));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel20.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 46, 160, 30));
+        comboServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel20.add(comboServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 46, 160, 30));
+
+        jLabel4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Fecha de Entrada");
+        jPanel20.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 230, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Elija Bicicleta");
+        jPanel20.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 140, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Elija Servicio");
+        jPanel20.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 50, -1, -1));
+
+        txtBuscarReparacionID.setBackground(new java.awt.Color(51, 51, 51));
+        txtBuscarReparacionID.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtBuscarReparacionID.setForeground(new java.awt.Color(123, 123, 123));
+        txtBuscarReparacionID.setText("Ingrese ID Reparación");
+        txtBuscarReparacionID.setBorder(null);
+        txtBuscarReparacionID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarReparacionIDActionPerformed(evt);
+            }
+        });
+        jPanel20.add(txtBuscarReparacionID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 160, 20));
+
+        jSeparator31.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel20.add(jSeparator31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 160, 20));
+
+        panelBuscarReparacion.setBackground(new java.awt.Color(0, 134, 190));
+        panelBuscarReparacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBuscarReparacion.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBuscarReparacion.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarReparacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBuscarReparacion.setText("Buscar");
+        btnBuscarReparacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBuscarReparacionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBuscarReparacionMouseExited(evt);
+            }
+        });
+        panelBuscarReparacion.add(btnBuscarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel20.add(panelBuscarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 90, 30));
 
         jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 350, 450));
 
@@ -750,25 +937,13 @@ public class MainForm extends javax.swing.JFrame {
         jLabel30.setText("Repuestos");
         jPanel22.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 30));
 
-        jTextField25.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField25.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField25.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField25.setText("Elija Reparación");
-        jTextField25.setBorder(null);
-        jTextField25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField25ActionPerformed(evt);
-            }
-        });
-        jPanel22.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
-
         jSeparator29.setForeground(new java.awt.Color(0, 134, 190));
         jPanel22.add(jSeparator29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, 20));
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel22.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 160, 30));
+        comboRepuestos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel22.add(comboRepuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 160, 30));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tablaItemRepuesto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -779,9 +954,14 @@ public class MainForm extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(tablaItemRepuesto);
 
         jPanel22.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 89, -1, 160));
+
+        jLabel40.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setText("Elija Reparación");
+        jPanel22.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         jPanel19.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 450, 250));
 
@@ -797,190 +977,663 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator26.setForeground(new java.awt.Color(0, 134, 190));
         jPanel26.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, 20));
 
-        jTextField22.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField22.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField22.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField22.setText("Elija Repuesto");
-        jTextField22.setBorder(null);
-        jTextField22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField22ActionPerformed(evt);
-            }
-        });
-        jPanel26.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
-
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel26.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 160, 30));
-
-        jTextField23.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField23.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField23.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField23.setText("Cant.");
-        jTextField23.setBorder(null);
-        jTextField23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField23ActionPerformed(evt);
-            }
-        });
-        jPanel26.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 40, 20));
+        comboItemRepuesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel26.add(comboItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 160, 30));
 
         jSeparator27.setForeground(new java.awt.Color(0, 134, 190));
         jPanel26.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 50, 20));
-        jPanel26.add(jSpinner3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 70, -1));
+        jPanel26.add(cantRepuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 70, -1));
 
-        jPanel27.setBackground(new java.awt.Color(0, 134, 190));
-        jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelAggItemRepuesto.setBackground(new java.awt.Color(0, 134, 190));
+        panelAggItemRepuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel35.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("Agregar");
-        jPanel27.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
-
-        jPanel26.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 90, 30));
-
-        jTextField24.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField24.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField24.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField24.setText("Elija Reparación");
-        jTextField24.setBorder(null);
-        jTextField24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField24ActionPerformed(evt);
+        btnAggItemRepuesto.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnAggItemRepuesto.setForeground(new java.awt.Color(255, 255, 255));
+        btnAggItemRepuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAggItemRepuesto.setText("Agregar");
+        btnAggItemRepuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAggItemRepuestoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAggItemRepuestoMouseExited(evt);
             }
         });
-        jPanel26.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 140, 20));
+        panelAggItemRepuesto.add(btnAggItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel26.add(panelAggItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 90, 30));
+
+        panelActualizarItemRepuesto.setBackground(new java.awt.Color(0, 134, 190));
+        panelActualizarItemRepuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnActualizarItemRepuesto.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnActualizarItemRepuesto.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarItemRepuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnActualizarItemRepuesto.setText("Actualizar");
+        btnActualizarItemRepuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnActualizarItemRepuestoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnActualizarItemRepuestoMouseExited(evt);
+            }
+        });
+        panelActualizarItemRepuesto.add(btnActualizarItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel26.add(panelActualizarItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 90, 30));
+
+        panelBorrarItemRepuesto.setBackground(new java.awt.Color(0, 134, 190));
+        panelBorrarItemRepuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBorrarItemRepuesto.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBorrarItemRepuesto.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrarItemRepuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBorrarItemRepuesto.setText("Borrar");
+        btnBorrarItemRepuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBorrarItemRepuestoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBorrarItemRepuestoMouseExited(evt);
+            }
+        });
+        panelBorrarItemRepuesto.add(btnBorrarItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel26.add(panelBorrarItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 90, 30));
 
         jSeparator28.setForeground(new java.awt.Color(0, 134, 190));
         jPanel26.add(jSeparator28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 140, 20));
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel26.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 160, 30));
+        comboReparacionXitemRepuesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel26.add(comboReparacionXitemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 160, 30));
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Cant.");
+        jPanel26.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+
+        jLabel41.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("Elija Repuesto");
+        jPanel26.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Elija Reparación");
+        jPanel26.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         jPanel19.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 450, 190));
 
         jTabbedPane1.addTab("tab4", jPanel19);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 940, 530));
+        jPanel23.setBackground(new java.awt.Color(35, 35, 35));
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Ink Free", 3, 28)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("El Pepe");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 120, 40));
+        jLabel29.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("Clientes");
+        jPanel23.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 940, 30));
 
-        homeBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/casa (1).png"))); // NOI18N
-        homeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                homeBtnMouseEntered(evt);
+        jPanel28.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel31.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("Agregar Bicicleta");
+        jPanel28.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 450, 30));
+
+        txtDniCliente.setBackground(new java.awt.Color(51, 51, 51));
+        txtDniCliente.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtDniCliente.setForeground(new java.awt.Color(123, 123, 123));
+        txtDniCliente.setText("Ingrese DNI");
+        txtDniCliente.setBorder(null);
+        txtDniCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDniClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(homeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 120, 40, 40));
+        jPanel28.add(txtDniCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 60, 230, 20));
 
-        repuestoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        repuestoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/repuesto.png"))); // NOI18N
-        jPanel1.add(repuestoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 180, 40, 40));
+        jSeparator21.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator21.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel28.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 20, 390));
 
-        clientBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        clientBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bicycle.png"))); // NOI18N
-        jPanel1.add(clientBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 240, 40, 40));
+        txtNombre.setBackground(new java.awt.Color(51, 51, 51));
+        txtNombre.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(123, 123, 123));
+        txtNombre.setText("Ingrese Nombre");
+        txtNombre.setBorder(null);
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+        jPanel28.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 160, 230, 20));
 
-        servicioBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        servicioBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/servicio.png"))); // NOI18N
-        jPanel1.add(servicioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 300, 40, 40));
+        jSeparator22.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel28.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 180, 230, 20));
+
+        txtTelefono.setBackground(new java.awt.Color(51, 51, 51));
+        txtTelefono.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(123, 123, 123));
+        txtTelefono.setText("Ingrese Telefono");
+        txtTelefono.setBorder(null);
+        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoActionPerformed(evt);
+            }
+        });
+        jPanel28.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 210, 230, 20));
+
+        jSeparator23.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel28.add(jSeparator23, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 230, 230, 20));
+
+        jSeparator24.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel28.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 280, 230, 20));
+
+        txtDomicilio.setBackground(new java.awt.Color(51, 51, 51));
+        txtDomicilio.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtDomicilio.setForeground(new java.awt.Color(123, 123, 123));
+        txtDomicilio.setText("Ingrese Domicilio");
+        txtDomicilio.setBorder(null);
+        txtDomicilio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDomicilioActionPerformed(evt);
+            }
+        });
+        jPanel28.add(txtDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 260, 230, 20));
+
+        txtApellido.setBackground(new java.awt.Color(51, 51, 51));
+        txtApellido.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtApellido.setForeground(new java.awt.Color(123, 123, 123));
+        txtApellido.setText("Ingrese Apellido");
+        txtApellido.setBorder(null);
+        txtApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidoActionPerformed(evt);
+            }
+        });
+        jPanel28.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, 230, 20));
+
+        jSeparator25.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel28.add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 130, 230, 20));
+
+        jSeparator30.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel28.add(jSeparator30, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 80, 230, 20));
+
+        panelBorrarBicicleta.setBackground(new java.awt.Color(0, 134, 190));
+        panelBorrarBicicleta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBorrarBicicleta.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBorrarBicicleta.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrarBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBorrarBicicleta.setText("Borrar");
+        btnBorrarBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBorrarBicicletaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBorrarBicicletaMouseExited(evt);
+            }
+        });
+        panelBorrarBicicleta.add(btnBorrarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel28.add(panelBorrarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 90, 30));
+
+        panelAggBicicleta.setBackground(new java.awt.Color(0, 134, 190));
+        panelAggBicicleta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnAggBicicleta.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnAggBicicleta.setForeground(new java.awt.Color(255, 255, 255));
+        btnAggBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAggBicicleta.setText("Agregar");
+        btnAggBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAggBicicletaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAggBicicletaMouseExited(evt);
+            }
+        });
+        panelAggBicicleta.add(btnAggBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel28.add(panelAggBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 90, 30));
+
+        panelActualizarBicicleta.setBackground(new java.awt.Color(0, 134, 190));
+        panelActualizarBicicleta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnActualizarBicicleta.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnActualizarBicicleta.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnActualizarBicicleta.setText("Actualizar");
+        btnActualizarBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnActualizarBicicletaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnActualizarBicicletaMouseExited(evt);
+            }
+        });
+        panelActualizarBicicleta.add(btnActualizarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel28.add(panelActualizarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 90, 30));
+
+        panelAggCliente.setBackground(new java.awt.Color(0, 134, 190));
+        panelAggCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnAggCliente.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnAggCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnAggCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAggCliente.setText("Agregar");
+        btnAggCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAggClienteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAggClienteMouseExited(evt);
+            }
+        });
+        panelAggCliente.add(btnAggCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel28.add(panelAggCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 90, 30));
+
+        panelBuscarCliente.setBackground(new java.awt.Color(0, 134, 190));
+        panelBuscarCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBuscarCliente.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBuscarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBuscarCliente.setText("Buscar");
+        btnBuscarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBuscarClienteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBuscarClienteMouseExited(evt);
+            }
+        });
+        panelBuscarCliente.add(btnBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel28.add(panelBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 90, 30));
+
+        panelBorrarCliente.setBackground(new java.awt.Color(0, 134, 190));
+        panelBorrarCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBorrarCliente.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBorrarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrarCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBorrarCliente.setText("Borrar");
+        btnBorrarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBorrarClienteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBorrarClienteMouseExited(evt);
+            }
+        });
+        panelBorrarCliente.add(btnBorrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel28.add(panelBorrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 90, 30));
+
+        panelActualizarCliente.setBackground(new java.awt.Color(0, 134, 190));
+        panelActualizarCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnActualizarCliente.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnActualizarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnActualizarCliente.setText("Actualizar");
+        btnActualizarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnActualizarClienteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnActualizarClienteMouseExited(evt);
+            }
+        });
+        panelActualizarCliente.add(btnActualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel28.add(panelActualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 90, 30));
+
+        jLabel45.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel45.setText("Agregar Cliente");
+        jPanel28.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 30));
+
+        jLabel46.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setText("Elija Dueño");
+        jPanel28.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, -1));
+
+        jSeparator32.setForeground(new java.awt.Color(0, 134, 190));
+        jPanel28.add(jSeparator32, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 140, 20));
+
+        comboDuenioBici.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel28.add(comboDuenioBici, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 200, 30));
+
+        jLabel47.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setText("Elija Tipo");
+        jPanel28.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, -1));
+
+        jSeparator33.setForeground(new java.awt.Color(0, 134, 190));
+        jPanel28.add(jSeparator33, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 140, 20));
+
+        comboTipoBici.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Urbana", "Ruta", "Contrarreloj", "Mountain", "Plegable", "BMX", "Paseo", "Híbrida", "Circuito", "Eléctrica", "Gravel" }));
+        jPanel28.add(comboTipoBici, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 200, 30));
+
+        jSeparator34.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel28.add(jSeparator34, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 170, 20));
+
+        txtColor.setBackground(new java.awt.Color(51, 51, 51));
+        txtColor.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtColor.setForeground(new java.awt.Color(123, 123, 123));
+        txtColor.setText("Ingrese Color");
+        txtColor.setBorder(null);
+        txtColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtColorActionPerformed(evt);
+            }
+        });
+        jPanel28.add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 170, 20));
+
+        txtMarca.setBackground(new java.awt.Color(51, 51, 51));
+        txtMarca.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtMarca.setForeground(new java.awt.Color(123, 123, 123));
+        txtMarca.setText("Ingrese Marca");
+        txtMarca.setBorder(null);
+        txtMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMarcaActionPerformed(evt);
+            }
+        });
+        jPanel28.add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 170, 20));
+
+        jSeparator35.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel28.add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 170, 20));
+
+        txtNumSerieBicicleta.setBackground(new java.awt.Color(51, 51, 51));
+        txtNumSerieBicicleta.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtNumSerieBicicleta.setForeground(new java.awt.Color(123, 123, 123));
+        txtNumSerieBicicleta.setText("Ingrese N° de Serie");
+        txtNumSerieBicicleta.setBorder(null);
+        txtNumSerieBicicleta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumSerieBicicletaActionPerformed(evt);
+            }
+        });
+        jPanel28.add(txtNumSerieBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 170, 20));
+
+        jSeparator36.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel28.add(jSeparator36, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 170, 20));
+
+        jPanel37.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 134, 190)));
+        jPanel37.setForeground(new java.awt.Color(60, 63, 65));
+        jPanel37.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtBuscarxNumSertieBicicleta.setBackground(new java.awt.Color(51, 51, 51));
+        txtBuscarxNumSertieBicicleta.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtBuscarxNumSertieBicicleta.setForeground(new java.awt.Color(123, 123, 123));
+        txtBuscarxNumSertieBicicleta.setText("Ingrese N° de Serie");
+        txtBuscarxNumSertieBicicleta.setBorder(null);
+        txtBuscarxNumSertieBicicleta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarxNumSertieBicicletaActionPerformed(evt);
+            }
+        });
+        jPanel37.add(txtBuscarxNumSertieBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 10, 150, 20));
+
+        jSeparator37.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel37.add(jSeparator37, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 30, 150, 20));
+
+        panelBuscarBicicleta.setBackground(new java.awt.Color(0, 134, 190));
+        panelBuscarBicicleta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBuscarBicicleta.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBuscarBicicleta.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBuscarBicicleta.setText("Buscar");
+        btnBuscarBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBuscarBicicletaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBuscarBicicletaMouseExited(evt);
+            }
+        });
+        panelBuscarBicicleta.add(btnBuscarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel37.add(panelBuscarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, -1));
+
+        jPanel28.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 160, 120));
+
+        jPanel23.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 900, 440));
+
+        jTabbedPane1.addTab("tab5", jPanel23);
+
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 940, 530));
 
         jSeparator12.setForeground(new java.awt.Color(125, 125, 125));
         jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 20, 320));
+
+        btnHome.setBackground(new java.awt.Color(35, 35, 35));
+        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHomeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHomeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHomeMouseExited(evt);
+            }
+        });
+        btnHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        homeBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/casa (1).png"))); // NOI18N
+        homeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                homeBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                homeBtnMouseExited(evt);
+            }
+        });
+        btnHome.add(homeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        jPanel1.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 128, -1, 40));
+
+        btnirServicios.setBackground(new java.awt.Color(35, 35, 35));
+        btnirServicios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnirServiciosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnirServiciosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnirServiciosMouseExited(evt);
+            }
+        });
+        btnirServicios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        servicioBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        servicioBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/servicio.png"))); // NOI18N
+        servicioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                servicioBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                servicioBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                servicioBtnMouseExited(evt);
+            }
+        });
+        btnirServicios.add(servicioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        jPanel1.add(btnirServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 310, 40, 40));
+
+        btnirBiciCliente.setBackground(new java.awt.Color(35, 35, 35));
+        btnirBiciCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnirBiciClienteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnirBiciClienteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnirBiciClienteMouseExited(evt);
+            }
+        });
+        btnirBiciCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        clientBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clientBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bicycle.png"))); // NOI18N
+        clientBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clientBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                clientBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                clientBtnMouseExited(evt);
+            }
+        });
+        btnirBiciCliente.add(clientBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        jPanel1.add(btnirBiciCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 250, 40, 40));
+
+        btnirReparaciones.setBackground(new java.awt.Color(35, 35, 35));
+        btnirReparaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnirReparacionesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnirReparacionesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnirReparacionesMouseExited(evt);
+            }
+        });
+        btnirReparaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        reparacionBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        reparacionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/reparacion.png"))); // NOI18N
+        reparacionBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                reparacionBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                reparacionBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                reparacionBtnMouseExited(evt);
+            }
+        });
+        btnirReparaciones.add(reparacionBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        jPanel1.add(btnirReparaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 370, 40, 40));
+
+        btnirRepuesto.setBackground(new java.awt.Color(35, 35, 35));
+        btnirRepuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnirRepuestoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnirRepuestoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnirRepuestoMouseExited(evt);
+            }
+        });
+        btnirRepuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        repuestoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        repuestoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/repuesto.png"))); // NOI18N
+        repuestoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                repuestoBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                repuestoBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                repuestoBtnMouseExited(evt);
+            }
+        });
+        btnirRepuesto.add(repuestoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        jPanel1.add(btnirRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 180, 40, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtBuscarDNIduenioRepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarDNIduenioRepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtBuscarDNIduenioRepActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtRepuestoNumSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRepuestoNumSerieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtRepuestoNumSerieActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtNombreRepuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreRepuestoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtNombreRepuestoActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtPrecioRepuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioRepuestoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtPrecioRepuestoActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtBuscarRepuestoXnumSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarRepuestoXnumSerieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtBuscarRepuestoXnumSerieActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtNombreRepuestoActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreRepuestoActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtNombreRepuestoActualizarActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtPrecioRepuestoActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioRepuestoActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtPrecioRepuestoActualizarActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void txtNombreServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreServicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_txtNombreServicioActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void txtPrecioServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioServicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_txtPrecioServicioActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void txtCodServicioBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodServicioBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_txtCodServicioBuscarActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void txtServicioPrecioActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServicioPrecioActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_txtServicioPrecioActualizarActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void txtServicioNombreActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServicioNombreActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_txtServicioNombreActualizarActionPerformed
 
-    private void jTextField24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField24ActionPerformed
+    private void txtPrecioReparacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioReparacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField24ActionPerformed
-
-    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23ActionPerformed
-
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
-
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
-
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
-
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
-
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
-
-    private void jTextField25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField25ActionPerformed
+    }//GEN-LAST:event_txtPrecioReparacionActionPerformed
 
     private void homeBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseEntered
-        homeBtn.setBackground(new Color(0,134,190));
+        btnHome.setBackground(new Color(0,102,102));
     }//GEN-LAST:event_homeBtnMouseEntered
 
     private void btnBuscarXdniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarXdniMouseEntered
@@ -990,6 +1643,358 @@ public class MainForm extends javax.swing.JFrame {
     private void btnBuscarXdniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarXdniMouseExited
         btnBuscarXdni.setBackground(new Color(0,134,190));
     }//GEN-LAST:event_btnBuscarXdniMouseExited
+
+    private void btnSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseEntered
+        btnSalir.setBackground(Color.red);
+    }//GEN-LAST:event_btnSalirMouseEntered
+
+    private void btnSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseExited
+        btnSalir.setBackground(new Color(60,63,65));
+    }//GEN-LAST:event_btnSalirMouseExited
+
+    private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirMouseClicked
+
+    private void btnHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseEntered
+        btnHome.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_btnHomeMouseEntered
+
+    private void btnHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseExited
+        btnHome.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_btnHomeMouseExited
+
+    private void homeBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseExited
+        btnHome.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_homeBtnMouseExited
+
+    private void btnirRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirRepuestoMouseEntered
+        btnirRepuesto.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_btnirRepuestoMouseEntered
+
+    private void btnirRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirRepuestoMouseExited
+        btnirRepuesto.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_btnirRepuestoMouseExited
+
+    private void btnirBiciClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirBiciClienteMouseEntered
+        btnirBiciCliente.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_btnirBiciClienteMouseEntered
+
+    private void btnirBiciClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirBiciClienteMouseExited
+        btnirBiciCliente.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_btnirBiciClienteMouseExited
+
+    private void btnirServiciosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirServiciosMouseEntered
+        btnirServicios.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_btnirServiciosMouseEntered
+
+    private void btnirServiciosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirServiciosMouseExited
+        btnirServicios.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_btnirServiciosMouseExited
+
+    private void clientBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientBtnMouseEntered
+        btnirBiciCliente.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_clientBtnMouseEntered
+
+    private void servicioBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_servicioBtnMouseEntered
+        btnirServicios.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_servicioBtnMouseEntered
+
+    private void servicioBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_servicioBtnMouseExited
+        btnirServicios.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_servicioBtnMouseExited
+
+    private void clientBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientBtnMouseExited
+        btnirBiciCliente.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_clientBtnMouseExited
+
+    private void btnirReparacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirReparacionesMouseEntered
+        btnirReparaciones.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_btnirReparacionesMouseEntered
+
+    private void btnirReparacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirReparacionesMouseExited
+        btnirReparaciones.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_btnirReparacionesMouseExited
+
+    private void reparacionBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reparacionBtnMouseEntered
+        btnirReparaciones.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_reparacionBtnMouseEntered
+
+    private void reparacionBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reparacionBtnMouseExited
+        btnirReparaciones.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_reparacionBtnMouseExited
+
+    private void homeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseClicked
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_homeBtnMouseClicked
+
+    private void btnHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseClicked
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_btnHomeMouseClicked
+
+    private void btnirRepuestoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirRepuestoMouseClicked
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_btnirRepuestoMouseClicked
+
+    private void repuestoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repuestoBtnMouseClicked
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_repuestoBtnMouseClicked
+
+    private void repuestoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repuestoBtnMouseEntered
+        btnirRepuesto.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_repuestoBtnMouseEntered
+
+    private void repuestoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repuestoBtnMouseExited
+        btnirRepuesto.setBackground(new Color(35,35,35));
+    }//GEN-LAST:event_repuestoBtnMouseExited
+
+    private void servicioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_servicioBtnMouseClicked
+        jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_servicioBtnMouseClicked
+
+    private void btnirServiciosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirServiciosMouseClicked
+        jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_btnirServiciosMouseClicked
+
+    private void reparacionBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reparacionBtnMouseClicked
+        jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_reparacionBtnMouseClicked
+
+    private void btnirReparacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirReparacionesMouseClicked
+        jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_btnirReparacionesMouseClicked
+
+    private void txtDniClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDniClienteActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoActionPerformed
+
+    private void txtDomicilioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomicilioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDomicilioActionPerformed
+
+    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidoActionPerformed
+
+    private void txtBuscarReparacionIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarReparacionIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarReparacionIDActionPerformed
+
+    private void txtColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtColorActionPerformed
+
+    private void txtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMarcaActionPerformed
+
+    private void txtNumSerieBicicletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumSerieBicicletaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumSerieBicicletaActionPerformed
+
+    private void txtBuscarxNumSertieBicicletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarxNumSertieBicicletaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarxNumSertieBicicletaActionPerformed
+
+    private void clientBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientBtnMouseClicked
+        jTabbedPane1.setSelectedIndex(4);
+    }//GEN-LAST:event_clientBtnMouseClicked
+
+    private void btnirBiciClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirBiciClienteMouseClicked
+        jTabbedPane1.setSelectedIndex(4);
+    }//GEN-LAST:event_btnirBiciClienteMouseClicked
+
+    private void btnAggRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggRepuestoMouseEntered
+        panelBtnAggRepuesto.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnAggRepuestoMouseEntered
+
+    private void btnAggRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggRepuestoMouseExited
+        panelBtnAggRepuesto.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnAggRepuestoMouseExited
+
+    private void btnBuscarRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarRepuestoMouseEntered
+        panelBuscarRepuesto.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBuscarRepuestoMouseEntered
+
+    private void btnBuscarRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarRepuestoMouseExited
+        panelBuscarRepuesto.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBuscarRepuestoMouseExited
+
+    private void btnBorrarRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarRepuestoMouseEntered
+        panelBorrarRepuesto.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBorrarRepuestoMouseEntered
+
+    private void btnBorrarRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarRepuestoMouseExited
+        panelBorrarRepuesto.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBorrarRepuestoMouseExited
+
+    private void btnActualizarRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarRepuestoMouseEntered
+        panelActualizarRepuesto.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnActualizarRepuestoMouseEntered
+
+    private void btnActualizarRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarRepuestoMouseExited
+        panelActualizarRepuesto.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnActualizarRepuestoMouseExited
+
+    private void btnAggServicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggServicioMouseEntered
+        panelAggServicio.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnAggServicioMouseEntered
+
+    private void btnAggServicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggServicioMouseExited
+        panelAggServicio.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnAggServicioMouseExited
+
+    private void btnBuscarServicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarServicioMouseEntered
+        panelBuscarServicio.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBuscarServicioMouseEntered
+
+    private void btnBuscarServicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarServicioMouseExited
+        panelBuscarServicio.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBuscarServicioMouseExited
+
+    private void btnBorrarServicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarServicioMouseEntered
+        panelBorrarServicio.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBorrarServicioMouseEntered
+
+    private void btnBorrarServicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarServicioMouseExited
+        panelBorrarServicio.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBorrarServicioMouseExited
+
+    private void btnActualizarServicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarServicioMouseEntered
+        panelActualizarServicio.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnActualizarServicioMouseEntered
+
+    private void btnActualizarServicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarServicioMouseExited
+        panelActualizarServicio.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnActualizarServicioMouseExited
+
+    private void btnBuscarReparacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarReparacionMouseEntered
+        panelBuscarReparacion.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBuscarReparacionMouseEntered
+
+    private void btnBuscarReparacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarReparacionMouseExited
+        panelBuscarReparacion.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBuscarReparacionMouseExited
+
+    private void btnBorrarReparacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarReparacionMouseEntered
+        panelBorrarReparacion.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBorrarReparacionMouseEntered
+
+    private void btnBorrarReparacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarReparacionMouseExited
+        panelBorrarReparacion.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBorrarReparacionMouseExited
+
+    private void btnAgregarReparacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarReparacionMouseEntered
+        panelAggReparacion.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnAgregarReparacionMouseEntered
+
+    private void btnAgregarReparacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarReparacionMouseExited
+        panelAggReparacion.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnAgregarReparacionMouseExited
+
+    private void btnActualizarReparacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarReparacionMouseEntered
+        panelActualizarReparacion.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnActualizarReparacionMouseEntered
+
+    private void btnActualizarReparacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarReparacionMouseExited
+        panelActualizarReparacion.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnActualizarReparacionMouseExited
+
+    private void btnAggItemRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggItemRepuestoMouseEntered
+        panelAggItemRepuesto.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnAggItemRepuestoMouseEntered
+
+    private void btnAggItemRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggItemRepuestoMouseExited
+        panelAggItemRepuesto.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnAggItemRepuestoMouseExited
+
+    private void btnActualizarItemRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarItemRepuestoMouseEntered
+        panelActualizarItemRepuesto.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnActualizarItemRepuestoMouseEntered
+
+    private void btnActualizarItemRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarItemRepuestoMouseExited
+        panelActualizarItemRepuesto.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnActualizarItemRepuestoMouseExited
+
+    private void btnBorrarItemRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarItemRepuestoMouseEntered
+        panelBorrarItemRepuesto.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBorrarItemRepuestoMouseEntered
+
+    private void btnBorrarItemRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarItemRepuestoMouseExited
+        panelBorrarItemRepuesto.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBorrarItemRepuestoMouseExited
+
+    private void btnBuscarClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarClienteMouseEntered
+        panelBuscarCliente.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBuscarClienteMouseEntered
+
+    private void btnBuscarClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarClienteMouseExited
+        panelBuscarCliente.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBuscarClienteMouseExited
+
+    private void btnBorrarClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarClienteMouseEntered
+        panelBorrarCliente.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBorrarClienteMouseEntered
+
+    private void btnBorrarClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarClienteMouseExited
+        panelBorrarCliente.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBorrarClienteMouseExited
+
+    private void btnAggClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggClienteMouseEntered
+        panelAggCliente.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnAggClienteMouseEntered
+
+    private void btnAggClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggClienteMouseExited
+        panelAggCliente.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnAggClienteMouseExited
+
+    private void btnActualizarClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarClienteMouseEntered
+        panelActualizarCliente.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnActualizarClienteMouseEntered
+
+    private void btnActualizarClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarClienteMouseExited
+        panelActualizarCliente.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnActualizarClienteMouseExited
+
+    private void btnAggBicicletaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggBicicletaMouseEntered
+        panelAggBicicleta.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnAggBicicletaMouseEntered
+
+    private void btnAggBicicletaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggBicicletaMouseExited
+        panelAggBicicleta.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnAggBicicletaMouseExited
+
+    private void btnBorrarBicicletaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarBicicletaMouseEntered
+        panelBorrarBicicleta.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBorrarBicicletaMouseEntered
+
+    private void btnBorrarBicicletaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarBicicletaMouseExited
+        panelBorrarBicicleta.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBorrarBicicletaMouseExited
+
+    private void btnActualizarBicicletaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarBicicletaMouseEntered
+        panelActualizarBicicleta.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnActualizarBicicletaMouseEntered
+
+    private void btnActualizarBicicletaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarBicicletaMouseExited
+        panelActualizarBicicleta.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnActualizarBicicletaMouseExited
+
+    private void btnBuscarBicicletaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarBicicletaMouseEntered
+        panelBuscarBicicleta.setBackground(new Color(0,196,223));
+    }//GEN-LAST:event_btnBuscarBicicletaMouseEntered
+
+    private void btnBuscarBicicletaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarBicicletaMouseExited
+        panelBuscarBicicleta.setBackground(new Color(0,134,190));
+    }//GEN-LAST:event_btnBuscarBicicletaMouseExited
 
     /**
      * @param args the command line arguments
@@ -1027,70 +2032,92 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnActualizarBicicleta;
+    private javax.swing.JLabel btnActualizarCliente;
+    private javax.swing.JLabel btnActualizarItemRepuesto;
+    private javax.swing.JLabel btnActualizarReparacion;
+    private javax.swing.JLabel btnActualizarRepuesto;
+    private javax.swing.JLabel btnActualizarServicio;
+    private javax.swing.JLabel btnAggBicicleta;
+    private javax.swing.JLabel btnAggCliente;
+    private javax.swing.JLabel btnAggItemRepuesto;
+    private javax.swing.JLabel btnAggRepuesto;
+    private javax.swing.JLabel btnAggServicio;
+    private javax.swing.JLabel btnAgregarReparacion;
+    private javax.swing.JLabel btnBorrarBicicleta;
+    private javax.swing.JLabel btnBorrarCliente;
+    private javax.swing.JLabel btnBorrarItemRepuesto;
+    private javax.swing.JLabel btnBorrarReparacion;
+    private javax.swing.JLabel btnBorrarRepuesto;
+    private javax.swing.JLabel btnBorrarServicio;
+    private javax.swing.JLabel btnBuscarBicicleta;
+    private javax.swing.JLabel btnBuscarCliente;
+    private javax.swing.JLabel btnBuscarReparacion;
+    private javax.swing.JLabel btnBuscarReparacionxDNI;
+    private javax.swing.JLabel btnBuscarRepuesto;
+    private javax.swing.JLabel btnBuscarServicio;
     private javax.swing.JPanel btnBuscarXdni;
+    private javax.swing.JPanel btnHome;
+    private javax.swing.JPanel btnSalir;
+    private javax.swing.JPanel btnirBiciCliente;
+    private javax.swing.JPanel btnirReparaciones;
+    private javax.swing.JPanel btnirRepuesto;
+    private javax.swing.JPanel btnirServicios;
+    private com.toedter.calendar.JDateChooser calendarFechaEntrada;
+    private javax.swing.JSpinner cantRepuestos;
     private javax.swing.JLabel clientBtn;
+    private javax.swing.JComboBox<String> comboBicicleta;
+    private javax.swing.JComboBox<String> comboDuenioBici;
+    private javax.swing.JComboBox<String> comboItemRepuesto;
+    private javax.swing.JComboBox<String> comboReparacionXitemRepuesto;
+    private javax.swing.JComboBox<String> comboRepuestos;
+    private javax.swing.JComboBox<String> comboServicio;
+    private javax.swing.JComboBox<String> comboTipoBici;
     private javax.swing.JLabel homeBtn;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel37;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1108,45 +2135,85 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator21;
+    private javax.swing.JSeparator jSeparator22;
+    private javax.swing.JSeparator jSeparator23;
+    private javax.swing.JSeparator jSeparator24;
+    private javax.swing.JSeparator jSeparator25;
     private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator27;
     private javax.swing.JSeparator jSeparator28;
     private javax.swing.JSeparator jSeparator29;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator30;
+    private javax.swing.JSeparator jSeparator31;
+    private javax.swing.JSeparator jSeparator32;
+    private javax.swing.JSeparator jSeparator33;
+    private javax.swing.JSeparator jSeparator34;
+    private javax.swing.JSeparator jSeparator35;
+    private javax.swing.JSeparator jSeparator36;
+    private javax.swing.JSeparator jSeparator37;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel panelActualizarBicicleta;
+    private javax.swing.JPanel panelActualizarCliente;
+    private javax.swing.JPanel panelActualizarItemRepuesto;
+    private javax.swing.JPanel panelActualizarReparacion;
+    private javax.swing.JPanel panelActualizarRepuesto;
+    private javax.swing.JPanel panelActualizarServicio;
+    private javax.swing.JPanel panelAggBicicleta;
+    private javax.swing.JPanel panelAggCliente;
+    private javax.swing.JPanel panelAggItemRepuesto;
+    private javax.swing.JPanel panelAggReparacion;
+    private javax.swing.JPanel panelAggServicio;
+    private javax.swing.JPanel panelBorrarBicicleta;
+    private javax.swing.JPanel panelBorrarCliente;
+    private javax.swing.JPanel panelBorrarItemRepuesto;
+    private javax.swing.JPanel panelBorrarReparacion;
+    private javax.swing.JPanel panelBorrarRepuesto;
+    private javax.swing.JPanel panelBorrarServicio;
+    private javax.swing.JPanel panelBtnAggRepuesto;
+    private javax.swing.JPanel panelBuscarBicicleta;
+    private javax.swing.JPanel panelBuscarCliente;
+    private javax.swing.JPanel panelBuscarReparacion;
+    private javax.swing.JPanel panelBuscarRepuesto;
+    private javax.swing.JPanel panelBuscarServicio;
+    private javax.swing.JRadioButton radioBtnRepNoEntregadas;
+    private javax.swing.JRadioButton radioBtnRepNoTerminadas;
     private javax.swing.JLabel reparacionBtn;
     private javax.swing.JLabel repuestoBtn;
     private javax.swing.JLabel servicioBtn;
+    private javax.swing.JTable tablaItemRepuesto;
+    private javax.swing.JTable tablaReparaciones;
+    private javax.swing.JTable tablaRepuestos;
+    private javax.swing.JTable tablaServicios;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtBuscarDNIduenioRep;
+    private javax.swing.JTextField txtBuscarReparacionID;
+    private javax.swing.JTextField txtBuscarRepuestoXnumSerie;
+    private javax.swing.JTextField txtBuscarxNumSertieBicicleta;
+    private javax.swing.JTextField txtCodServicioBuscar;
+    private javax.swing.JTextField txtColor;
+    private javax.swing.JTextField txtDniCliente;
+    private javax.swing.JTextField txtDomicilio;
+    private javax.swing.JTextField txtMarca;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtNombreRepuesto;
+    private javax.swing.JTextField txtNombreRepuestoActualizar;
+    private javax.swing.JTextField txtNombreServicio;
+    private javax.swing.JTextField txtNumSerieBicicleta;
+    private javax.swing.JTextField txtPrecioReparacion;
+    private javax.swing.JTextField txtPrecioRepuesto;
+    private javax.swing.JTextField txtPrecioRepuestoActualizar;
+    private javax.swing.JTextField txtPrecioServicio;
+    private javax.swing.JTextField txtRepuestoNumSerie;
+    private javax.swing.JTextField txtServicioNombreActualizar;
+    private javax.swing.JTextField txtServicioPrecioActualizar;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
