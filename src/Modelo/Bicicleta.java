@@ -10,7 +10,6 @@ public class Bicicleta {
     private boolean activo;
 
     public Bicicleta() {
-
     }
 
     public Bicicleta(String numSerie, String tipo, String color, String marca, Cliente dniDuenio, boolean activo) {
@@ -68,6 +67,11 @@ public class Bicicleta {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    @Override
+    public String toString() {
+        return "Bicicleta: " + "NumSerie = " + numSerie + " | Tipo = " + tipo + " | Color = " + color + " | Marca = " + marca + " | DniDueño = " + dniDuenio.getDni();
     }
 
 }

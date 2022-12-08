@@ -15,22 +15,26 @@ public class Reparacion {
     public Reparacion() {
     }
 
-    public Reparacion(int id_reparacion, Servicio id_servicio, Bicicleta id_bicicleta, LocalDate fecha_entrada, float costo, boolean estado) {
+    public Reparacion(int id_reparacion, Servicio id_servicio, Bicicleta id_bicicleta, LocalDate fecha_entrada, float costo, boolean estado, boolean activo) {
         this.id_reparacion = id_reparacion;
         this.id_servicio = id_servicio;
         this.id_bicicleta = id_bicicleta;
         this.fecha_entrada = fecha_entrada;
         this.costo = costo;
         this.estado = estado;
+        this.activo = activo;
     }
 
-    public Reparacion(Servicio id_servicio, Bicicleta id_bicicleta, LocalDate fecha_entrada, float costo, boolean estado) {
+    public Reparacion(Servicio id_servicio, Bicicleta id_bicicleta, LocalDate fecha_entrada, float costo, boolean estado, boolean activo) {
         this.id_servicio = id_servicio;
         this.id_bicicleta = id_bicicleta;
         this.fecha_entrada = fecha_entrada;
         this.costo = costo;
         this.estado = estado;
+        this.activo = activo;
     }
+
+    
 
     public int getId_reparacion() {
         return id_reparacion;
@@ -75,7 +79,6 @@ public class Reparacion {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    
 
     public void setCosto(float costo) {
         this.costo = costo;
@@ -91,7 +94,6 @@ public class Reparacion {
 
     @Override
     public String toString() {
-        return "Reparacion{" + "id_reparacion=" + id_reparacion + ", id_servicio=" + id_servicio + ", id_bicicleta=" + id_bicicleta + ", fecha_entrada=" + fecha_entrada + ", costo=" + costo + ", estado=" + estado + '}';
+        return "Reparacion:" + " N° Reparación: " + id_reparacion + " | Servicio: " + id_servicio.getDescripcion() + " | N° Serie Bicicleta: " + id_bicicleta.getNumSerie() + " | Ingreso: " + fecha_entrada + " | Costo: $" + costo + " | Estado: " + estado;
     }
-
 }

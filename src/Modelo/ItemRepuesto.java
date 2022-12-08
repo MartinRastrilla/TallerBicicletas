@@ -14,14 +14,7 @@ public class ItemRepuesto {
         this.num_serie = num_serie;
         this.id_reparacion = id_reparacion;
         this.cantidad = cantidad;
-    }
-
-    public Repuesto getNum_serie() {
-        return num_serie;
-    }
-
-    public void setNum_serie(Repuesto num_serie) {
-        this.num_serie = num_serie;
+        this.activo = activo;
     }
 
     public boolean isActivo() {
@@ -30,6 +23,14 @@ public class ItemRepuesto {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    public Repuesto getNum_serie() {
+        return num_serie;
+    }
+
+    public void setNum_serie(Repuesto num_serie) {
+        this.num_serie = num_serie;
     }
 
     public Reparacion getId_reparacion() {
@@ -50,7 +51,6 @@ public class ItemRepuesto {
 
     @Override
     public String toString() {
-        return "ItemRepuesto{" + "num_serie=" + num_serie + ", id_reparacion=" + id_reparacion + ", cantidad=" + cantidad + '}';
+        return "ItemRepuesto: " + "N° Serie: " + num_serie.getNum_serie() + " | N° Reparación: " + id_reparacion.getId_reparacion() + " | Cantidad: " + cantidad;
     }
-
 }

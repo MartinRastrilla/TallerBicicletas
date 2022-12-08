@@ -17,7 +17,6 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -1121,7 +1120,7 @@ public class MainForm extends javax.swing.JFrame {
         repuesto.setPrecio(precio);
         repuesto.setActivo(true);
         repuestoData.agregarRepuesto(repuesto);
-
+        
         jTNumSerie.setText("");
         jTRepuesto.setText("");
         jTPrecio.setText("");
@@ -1129,11 +1128,7 @@ public class MainForm extends javax.swing.JFrame {
 
     private void jLBuscarRepuestoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLBuscarRepuestoMouseClicked
         String numSerie = jTFRepNSerie.getText();
-
-        if (repuestoData.obtenerRepuesto(numSerie) == null) {
-            JOptionPane.showMessageDialog(null, "No se ha encontrado al alumno", "Error", JOptionPane.ERROR_MESSAGE);
-            jTFRepNSerie.setText("");
-        }
+        System.out.println(repuestoData.obtenerRepuesto(numSerie));
     }//GEN-LAST:event_jLBuscarRepuestoMouseClicked
 
     private void jLActualizarRepuestoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLActualizarRepuestoMouseClicked
@@ -1145,6 +1140,7 @@ public class MainForm extends javax.swing.JFrame {
         repuesto.setDescripcion(repuestoDec);
         repuesto.setPrecio(precio);
         repuesto.setActivo(true);
+        
         repuestoData.modificarRepuesto(repuesto, numSerie);
     }//GEN-LAST:event_jLActualizarRepuestoMouseClicked
 
@@ -1161,6 +1157,7 @@ public class MainForm extends javax.swing.JFrame {
         servicio.setPrecio(precio);
         servicio.setActivo(true);
         sData.agregarServicio(servicio);
+        
         jTFservicio.setText("");
         jTFServicioPrecio.setText("");
     }//GEN-LAST:event_jLAgregarServicioMouseClicked
@@ -1168,7 +1165,7 @@ public class MainForm extends javax.swing.JFrame {
     private void jLBuscarServicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLBuscarServicioMouseClicked
         int serv = Integer.parseInt(jTFCodServ.getText());
         sData.obtenerServicio(serv);
-
+        
     }//GEN-LAST:event_jLBuscarServicioMouseClicked
 
     private void jLBorrarServMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLBorrarServMouseClicked
@@ -1187,7 +1184,7 @@ public class MainForm extends javax.swing.JFrame {
         sData.modificarServicio(servicio, codSer);
         jTFServicioB.setText("");
         jTFPrecioB.setText("");
-
+        
     }//GEN-LAST:event_jLActServMouseClicked
 
     /**

@@ -1,17 +1,23 @@
 package Modelo;
 
-
 public class Repuesto {
-private String num_serie;
-private String descripcion;
-private float precio;
-private boolean activo;
+
+    private String num_serie;
+    private String descripcion;
+    private float precio;
+    private boolean activo;
 
     public Repuesto(String num_serie, String descripcion, float precio, boolean activo) {
         this.num_serie = num_serie;
         this.descripcion = descripcion;
         this.precio = precio;
         this.activo = activo;
+    }
+
+    public Repuesto(String num_serie, String descripcion, float precio) {
+        this.num_serie = num_serie;
+        this.descripcion = descripcion;
+        this.precio = precio;
     }
 
     public Repuesto() {
@@ -51,8 +57,6 @@ private boolean activo;
 
     @Override
     public String toString() {
-        return "Repuesto{" + "num_serie:" + num_serie + ", Nombre:" + descripcion.toUpperCase() + ", precio:" + precio + '}';
+        return "Repuesto:" + "N° Serie: " + num_serie + " | Descripción: " + descripcion.toUpperCase() + " | Precio: " + precio + " | Stock: " + activo;
     }
-
-
 }

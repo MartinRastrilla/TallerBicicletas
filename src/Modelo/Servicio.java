@@ -1,11 +1,11 @@
 package Modelo;
 
-
 public class Servicio {
-private int codigo;
-private float precio;
-private String descripcion;
-private boolean activo;
+
+    private int codigo;
+    private float precio;
+    private String descripcion;
+    private boolean activo;
 
     public Servicio(int codigo, float precio, String descripcion, boolean activo) {
         this.codigo = codigo;
@@ -57,10 +57,6 @@ private boolean activo;
 
     @Override
     public String toString() {
-        return "Servicio{" + "codigo=" + codigo + ", precio=" + precio + ", descripcion=" + descripcion + '}';
+        return "Servicio: " + "Codigo: " + codigo + " | Precio=" + precio + " | Descripcion: " + descripcion + " | Servicio Activo: " + activo;
     }
-
-
-    
-
 }

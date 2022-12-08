@@ -20,70 +20,75 @@ public class ServicioData {
 
     }
 
-    public void AgregarServicio(Servicio svc) {
-        String sql = "INSERT INTO `servicio`(`precio`, `descripcion`, `activo`) VALUES ( ?, ?, ?)";
+    public void agregarServicio(Servicio svc) {
+        String sql = "INSERT INTO `servicio`(`precio`, `descripcion`, `activo`) VALUES (?, ?, ?)";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setFloat(1, svc.getPrecio());
             ps.setString(2, svc.getDescripcion());
             ps.setBoolean(3, svc.isActivo());
-
+            
             String mensaje;
 
             int nuevoRegistro = ps.executeUpdate();
 
             if (nuevoRegistro > 0) {
-                mensaje = "Servicio Incorporado";
+                mensaje = "Servicio Añadido";
             } else {
-                mensaje = "Error al Incorporar Servicio";
+                mensaje = "Error al añadir Servicio";
             }
-
             JOptionPane.showMessageDialog(null, mensaje);
-
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                svc.setCodigo(rs.getInt(1));
+            }
+            ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-AgregaServicio");
         }
     }
 
-    public void EliminarServicioPorCodigo(int codigo) {
+    public void eliminarServicioPorCodigo(int codigo) {
         try {
             int resultado;
-            String sql = "DELETE FROM `servicio` WHERE codigo= " + codigo;
+            String sql = "UPDATE servicio SET activo = 0 WHERE codigo = ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
-
+            ps.setInt(1, codigo);
             resultado = ps.executeUpdate();
             String mensaje;
             if (resultado > 0) {
-                mensaje = "Se Logro Eliminar el Servicio";
+                mensaje = "Servicio Eliminado";
             } else {
-                mensaje = "No se Encontro el Servicio a Eliminar";
+                mensaje = "Servicio no encontrado";
             }
             JOptionPane.showMessageDialog(null, mensaje);
+            ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-borrarServicio");
         }
 
     }
 
-    public void EliminarServicioPorNombre(String nombre) {
+    public void eliminarServicioPorNombre(String nombre) {
         try {
             int resultado;
-            String sql = "DELETE FROM `servicio` WHERE descripcion= ?";
+            String sql = "UPDATE servicio SET activo = 0 WHERE descripcion = ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
-
+            ps.setString(1, nombre);
             resultado = ps.executeUpdate();
             String mensaje;
             if (resultado > 0) {
-                mensaje = "Se Logro Eliminar el Servicio";
+                mensaje = "Servicio Eliminado";
             } else {
-                mensaje = "No se Encontro el Servicio a Eliminar";
+                mensaje = "Servicio no encontrado";
             }
             JOptionPane.showMessageDialog(null, mensaje);
+            ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-borrarServicio");
         }
     }
 
@@ -100,7 +105,7 @@ public class ServicioData {
 
             if (rs.next()) {
                 sv = new Servicio();
-                sv.setCodigo(codigo);
+                sv.setCodigo(rs.getInt("codigo"));
                 sv.setDescripcion(rs.getString("descripcion"));
                 sv.setPrecio(rs.getFloat("precio"));
                 sv.setActivo(rs.getBoolean("activo"));
@@ -108,7 +113,7 @@ public class ServicioData {
 
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-ObtenerServicio");
         }
         return sv;
     }
@@ -116,7 +121,7 @@ public class ServicioData {
     public ArrayList<Servicio> listarServicios() {
 
         ArrayList<Servicio> lista = new ArrayList<>();
-        Servicio sv = new Servicio();
+        
 
         String sql = "SELECT * FROM servicio";
         try {
@@ -124,7 +129,7 @@ public class ServicioData {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                sv = new Servicio();
+                Servicio sv = new Servicio();
                 sv.setCodigo(rs.getInt("codigo"));
                 sv.setPrecio(rs.getFloat("precio"));
                 sv.setDescripcion(rs.getString("descripcion"));
@@ -135,13 +140,13 @@ public class ServicioData {
             ps.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(ServicioData.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-ListaServicios");
         }
 
         return lista;
     }
 
-    public void modificarServicio(Servicio sv) {
+    public void modificarServicio(Servicio sv, int codigo) {
         String sql = "UPDATE servicio SET precio= ?,descripcion= ?,activo= ? WHERE codigo= ?";
         String mensaje;
         try {
@@ -150,7 +155,7 @@ public class ServicioData {
             ps.setFloat(1, sv.getPrecio());
             ps.setString(2, sv.getDescripcion());
             ps.setBoolean(3, sv.isActivo());
-            ps.setInt(4, sv.getCodigo());
+            ps.setInt(4, codigo);
 
             int camb = ps.executeUpdate();
 
@@ -163,8 +168,9 @@ public class ServicioData {
             }
 
             JOptionPane.showMessageDialog(null, mensaje);
+            ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-ModificarServicio");
         }
 
     }
