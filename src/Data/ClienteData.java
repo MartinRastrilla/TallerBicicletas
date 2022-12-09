@@ -15,8 +15,8 @@ import javax.swing.JOptionPane;
 public class ClienteData {
     private Connection con;
 
-    public ClienteData(Connection con) {
-        this.con = con;
+    public ClienteData () {
+        this.con = Conexion.getConexion();
     }
     
     public void agregarCliente(Cliente cliente){
@@ -109,4 +109,31 @@ public class ClienteData {
         }
         
     }
+    
+    public ArrayList<Cliente> listaClientes() {
+        String query = "SELECT * FROM `cliente`";
+        ArrayList<Cliente> listaClientes = new ArrayList();
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(query);       
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Cliente cliente = new Cliente();
+                cliente.setDni(rs.getString("dni"));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellido(rs.getString("apellido"));
+                cliente.setDomicilio(rs.getString("domicilio"));
+                cliente.setTelefono(rs.getString("telefono"));
+                cliente.setActivo(rs.getBoolean("activo"));
+                
+                listaClientes.add(cliente);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-buscarClienteApellido");
+        }
+        return listaClientes;
+    }
+
 }
+

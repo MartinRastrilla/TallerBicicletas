@@ -16,11 +16,11 @@ import javax.swing.JOptionPane;
 
 public class BicicletaData {
     private Connection con;
-    private ClienteData cData;
+    
     
     public BicicletaData() {
         this.con = Conexion.getConexion();
-        this.cData = new ClienteData(con);
+        
     }
     
     public void agregarBicicleta(Bicicleta bici){
@@ -141,4 +141,37 @@ public class BicicletaData {
         }
         return b;
     }
+    
+     public ArrayList<Bicicleta> listarBicicletas() {
+
+        ArrayList<Bicicleta> lista = new ArrayList<>();
+        
+
+        String sql = "SELECT * FROM bicicleta";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Bicicleta b = new Bicicleta();
+                Cliente c = new Cliente();
+                c.setDni(rs.getString("dni_duenio"));
+                b.setNumSerie(rs.getString("num_serie"));
+                b.setTipo(rs.getString("tipo"));
+                b.setColor(rs.getString("color"));
+                b.setMarca(rs.getString("marca"));
+                b.setDniDuenio(c);
+                b.setActivo(rs.getBoolean("activo"));
+                
+                lista.add(b);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-ListaServicios");
+        }
+
+        return lista;
+    }
+    
 }
