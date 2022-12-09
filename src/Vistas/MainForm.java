@@ -12,6 +12,7 @@ import Data.ItemRepuestoData;
 import Data.ReparacionData;
 import Data.RepuestoData;
 import Data.ServicioData;
+import Modelo.Bicicleta;
 import Modelo.Cliente;
 import java.awt.Color;
 import java.sql.Connection;
@@ -186,12 +187,8 @@ public class MainForm extends javax.swing.JFrame {
         txtApellido = new javax.swing.JTextField();
         jSeparator25 = new javax.swing.JSeparator();
         jSeparator30 = new javax.swing.JSeparator();
-        panelBorrarBicicleta = new javax.swing.JPanel();
-        btnBorrarBicicleta = new javax.swing.JLabel();
         panelAggBicicleta = new javax.swing.JPanel();
         btnAggBicicleta = new javax.swing.JLabel();
-        panelActualizarBicicleta = new javax.swing.JPanel();
-        btnActualizarBicicleta = new javax.swing.JLabel();
         panelAggCliente = new javax.swing.JPanel();
         btnAggCliente = new javax.swing.JLabel();
         panelBuscarCliente = new javax.swing.JPanel();
@@ -218,6 +215,10 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator37 = new javax.swing.JSeparator();
         panelBuscarBicicleta = new javax.swing.JPanel();
         btnBuscarBicicleta = new javax.swing.JLabel();
+        panelBorrarBicicleta = new javax.swing.JPanel();
+        btnBorrarBicicleta = new javax.swing.JLabel();
+        panelActualizarBicicleta = new javax.swing.JPanel();
+        btnActualizarBicicleta = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
         btnHome = new javax.swing.JPanel();
         homeBtn = new javax.swing.JLabel();
@@ -1217,25 +1218,6 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator30.setForeground(new java.awt.Color(255, 255, 255));
         jPanel28.add(jSeparator30, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 80, 230, 20));
 
-        panelBorrarBicicleta.setBackground(new java.awt.Color(0, 134, 190));
-        panelBorrarBicicleta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnBorrarBicicleta.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        btnBorrarBicicleta.setForeground(new java.awt.Color(255, 255, 255));
-        btnBorrarBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnBorrarBicicleta.setText("Borrar");
-        btnBorrarBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnBorrarBicicletaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnBorrarBicicletaMouseExited(evt);
-            }
-        });
-        panelBorrarBicicleta.add(btnBorrarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
-
-        jPanel28.add(panelBorrarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 90, 30));
-
         panelAggBicicleta.setBackground(new java.awt.Color(0, 134, 190));
         panelAggBicicleta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1244,6 +1226,9 @@ public class MainForm extends javax.swing.JFrame {
         btnAggBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnAggBicicleta.setText("Agregar");
         btnAggBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAggBicicletaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAggBicicletaMouseEntered(evt);
             }
@@ -1254,25 +1239,6 @@ public class MainForm extends javax.swing.JFrame {
         panelAggBicicleta.add(btnAggBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
 
         jPanel28.add(panelAggBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 90, 30));
-
-        panelActualizarBicicleta.setBackground(new java.awt.Color(0, 134, 190));
-        panelActualizarBicicleta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnActualizarBicicleta.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        btnActualizarBicicleta.setForeground(new java.awt.Color(255, 255, 255));
-        btnActualizarBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnActualizarBicicleta.setText("Actualizar");
-        btnActualizarBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnActualizarBicicletaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnActualizarBicicletaMouseExited(evt);
-            }
-        });
-        panelActualizarBicicleta.add(btnActualizarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
-
-        jPanel28.add(panelActualizarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 90, 30));
 
         panelAggCliente.setBackground(new java.awt.Color(0, 134, 190));
         panelAggCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1463,6 +1429,9 @@ public class MainForm extends javax.swing.JFrame {
         btnBuscarBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnBuscarBicicleta.setText("Buscar");
         btnBuscarBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBuscarBicicletaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBuscarBicicletaMouseEntered(evt);
             }
@@ -1474,7 +1443,51 @@ public class MainForm extends javax.swing.JFrame {
 
         jPanel37.add(panelBuscarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, -1));
 
-        jPanel28.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 160, 120));
+        panelBorrarBicicleta.setBackground(new java.awt.Color(0, 134, 190));
+        panelBorrarBicicleta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBorrarBicicleta.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnBorrarBicicleta.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrarBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBorrarBicicleta.setText("Borrar");
+        btnBorrarBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBorrarBicicletaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBorrarBicicletaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBorrarBicicletaMouseExited(evt);
+            }
+        });
+        panelBorrarBicicleta.add(btnBorrarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel37.add(panelBorrarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
+
+        panelActualizarBicicleta.setBackground(new java.awt.Color(0, 134, 190));
+        panelActualizarBicicleta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnActualizarBicicleta.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnActualizarBicicleta.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizarBicicleta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnActualizarBicicleta.setText("Actualizar");
+        btnActualizarBicicleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnActualizarBicicletaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnActualizarBicicletaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnActualizarBicicletaMouseExited(evt);
+            }
+        });
+        panelActualizarBicicleta.add(btnActualizarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        jPanel37.add(panelActualizarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
+
+        jPanel28.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, 430, 120));
 
         jPanel23.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 900, 440));
 
@@ -2107,12 +2120,8 @@ public class MainForm extends javax.swing.JFrame {
         String nombre = txtNombre.getText();
         String telefono = txtTelefono.getText();
         String domicilio = txtDomicilio.getText();
-        txtDomicilio.setText("");
-        txtTelefono.setText("");
-        txtDniCliente.setText("");
-        txtApellido.setText("");
-        txtNombre.setText("");
-        if (txtDniCliente.getText().equals("") || txtApellido.getText().equals("") || txtNombre.getText().equals("") || txtTelefono.getText().equals("") || txtDomicilio.getText().equals("")) {
+
+        if (txtDniCliente.getText().equals("") || txtApellido.getText().equals("") || txtNombre.getText().equals("") || txtTelefono.getText().equals("") || txtDomicilio.getText().equals("") || txtDniCliente.getText().equals("Ingrese DNI") || txtApellido.getText().equals("Ingrese Apellido") || txtNombre.getText().equals("Ingrese Nombre") || txtTelefono.getText().equals("Ingrese Telefono") || txtDomicilio.getText().equals("Ingrese Domicilio")) {
             JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             Cliente c = new Cliente(dni, nombre, apellido, domicilio, telefono, true);
@@ -2123,11 +2132,6 @@ public class MainForm extends javax.swing.JFrame {
             txtApellido.setText("Ingrese Apellido");
             txtNombre.setText("Ingrese Nombre");
         }
-        txtDomicilio.setText("Ingrese Domicilio");
-        txtTelefono.setText("Ingrese Telefono");
-        txtDniCliente.setText("Ingrese DNI");
-        txtApellido.setText("Ingrese Apellido");
-        txtNombre.setText("Ingrese Nombre");
 
     }//GEN-LAST:event_btnAggClienteMouseClicked
 
@@ -2177,7 +2181,7 @@ public class MainForm extends javax.swing.JFrame {
         txtDniCliente.setText("");
         txtApellido.setText("");
         txtNombre.setText("");
-        
+
         if (dni.equals("") || dni.equals("Ingrese DNI")) {
             JOptionPane.showMessageDialog(null, "Ingrese el DNI del cliente a actualizar.", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (dni.equals("") || apellido.equals("") || nombre.equals("") || telefono.equals("") || domicilio.equals("")) {
@@ -2186,19 +2190,100 @@ public class MainForm extends javax.swing.JFrame {
             Cliente cliente = new Cliente(dni, nombre, apellido, domicilio, telefono, rootPaneCheckingEnabled);
             if (cliente != null) {
                 cData.actualizarCliente(cliente, dni);
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Cliente no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnActualizarClienteMouseClicked
-    
+
+    private void btnAggBicicletaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggBicicletaMouseClicked
+        String numSerie = txtNumSerieBicicleta.getText();
+        String tipo = (String) comboTipoBici.getSelectedItem();
+        String color = txtColor.getText();
+        String marca = txtMarca.getText();
+        Cliente cliente = (Cliente) comboDuenioBici.getSelectedItem();
+        String dniDuenio = cliente.getDni();
+        if (numSerie.equals("") || tipo.equals("") || color.equals("") || marca.equals("") || cliente == null || dniDuenio.equals("") || numSerie.equals("Ingrese N° de Serie") || color.equals("Ingrese Color") || marca.equals("Ingrese Marca")) {
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Bicicleta bici = new Bicicleta(numSerie, tipo, color, marca, cliente, true);
+            bData.agregarBicicleta(bici);
+            txtNumSerieBicicleta.setText("Ingrese N° de Serie");
+            txtColor.setText("Ingrese Color");
+            txtMarca.setText("Ingrese Marca");
+        }
+    }//GEN-LAST:event_btnAggBicicletaMouseClicked
+
+    private void btnBorrarBicicletaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarBicicletaMouseClicked
+        String numSerie = txtBuscarxNumSertieBicicleta.getText();
+        if (numSerie.equals("") || numSerie.equals("Ingrese N° de Serie")) {
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Bicicleta bici = bData.buscarBiciNumSerie(numSerie);
+            if (bici != null && bici.isActivo()) {
+                bData.borrarBicicleta(numSerie);
+            } else {
+                JOptionPane.showMessageDialog(null, "Bicicleta no encontrada", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+    }//GEN-LAST:event_btnBorrarBicicletaMouseClicked
+
+    private void btnBuscarBicicletaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarBicicletaMouseClicked
+        String numSerie = txtBuscarxNumSertieBicicleta.getText();
+        if (numSerie.equals("") || numSerie.equals("Ingrese N° de Serie")) {
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Bicicleta bici = bData.buscarBiciNumSerie(numSerie);
+            if (bici != null) {
+                txtColor.setText(bici.getColor());
+                txtMarca.setText(bici.getMarca());
+                txtNumSerieBicicleta.setText(bici.getNumSerie());
+                Cliente c = bici.getDniDuenio();
+                comboDuenioBici.setSelectedItem((Cliente) c);
+                comboTipoBici.setSelectedItem(bici.getTipo());
+            } else {
+                JOptionPane.showMessageDialog(null, "Bicicleta no encontrada", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnBuscarBicicletaMouseClicked
+
+    private void btnActualizarBicicletaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarBicicletaMouseClicked
+        String numSerieB = txtBuscarxNumSertieBicicleta.getText();
+        String numSerie = txtNumSerieBicicleta.getText();
+        String tipo = (String) comboTipoBici.getSelectedItem();
+        String color = txtColor.getText();
+        String marca = txtMarca.getText();
+
+        if (numSerieB.equals("") || numSerieB.equals("Ingrese N° de Serie")) {
+            JOptionPane.showMessageDialog(null, "Ingrese el N° de serie de la bicicleta a actualizar.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (comboDuenioBici.getSelectedIndex() == -1) {
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Cliente cliente = (Cliente) comboDuenioBici.getSelectedItem();
+            String dniDuenio = cliente.getDni();
+            if (numSerie.equals("") || tipo.equals("") || color.equals("") || marca.equals("") || dniDuenio.equals("") || numSerie.equals("Ingrese N° de Serie") || color.equals("Ingrese Color") || marca.equals("Ingrese Marca")) {
+                JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                Bicicleta bici = new Bicicleta(numSerie, tipo, color, marca, cliente, true);
+                bData.actualizarBicicleta(numSerieB, bici);
+                txtNumSerieBicicleta.setText("Ingrese N° de Serie");
+                txtBuscarxNumSertieBicicleta.setText("Ingrese N° de Serie");
+                txtColor.setText("Ingrese Color");
+                txtMarca.setText("Ingrese Marca");
+            }
+        }
+
+    }//GEN-LAST:event_btnActualizarBicicletaMouseClicked
+
     private void llenarCombo() {
         List<Cliente> listaCliente = cData.obtenerClientes();
         for (Cliente cliente : listaCliente) {
             comboDuenioBici.addItem(cliente);
         }
+        comboDuenioBici.setSelectedIndex(-1);
     }
-    
+
     /**
      * @param args the command line arguments
      */
