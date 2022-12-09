@@ -5,7 +5,18 @@
  */
 package Vistas;
 
+import Data.BicicletaData;
+import Data.ClienteData;
+import Data.Conexion;
+import Data.ItemRepuestoData;
+import Data.ReparacionData;
+import Data.RepuestoData;
+import Data.ServicioData;
+import Modelo.Cliente;
 import java.awt.Color;
+import java.sql.Connection;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,11 +24,17 @@ import java.awt.Color;
  */
 public class MainForm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainForm
-     */
+    Connection con = Conexion.getConexion();
+    ClienteData cData = new ClienteData(con);
+    BicicletaData bData = new BicicletaData();
+    RepuestoData repuestoData = new RepuestoData();
+    ServicioData servicioData = new ServicioData();
+    ReparacionData reparacionData = new ReparacionData();
+    ItemRepuestoData itemData = new ItemRepuestoData();
+
     public MainForm() {
         initComponents();
+        llenarCombo();
     }
 
     /**
@@ -225,6 +242,7 @@ public class MainForm extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnSalir.setBackground(new java.awt.Color(0, 51, 51));
         btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalirMouseClicked(evt);
@@ -262,6 +280,7 @@ public class MainForm extends javax.swing.JFrame {
 
         jTabbedPane1.setBackground(new java.awt.Color(35, 35, 35));
         jTabbedPane1.setForeground(new java.awt.Color(35, 35, 35));
+        jTabbedPane1.setEnabled(false);
 
         jPanel2.setBackground(new java.awt.Color(35, 35, 35));
         jPanel2.setForeground(new java.awt.Color(35, 35, 35));
@@ -569,7 +588,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Servicios");
-        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 30));
+        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 940, 30));
 
         jPanel13.setBackground(new java.awt.Color(51, 51, 51));
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1089,9 +1108,19 @@ public class MainForm extends javax.swing.JFrame {
         txtDniCliente.setForeground(new java.awt.Color(123, 123, 123));
         txtDniCliente.setText("Ingrese DNI");
         txtDniCliente.setBorder(null);
+        txtDniCliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDniClienteFocusGained(evt);
+            }
+        });
         txtDniCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDniClienteActionPerformed(evt);
+            }
+        });
+        txtDniCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDniClienteKeyTyped(evt);
             }
         });
         jPanel28.add(txtDniCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 60, 230, 20));
@@ -1105,6 +1134,11 @@ public class MainForm extends javax.swing.JFrame {
         txtNombre.setForeground(new java.awt.Color(123, 123, 123));
         txtNombre.setText("Ingrese Nombre");
         txtNombre.setBorder(null);
+        txtNombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNombreFocusGained(evt);
+            }
+        });
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
@@ -1120,9 +1154,19 @@ public class MainForm extends javax.swing.JFrame {
         txtTelefono.setForeground(new java.awt.Color(123, 123, 123));
         txtTelefono.setText("Ingrese Telefono");
         txtTelefono.setBorder(null);
+        txtTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTelefonoFocusGained(evt);
+            }
+        });
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefonoActionPerformed(evt);
+            }
+        });
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
             }
         });
         jPanel28.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 210, 230, 20));
@@ -1138,6 +1182,11 @@ public class MainForm extends javax.swing.JFrame {
         txtDomicilio.setForeground(new java.awt.Color(123, 123, 123));
         txtDomicilio.setText("Ingrese Domicilio");
         txtDomicilio.setBorder(null);
+        txtDomicilio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDomicilioFocusGained(evt);
+            }
+        });
         txtDomicilio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDomicilioActionPerformed(evt);
@@ -1150,6 +1199,11 @@ public class MainForm extends javax.swing.JFrame {
         txtApellido.setForeground(new java.awt.Color(123, 123, 123));
         txtApellido.setText("Ingrese Apellido");
         txtApellido.setBorder(null);
+        txtApellido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtApellidoFocusGained(evt);
+            }
+        });
         txtApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidoActionPerformed(evt);
@@ -1228,6 +1282,9 @@ public class MainForm extends javax.swing.JFrame {
         btnAggCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnAggCliente.setText("Agregar");
         btnAggCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAggClienteMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAggClienteMouseEntered(evt);
             }
@@ -1247,6 +1304,9 @@ public class MainForm extends javax.swing.JFrame {
         btnBuscarCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnBuscarCliente.setText("Buscar");
         btnBuscarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBuscarClienteMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBuscarClienteMouseEntered(evt);
             }
@@ -1266,6 +1326,9 @@ public class MainForm extends javax.swing.JFrame {
         btnBorrarCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnBorrarCliente.setText("Borrar");
         btnBorrarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBorrarClienteMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBorrarClienteMouseEntered(evt);
             }
@@ -1285,6 +1348,9 @@ public class MainForm extends javax.swing.JFrame {
         btnActualizarCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnActualizarCliente.setText("Actualizar");
         btnActualizarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnActualizarClienteMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnActualizarClienteMouseEntered(evt);
             }
@@ -1310,7 +1376,7 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator32.setForeground(new java.awt.Color(0, 134, 190));
         jPanel28.add(jSeparator32, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 140, 20));
 
-        comboDuenioBici.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboDuenioBici.setToolTipText("");
         jPanel28.add(comboDuenioBici, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 200, 30));
 
         jLabel47.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -1633,15 +1699,15 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPrecioReparacionActionPerformed
 
     private void homeBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseEntered
-        btnHome.setBackground(new Color(0,102,102));
+        btnHome.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_homeBtnMouseEntered
 
     private void btnBuscarXdniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarXdniMouseEntered
-        btnBuscarXdni.setBackground(new Color(0,196,223));
+        btnBuscarXdni.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBuscarXdniMouseEntered
 
     private void btnBuscarXdniMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarXdniMouseExited
-        btnBuscarXdni.setBackground(new Color(0,134,190));
+        btnBuscarXdni.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBuscarXdniMouseExited
 
     private void btnSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseEntered
@@ -1649,7 +1715,7 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirMouseEntered
 
     private void btnSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseExited
-        btnSalir.setBackground(new Color(60,63,65));
+        btnSalir.setBackground(new Color(60, 63, 65));
     }//GEN-LAST:event_btnSalirMouseExited
 
     private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
@@ -1657,71 +1723,71 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirMouseClicked
 
     private void btnHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseEntered
-        btnHome.setBackground(new Color(0,102,102));
+        btnHome.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_btnHomeMouseEntered
 
     private void btnHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseExited
-        btnHome.setBackground(new Color(35,35,35));
+        btnHome.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_btnHomeMouseExited
 
     private void homeBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseExited
-        btnHome.setBackground(new Color(35,35,35));
+        btnHome.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_homeBtnMouseExited
 
     private void btnirRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirRepuestoMouseEntered
-        btnirRepuesto.setBackground(new Color(0,102,102));
+        btnirRepuesto.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_btnirRepuestoMouseEntered
 
     private void btnirRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirRepuestoMouseExited
-        btnirRepuesto.setBackground(new Color(35,35,35));
+        btnirRepuesto.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_btnirRepuestoMouseExited
 
     private void btnirBiciClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirBiciClienteMouseEntered
-        btnirBiciCliente.setBackground(new Color(0,102,102));
+        btnirBiciCliente.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_btnirBiciClienteMouseEntered
 
     private void btnirBiciClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirBiciClienteMouseExited
-        btnirBiciCliente.setBackground(new Color(35,35,35));
+        btnirBiciCliente.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_btnirBiciClienteMouseExited
 
     private void btnirServiciosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirServiciosMouseEntered
-        btnirServicios.setBackground(new Color(0,102,102));
+        btnirServicios.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_btnirServiciosMouseEntered
 
     private void btnirServiciosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirServiciosMouseExited
-        btnirServicios.setBackground(new Color(35,35,35));
+        btnirServicios.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_btnirServiciosMouseExited
 
     private void clientBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientBtnMouseEntered
-        btnirBiciCliente.setBackground(new Color(0,102,102));
+        btnirBiciCliente.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_clientBtnMouseEntered
 
     private void servicioBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_servicioBtnMouseEntered
-        btnirServicios.setBackground(new Color(0,102,102));
+        btnirServicios.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_servicioBtnMouseEntered
 
     private void servicioBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_servicioBtnMouseExited
-        btnirServicios.setBackground(new Color(35,35,35));
+        btnirServicios.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_servicioBtnMouseExited
 
     private void clientBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientBtnMouseExited
-        btnirBiciCliente.setBackground(new Color(35,35,35));
+        btnirBiciCliente.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_clientBtnMouseExited
 
     private void btnirReparacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirReparacionesMouseEntered
-        btnirReparaciones.setBackground(new Color(0,102,102));
+        btnirReparaciones.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_btnirReparacionesMouseEntered
 
     private void btnirReparacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnirReparacionesMouseExited
-        btnirReparaciones.setBackground(new Color(35,35,35));
+        btnirReparaciones.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_btnirReparacionesMouseExited
 
     private void reparacionBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reparacionBtnMouseEntered
-        btnirReparaciones.setBackground(new Color(0,102,102));
+        btnirReparaciones.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_reparacionBtnMouseEntered
 
     private void reparacionBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reparacionBtnMouseExited
-        btnirReparaciones.setBackground(new Color(35,35,35));
+        btnirReparaciones.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_reparacionBtnMouseExited
 
     private void homeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseClicked
@@ -1741,11 +1807,11 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_repuestoBtnMouseClicked
 
     private void repuestoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repuestoBtnMouseEntered
-        btnirRepuesto.setBackground(new Color(0,102,102));
+        btnirRepuesto.setBackground(new Color(0, 102, 102));
     }//GEN-LAST:event_repuestoBtnMouseEntered
 
     private void repuestoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_repuestoBtnMouseExited
-        btnirRepuesto.setBackground(new Color(35,35,35));
+        btnirRepuesto.setBackground(new Color(35, 35, 35));
     }//GEN-LAST:event_repuestoBtnMouseExited
 
     private void servicioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_servicioBtnMouseClicked
@@ -1813,189 +1879,326 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnirBiciClienteMouseClicked
 
     private void btnAggRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggRepuestoMouseEntered
-        panelBtnAggRepuesto.setBackground(new Color(0,196,223));
+        panelBtnAggRepuesto.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnAggRepuestoMouseEntered
 
     private void btnAggRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggRepuestoMouseExited
-        panelBtnAggRepuesto.setBackground(new Color(0,134,190));
+        panelBtnAggRepuesto.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnAggRepuestoMouseExited
 
     private void btnBuscarRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarRepuestoMouseEntered
-        panelBuscarRepuesto.setBackground(new Color(0,196,223));
+        panelBuscarRepuesto.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBuscarRepuestoMouseEntered
 
     private void btnBuscarRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarRepuestoMouseExited
-        panelBuscarRepuesto.setBackground(new Color(0,134,190));
+        panelBuscarRepuesto.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBuscarRepuestoMouseExited
 
     private void btnBorrarRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarRepuestoMouseEntered
-        panelBorrarRepuesto.setBackground(new Color(0,196,223));
+        panelBorrarRepuesto.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBorrarRepuestoMouseEntered
 
     private void btnBorrarRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarRepuestoMouseExited
-        panelBorrarRepuesto.setBackground(new Color(0,134,190));
+        panelBorrarRepuesto.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBorrarRepuestoMouseExited
 
     private void btnActualizarRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarRepuestoMouseEntered
-        panelActualizarRepuesto.setBackground(new Color(0,196,223));
+        panelActualizarRepuesto.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnActualizarRepuestoMouseEntered
 
     private void btnActualizarRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarRepuestoMouseExited
-        panelActualizarRepuesto.setBackground(new Color(0,134,190));
+        panelActualizarRepuesto.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnActualizarRepuestoMouseExited
 
     private void btnAggServicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggServicioMouseEntered
-        panelAggServicio.setBackground(new Color(0,196,223));
+        panelAggServicio.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnAggServicioMouseEntered
 
     private void btnAggServicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggServicioMouseExited
-        panelAggServicio.setBackground(new Color(0,134,190));
+        panelAggServicio.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnAggServicioMouseExited
 
     private void btnBuscarServicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarServicioMouseEntered
-        panelBuscarServicio.setBackground(new Color(0,196,223));
+        panelBuscarServicio.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBuscarServicioMouseEntered
 
     private void btnBuscarServicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarServicioMouseExited
-        panelBuscarServicio.setBackground(new Color(0,134,190));
+        panelBuscarServicio.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBuscarServicioMouseExited
 
     private void btnBorrarServicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarServicioMouseEntered
-        panelBorrarServicio.setBackground(new Color(0,196,223));
+        panelBorrarServicio.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBorrarServicioMouseEntered
 
     private void btnBorrarServicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarServicioMouseExited
-        panelBorrarServicio.setBackground(new Color(0,134,190));
+        panelBorrarServicio.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBorrarServicioMouseExited
 
     private void btnActualizarServicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarServicioMouseEntered
-        panelActualizarServicio.setBackground(new Color(0,196,223));
+        panelActualizarServicio.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnActualizarServicioMouseEntered
 
     private void btnActualizarServicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarServicioMouseExited
-        panelActualizarServicio.setBackground(new Color(0,134,190));
+        panelActualizarServicio.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnActualizarServicioMouseExited
 
     private void btnBuscarReparacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarReparacionMouseEntered
-        panelBuscarReparacion.setBackground(new Color(0,196,223));
+        panelBuscarReparacion.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBuscarReparacionMouseEntered
 
     private void btnBuscarReparacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarReparacionMouseExited
-        panelBuscarReparacion.setBackground(new Color(0,134,190));
+        panelBuscarReparacion.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBuscarReparacionMouseExited
 
     private void btnBorrarReparacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarReparacionMouseEntered
-        panelBorrarReparacion.setBackground(new Color(0,196,223));
+        panelBorrarReparacion.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBorrarReparacionMouseEntered
 
     private void btnBorrarReparacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarReparacionMouseExited
-        panelBorrarReparacion.setBackground(new Color(0,134,190));
+        panelBorrarReparacion.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBorrarReparacionMouseExited
 
     private void btnAgregarReparacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarReparacionMouseEntered
-        panelAggReparacion.setBackground(new Color(0,196,223));
+        panelAggReparacion.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnAgregarReparacionMouseEntered
 
     private void btnAgregarReparacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarReparacionMouseExited
-        panelAggReparacion.setBackground(new Color(0,134,190));
+        panelAggReparacion.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnAgregarReparacionMouseExited
 
     private void btnActualizarReparacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarReparacionMouseEntered
-        panelActualizarReparacion.setBackground(new Color(0,196,223));
+        panelActualizarReparacion.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnActualizarReparacionMouseEntered
 
     private void btnActualizarReparacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarReparacionMouseExited
-        panelActualizarReparacion.setBackground(new Color(0,134,190));
+        panelActualizarReparacion.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnActualizarReparacionMouseExited
 
     private void btnAggItemRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggItemRepuestoMouseEntered
-        panelAggItemRepuesto.setBackground(new Color(0,196,223));
+        panelAggItemRepuesto.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnAggItemRepuestoMouseEntered
 
     private void btnAggItemRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggItemRepuestoMouseExited
-        panelAggItemRepuesto.setBackground(new Color(0,134,190));
+        panelAggItemRepuesto.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnAggItemRepuestoMouseExited
 
     private void btnActualizarItemRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarItemRepuestoMouseEntered
-        panelActualizarItemRepuesto.setBackground(new Color(0,196,223));
+        panelActualizarItemRepuesto.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnActualizarItemRepuestoMouseEntered
 
     private void btnActualizarItemRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarItemRepuestoMouseExited
-        panelActualizarItemRepuesto.setBackground(new Color(0,134,190));
+        panelActualizarItemRepuesto.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnActualizarItemRepuestoMouseExited
 
     private void btnBorrarItemRepuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarItemRepuestoMouseEntered
-        panelBorrarItemRepuesto.setBackground(new Color(0,196,223));
+        panelBorrarItemRepuesto.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBorrarItemRepuestoMouseEntered
 
     private void btnBorrarItemRepuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarItemRepuestoMouseExited
-        panelBorrarItemRepuesto.setBackground(new Color(0,134,190));
+        panelBorrarItemRepuesto.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBorrarItemRepuestoMouseExited
 
     private void btnBuscarClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarClienteMouseEntered
-        panelBuscarCliente.setBackground(new Color(0,196,223));
+        panelBuscarCliente.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBuscarClienteMouseEntered
 
     private void btnBuscarClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarClienteMouseExited
-        panelBuscarCliente.setBackground(new Color(0,134,190));
+        panelBuscarCliente.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBuscarClienteMouseExited
 
     private void btnBorrarClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarClienteMouseEntered
-        panelBorrarCliente.setBackground(new Color(0,196,223));
+        panelBorrarCliente.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBorrarClienteMouseEntered
 
     private void btnBorrarClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarClienteMouseExited
-        panelBorrarCliente.setBackground(new Color(0,134,190));
+        panelBorrarCliente.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBorrarClienteMouseExited
 
     private void btnAggClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggClienteMouseEntered
-        panelAggCliente.setBackground(new Color(0,196,223));
+        panelAggCliente.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnAggClienteMouseEntered
 
     private void btnAggClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggClienteMouseExited
-        panelAggCliente.setBackground(new Color(0,134,190));
+        panelAggCliente.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnAggClienteMouseExited
 
     private void btnActualizarClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarClienteMouseEntered
-        panelActualizarCliente.setBackground(new Color(0,196,223));
+        panelActualizarCliente.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnActualizarClienteMouseEntered
 
     private void btnActualizarClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarClienteMouseExited
-        panelActualizarCliente.setBackground(new Color(0,134,190));
+        panelActualizarCliente.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnActualizarClienteMouseExited
 
     private void btnAggBicicletaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggBicicletaMouseEntered
-        panelAggBicicleta.setBackground(new Color(0,196,223));
+        panelAggBicicleta.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnAggBicicletaMouseEntered
 
     private void btnAggBicicletaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggBicicletaMouseExited
-        panelAggBicicleta.setBackground(new Color(0,134,190));
+        panelAggBicicleta.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnAggBicicletaMouseExited
 
     private void btnBorrarBicicletaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarBicicletaMouseEntered
-        panelBorrarBicicleta.setBackground(new Color(0,196,223));
+        panelBorrarBicicleta.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBorrarBicicletaMouseEntered
 
     private void btnBorrarBicicletaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarBicicletaMouseExited
-        panelBorrarBicicleta.setBackground(new Color(0,134,190));
+        panelBorrarBicicleta.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBorrarBicicletaMouseExited
 
     private void btnActualizarBicicletaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarBicicletaMouseEntered
-        panelActualizarBicicleta.setBackground(new Color(0,196,223));
+        panelActualizarBicicleta.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnActualizarBicicletaMouseEntered
 
     private void btnActualizarBicicletaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarBicicletaMouseExited
-        panelActualizarBicicleta.setBackground(new Color(0,134,190));
+        panelActualizarBicicleta.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnActualizarBicicletaMouseExited
 
     private void btnBuscarBicicletaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarBicicletaMouseEntered
-        panelBuscarBicicleta.setBackground(new Color(0,196,223));
+        panelBuscarBicicleta.setBackground(new Color(0, 196, 223));
     }//GEN-LAST:event_btnBuscarBicicletaMouseEntered
 
     private void btnBuscarBicicletaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarBicicletaMouseExited
-        panelBuscarBicicleta.setBackground(new Color(0,134,190));
+        panelBuscarBicicleta.setBackground(new Color(0, 134, 190));
     }//GEN-LAST:event_btnBuscarBicicletaMouseExited
 
+    private void txtDniClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniClienteKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDniClienteKeyTyped
+
+    private void txtDniClienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniClienteFocusGained
+        txtDniCliente.setText("");
+        txtDniCliente.setForeground(Color.white);
+    }//GEN-LAST:event_txtDniClienteFocusGained
+
+    private void txtApellidoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtApellidoFocusGained
+        txtApellido.setText("");
+        txtApellido.setForeground(Color.white);
+    }//GEN-LAST:event_txtApellidoFocusGained
+
+    private void txtNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusGained
+        txtNombre.setText("");
+        txtNombre.setForeground(Color.white);
+    }//GEN-LAST:event_txtNombreFocusGained
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtTelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoFocusGained
+        txtTelefono.setText("");
+        txtTelefono.setForeground(Color.white);
+    }//GEN-LAST:event_txtTelefonoFocusGained
+
+    private void txtDomicilioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDomicilioFocusGained
+        txtDomicilio.setText("");
+        txtDomicilio.setForeground(Color.white);
+    }//GEN-LAST:event_txtDomicilioFocusGained
+
+    private void btnAggClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggClienteMouseClicked
+        String dni = txtDniCliente.getText();
+        String apellido = txtApellido.getText();
+        String nombre = txtNombre.getText();
+        String telefono = txtTelefono.getText();
+        String domicilio = txtDomicilio.getText();
+        txtDomicilio.setText("");
+        txtTelefono.setText("");
+        txtDniCliente.setText("");
+        txtApellido.setText("");
+        txtNombre.setText("");
+        if (txtDniCliente.getText().equals("") || txtApellido.getText().equals("") || txtNombre.getText().equals("") || txtTelefono.getText().equals("") || txtDomicilio.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Cliente c = new Cliente(dni, nombre, apellido, domicilio, telefono, true);
+            cData.agregarCliente(c);
+            txtDomicilio.setText("Ingrese Domicilio");
+            txtTelefono.setText("Ingrese Telefono");
+            txtDniCliente.setText("Ingrese DNI");
+            txtApellido.setText("Ingrese Apellido");
+            txtNombre.setText("Ingrese Nombre");
+        }
+        txtDomicilio.setText("Ingrese Domicilio");
+        txtTelefono.setText("Ingrese Telefono");
+        txtDniCliente.setText("Ingrese DNI");
+        txtApellido.setText("Ingrese Apellido");
+        txtNombre.setText("Ingrese Nombre");
+
+    }//GEN-LAST:event_btnAggClienteMouseClicked
+
+    private void btnBuscarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarClienteMouseClicked
+        String dni = txtDniCliente.getText();
+        if (dni.equals("") || dni.equals("Ingrese DNI")) {
+            JOptionPane.showMessageDialog(null, "Rellene el campo DNI", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Cliente cliente = cData.buscarClienteDNI(dni);
+            if (cliente != null) {
+                txtDomicilio.setText(cliente.getDomicilio());
+                txtTelefono.setText(cliente.getTelefono());
+                txtApellido.setText(cliente.getApellido());
+                txtNombre.setText(cliente.getNombre());
+            } else {
+                JOptionPane.showMessageDialog(null, "Cliente no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
+
+
+    }//GEN-LAST:event_btnBuscarClienteMouseClicked
+
+    private void btnBorrarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrarClienteMouseClicked
+        String dni = txtDniCliente.getText();
+        if (dni.equals("") || dni.equals("Ingrese DNI")) {
+            JOptionPane.showMessageDialog(null, "Rellene el campo DNI", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Cliente cliente = cData.buscarClienteDNI(dni);
+            if (cliente != null) {
+                cData.borrarCliente(dni);
+            } else {
+                JOptionPane.showMessageDialog(null, "Cliente no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
+    }//GEN-LAST:event_btnBorrarClienteMouseClicked
+
+    private void btnActualizarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarClienteMouseClicked
+        String dni = txtDniCliente.getText();
+        String apellido = txtApellido.getText();
+        String nombre = txtNombre.getText();
+        String telefono = txtTelefono.getText();
+        String domicilio = txtDomicilio.getText();
+        txtDomicilio.setText("");
+        txtTelefono.setText("");
+        txtDniCliente.setText("");
+        txtApellido.setText("");
+        txtNombre.setText("");
+        
+        if (dni.equals("") || dni.equals("Ingrese DNI")) {
+            JOptionPane.showMessageDialog(null, "Ingrese el DNI del cliente a actualizar.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (dni.equals("") || apellido.equals("") || nombre.equals("") || telefono.equals("") || domicilio.equals("")) {
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Cliente cliente = new Cliente(dni, nombre, apellido, domicilio, telefono, rootPaneCheckingEnabled);
+            if (cliente != null) {
+                cData.actualizarCliente(cliente, dni);
+            }else{
+                JOptionPane.showMessageDialog(null, "Cliente no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnActualizarClienteMouseClicked
+    
+    private void llenarCombo() {
+        List<Cliente> listaCliente = cData.obtenerClientes();
+        for (Cliente cliente : listaCliente) {
+            comboDuenioBici.addItem(cliente);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -2067,7 +2270,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JSpinner cantRepuestos;
     private javax.swing.JLabel clientBtn;
     private javax.swing.JComboBox<String> comboBicicleta;
-    private javax.swing.JComboBox<String> comboDuenioBici;
+    private javax.swing.JComboBox<Cliente> comboDuenioBici;
     private javax.swing.JComboBox<String> comboItemRepuesto;
     private javax.swing.JComboBox<String> comboReparacionXitemRepuesto;
     private javax.swing.JComboBox<String> comboRepuestos;
