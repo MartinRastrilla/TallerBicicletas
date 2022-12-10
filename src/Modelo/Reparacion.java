@@ -34,7 +34,13 @@ public class Reparacion {
         this.activo = activo;
     }
 
-    
+    public Reparacion(Servicio id_servicio, Bicicleta id_bicicleta, LocalDate fecha_entrada, float costo, boolean activo) {
+        this.id_servicio = id_servicio;
+        this.id_bicicleta = id_bicicleta;
+        this.fecha_entrada = fecha_entrada;
+        this.costo = costo;
+        this.activo = activo;
+    }
 
     public int getId_reparacion() {
         return id_reparacion;
@@ -94,6 +100,6 @@ public class Reparacion {
 
     @Override
     public String toString() {
-        return "Reparacion:" + " N° Reparación: " + id_reparacion + " | Servicio: " + id_servicio.getDescripcion() + " | N° Serie Bicicleta: " + id_bicicleta.getNumSerie() + " | Ingreso: " + fecha_entrada + " | Costo: $" + costo + " | Estado: " + estado;
+        return id_reparacion + " | " + id_servicio.getDescripcion() + " | " + id_bicicleta.getNumSerie();
     }
 }
