@@ -71,7 +71,7 @@ public class Bicicleta {
 
     @Override
     public String toString() {
-        return "Bicicleta: " + "NumSerie = " + numSerie + " | Tipo = " + tipo + " | Color = " + color + " | Marca = " + marca + " | DniDueño = " + dniDuenio.getDni();
+        return dniDuenio.getDni() + " | " + numSerie;
     }
 
 }
