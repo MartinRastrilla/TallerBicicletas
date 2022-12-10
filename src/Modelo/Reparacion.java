@@ -94,6 +94,6 @@ public class Reparacion {
 
     @Override
     public String toString() {
-        return "Reparacion:" + " N° Reparación: " + id_reparacion + " | Servicio: " + id_servicio.getDescripcion() + " | N° Serie Bicicleta: " + id_bicicleta.getNumSerie() + " | Ingreso: " + fecha_entrada + " | Costo: $" + costo + " | Estado: " + estado;
+        return id_reparacion + " | " + id_servicio.getDescripcion() + " | " + id_bicicleta.getNumSerie();
     }
 }

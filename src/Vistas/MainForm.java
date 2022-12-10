@@ -14,6 +14,7 @@ import Data.RepuestoData;
 import Data.ServicioData;
 import Modelo.Bicicleta;
 import Modelo.Cliente;
+import Modelo.ItemRepuesto;
 import Modelo.Reparacion;
 import Modelo.Repuesto;
 import Modelo.Servicio;
@@ -41,18 +42,25 @@ public class MainForm extends javax.swing.JFrame {
     ItemRepuestoData itemData = new ItemRepuestoData();
     private DefaultTableModel tableRepuestos;
     private DefaultTableModel tableServicios;
+    private DefaultTableModel tableReparaciones;
 
     public MainForm() {
         initComponents();
         tableRepuestos = new DefaultTableModel();
         tableServicios = new DefaultTableModel();
+        tableReparaciones = new DefaultTableModel();
         llenarCombo();
         llenarComboBicicleta();
         llenarComboServicio();
+        llenarComboRepaXitemRepuesto();
+        llenarComboReparacionBuscar();
+        llenarComboRepuesto();
         armarCabeceraTablaServicios();
         armarCabeceraTablaRepuestos();
+        armarCabeceraTablaReparaciones();
         cargarTablaRepuestos();
         cargarTablaServicios();
+        cargarTablaReparaciones();
     }
 
     /**
@@ -174,6 +182,8 @@ public class MainForm extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaItemRepuesto = new javax.swing.JTable();
         jLabel40 = new javax.swing.JLabel();
+        panelBtnRefreshServicios1 = new javax.swing.JPanel();
+        btnRefreshServicios1 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jSeparator26 = new javax.swing.JSeparator();
@@ -296,7 +306,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel1.setText("El Pepe");
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 120, 40));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 70));
 
         jTabbedPane1.setBackground(new java.awt.Color(35, 35, 35));
         jTabbedPane1.setForeground(new java.awt.Color(35, 35, 35));
@@ -1069,7 +1079,6 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator29.setForeground(new java.awt.Color(0, 134, 190));
         jPanel22.add(jSeparator29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, 20));
 
-        comboRepuestos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel22.add(comboRepuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 160, 30));
 
         tablaItemRepuesto.setModel(new javax.swing.table.DefaultTableModel(
@@ -1092,6 +1101,28 @@ public class MainForm extends javax.swing.JFrame {
         jLabel40.setText("Elija Reparación");
         jPanel22.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
+        panelBtnRefreshServicios1.setBackground(new java.awt.Color(0, 111, 157));
+        panelBtnRefreshServicios1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnRefreshServicios1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnRefreshServicios1.setForeground(new java.awt.Color(255, 255, 255));
+        btnRefreshServicios1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnRefreshServicios1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/refresh.png"))); // NOI18N
+        btnRefreshServicios1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRefreshServicios1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRefreshServicios1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRefreshServicios1MouseExited(evt);
+            }
+        });
+        panelBtnRefreshServicios1.add(btnRefreshServicios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+
+        jPanel22.add(panelBtnRefreshServicios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 35, -1, -1));
+
         jPanel19.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 470, 250));
 
         jPanel26.setBackground(new java.awt.Color(51, 51, 51));
@@ -1106,7 +1137,6 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator26.setForeground(new java.awt.Color(0, 134, 190));
         jPanel26.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, 20));
 
-        comboItemRepuesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel26.add(comboItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 160, 30));
 
         jSeparator27.setForeground(new java.awt.Color(0, 134, 190));
@@ -1121,6 +1151,9 @@ public class MainForm extends javax.swing.JFrame {
         btnAggItemRepuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnAggItemRepuesto.setText("Agregar");
         btnAggItemRepuesto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAggItemRepuestoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAggItemRepuestoMouseEntered(evt);
             }
@@ -1173,7 +1206,6 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator28.setForeground(new java.awt.Color(0, 134, 190));
         jPanel26.add(jSeparator28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 140, 20));
 
-        comboReparacionXitemRepuesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel26.add(comboReparacionXitemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 160, 30));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -2565,7 +2597,7 @@ public class MainForm extends javax.swing.JFrame {
                 int mes = calendarFechaEntrada.getCalendar().get(Calendar.MONTH);
                 int anio = calendarFechaEntrada.getCalendar().get(Calendar.YEAR);
                 float precio = Float.parseFloat(txtPrecioReparacion.getText());
-                Reparacion reparacion = new Reparacion(servicio, bicicleta, LocalDate.of(anio, mes+1, dia), precio, true, true);
+                Reparacion reparacion = new Reparacion(servicio, bicicleta, LocalDate.of(anio, mes + 1, dia), precio, true, true);
                 reparacionData.ingresarReparacion(reparacion);
                 comboServicio.setSelectedIndex(-1);
                 comboBicicleta.setSelectedIndex(-1);
@@ -2608,7 +2640,7 @@ public class MainForm extends javax.swing.JFrame {
                 int mes = calendarFechaEntrada.getCalendar().get(Calendar.MONTH);
                 int anio = calendarFechaEntrada.getCalendar().get(Calendar.YEAR);
                 float precio = Float.parseFloat(txtPrecioReparacion.getText());
-                Reparacion reparacion = new Reparacion(servicio, bicicleta, LocalDate.of(anio, mes+1, dia), precio, true, true);
+                Reparacion reparacion = new Reparacion(servicio, bicicleta, LocalDate.of(anio, mes + 1, dia), precio, true, true);
                 reparacionData.actualizarReparacion(reparacion, Integer.parseInt(txtBuscarReparacionID.getText()), servicio.getCodigo());
                 comboServicio.setSelectedIndex(-1);
                 comboBicicleta.setSelectedIndex(-1);
@@ -2619,6 +2651,32 @@ public class MainForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnActualizarReparacionMouseClicked
 
+    private void btnRefreshServicios1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshServicios1MouseClicked
+
+    }//GEN-LAST:event_btnRefreshServicios1MouseClicked
+
+    private void btnRefreshServicios1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshServicios1MouseEntered
+        panelBtnRefreshServicios1.setBackground(new Color(0, 196, 223));
+    }//GEN-LAST:event_btnRefreshServicios1MouseEntered
+
+    private void btnRefreshServicios1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshServicios1MouseExited
+        panelBtnRefreshServicios1.setBackground(new Color(0, 111, 157));
+    }//GEN-LAST:event_btnRefreshServicios1MouseExited
+
+    private void btnAggItemRepuestoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggItemRepuestoMouseClicked
+        int cantidad = Integer.parseInt(cantRepuestos.getValue().toString());
+        if (comboItemRepuesto.getSelectedIndex() == -1 || comboReparacionXitemRepuesto.getSelectedIndex() == -1 || cantidad < 1) {
+            JOptionPane.showMessageDialog(null, "Elija todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Repuesto repuesto = (Repuesto) comboItemRepuesto.getSelectedItem();
+            Reparacion reparacion = (Reparacion) comboReparacionXitemRepuesto.getSelectedItem();
+            ItemRepuesto item = new ItemRepuesto(repuesto, reparacion, cantidad, true);
+            itemData.ingresarItems(item);
+            comboItemRepuesto.setSelectedIndex(-1);
+            comboReparacionXitemRepuesto.setSelectedIndex(-1);
+        }
+    }//GEN-LAST:event_btnAggItemRepuestoMouseClicked
+
     private void llenarCombo() {
         List<Cliente> listaCliente = cData.obtenerClientes();
         for (Cliente cliente : listaCliente) {
@@ -2626,7 +2684,7 @@ public class MainForm extends javax.swing.JFrame {
         }
         comboDuenioBici.setSelectedIndex(-1);
     }
-    
+
     private void llenarComboServicio() {
         List<Servicio> lista = servicioData.listarServicios();
         for (Servicio aux : lista) {
@@ -2634,7 +2692,7 @@ public class MainForm extends javax.swing.JFrame {
         }
         comboServicio.setSelectedIndex(-1);
     }
-    
+
     private void llenarComboBicicleta() {
         List<Bicicleta> lista = bData.obtenerBicicletas();
         for (Bicicleta aux : lista) {
@@ -2642,6 +2700,7 @@ public class MainForm extends javax.swing.JFrame {
         }
         comboBicicleta.setSelectedIndex(-1);
     }
+
     private void borrarFilasTabla(DefaultTableModel tabla) {
         if (tabla != null) {
             int aux = tabla.getRowCount() - 1;
@@ -2664,6 +2723,21 @@ public class MainForm extends javax.swing.JFrame {
         tablaRepuestos.setModel(tableRepuestos);
     }
 
+    private void armarCabeceraTablaReparaciones() {
+        ArrayList<Object> columnas = new ArrayList();
+        columnas.add("ID");
+        columnas.add("Servicio");
+        columnas.add("Bicicleta");
+        columnas.add("Fecha Entrada");
+        columnas.add("Costo Total");
+        columnas.add("Estado");
+
+        for (Object aux : columnas) {
+            tableReparaciones.addColumn(aux);
+        }
+        tablaReparaciones.setModel(tableReparaciones);
+    }
+
     public void cargarTablaRepuestos() {
         borrarFilasTabla(tableRepuestos);
         ArrayList<Repuesto> lsitaRepuesto = repuestoData.listadoRepuesto();
@@ -2677,8 +2751,34 @@ public class MainForm extends javax.swing.JFrame {
             tableRepuestos.addRow(filas);
         }
         tablaRepuestos.setModel(tableRepuestos);
+        tablaItemRepuesto.setModel(tableRepuestos);
     }
-    
+
+    public void cargarTablaReparaciones() {
+        borrarFilasTabla(tableReparaciones);
+        String x;
+        ArrayList<Reparacion> lsitaRepuesto = reparacionData.obtenerReparaciones();
+
+        for (Reparacion aux : lsitaRepuesto) {
+            Object[] filas = new Object[6];
+            if (!aux.isEstado()) {
+                x = "No Finalizada";
+            } else if (aux.isEstado()) {
+                x = "Finalizada";
+            } else {
+                x = "Entregada";
+            }
+            filas[0] = aux.getId_reparacion();
+            filas[1] = aux.getId_servicio().getDescripcion();
+            filas[2] = aux.getId_bicicleta().getNumSerie();
+            filas[3] = aux.getFecha_entrada();
+            filas[4] = aux.getCosto();
+            filas[5] = x;
+            tableReparaciones.addRow(filas);
+        }
+        tablaReparaciones.setModel(tableReparaciones);
+    }
+
     private void armarCabeceraTablaServicios() {
         ArrayList<Object> columnas = new ArrayList();
         columnas.add("Código");
@@ -2691,7 +2791,7 @@ public class MainForm extends javax.swing.JFrame {
         }
         tablaServicios.setModel(tableServicios);
     }
-    
+
     public void cargarTablaServicios() {
         borrarFilasTabla(tableServicios);
         ArrayList<Servicio> listaServicios = servicioData.listarServicios();
@@ -2705,6 +2805,30 @@ public class MainForm extends javax.swing.JFrame {
             tableServicios.addRow(filas);
         }
         tablaServicios.setModel(tableServicios);
+    }
+
+    private void llenarComboRepaXitemRepuesto() {
+        List<Reparacion> lista = reparacionData.obtenerReparaciones();
+        for (Reparacion aux : lista) {
+            comboRepuestos.addItem(aux);
+        }
+        comboRepuestos.setSelectedIndex(-1);
+    }
+
+    private void llenarComboRepuesto() {
+        List<Repuesto> lista = repuestoData.listadoRepuesto();
+        for (Repuesto aux : lista) {
+            comboItemRepuesto.addItem(aux);
+        }
+        comboItemRepuesto.setSelectedIndex(-1);
+    }
+
+    private void llenarComboReparacionBuscar() {
+        List<Reparacion> lista = reparacionData.obtenerReparaciones();
+        for (Reparacion aux : lista) {
+            comboReparacionXitemRepuesto.addItem(aux);
+        }
+        comboReparacionXitemRepuesto.setSelectedIndex(-1);
     }
 
     /**
@@ -2770,6 +2894,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel btnHome;
     private javax.swing.JLabel btnRefreshRepuesto;
     private javax.swing.JLabel btnRefreshServicios;
+    private javax.swing.JLabel btnRefreshServicios1;
     private javax.swing.JPanel btnSalir;
     private javax.swing.JPanel btnirBiciCliente;
     private javax.swing.JPanel btnirReparaciones;
@@ -2780,9 +2905,9 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel clientBtn;
     private javax.swing.JComboBox<Bicicleta> comboBicicleta;
     private javax.swing.JComboBox<Cliente> comboDuenioBici;
-    private javax.swing.JComboBox<String> comboItemRepuesto;
-    private javax.swing.JComboBox<String> comboReparacionXitemRepuesto;
-    private javax.swing.JComboBox<String> comboRepuestos;
+    private javax.swing.JComboBox<Repuesto> comboItemRepuesto;
+    private javax.swing.JComboBox<Reparacion> comboReparacionXitemRepuesto;
+    private javax.swing.JComboBox<Reparacion> comboRepuestos;
     private javax.swing.JComboBox<Servicio> comboServicio;
     private javax.swing.JComboBox<String> comboTipoBici;
     private javax.swing.JLabel homeBtn;
@@ -2892,6 +3017,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel panelBtnAggRepuesto;
     private javax.swing.JPanel panelBtnRefreshRepuesto;
     private javax.swing.JPanel panelBtnRefreshServicios;
+    private javax.swing.JPanel panelBtnRefreshServicios1;
     private javax.swing.JPanel panelBuscarBicicleta;
     private javax.swing.JPanel panelBuscarCliente;
     private javax.swing.JPanel panelBuscarRepuesto;
