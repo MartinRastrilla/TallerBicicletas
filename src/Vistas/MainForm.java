@@ -310,7 +310,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel1.setText("El Pepe");
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 120, 40));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 50));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 70));
 
         jTabbedPane1.setBackground(new java.awt.Color(35, 35, 35));
         jTabbedPane1.setForeground(new java.awt.Color(35, 35, 35));
