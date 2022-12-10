@@ -141,4 +141,29 @@ public class BicicletaData {
         }
         return b;
     }
+    
+    public ArrayList<Bicicleta> obtenerBicicletas(){
+        String query = "SELECT * FROM bicicleta WHERE activo = true;"; 
+        ArrayList<Bicicleta> bicicletasDuenio = new ArrayList();
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Bicicleta b = new Bicicleta();
+                Cliente c = new Cliente();
+                c.setDni(rs.getString("dni_duenio"));
+                b.setNumSerie(rs.getString("num_serie"));
+                b.setTipo(rs.getString("tipo"));
+                b.setColor(rs.getString("color"));
+                b.setMarca(rs.getString("marca"));
+                b.setDniDuenio(c);
+                b.setActivo(rs.getBoolean("activo"));
+                bicicletasDuenio.add(b);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-obtenerBiciCliente");
+        }
+        return bicicletasDuenio;
+    }
 }
