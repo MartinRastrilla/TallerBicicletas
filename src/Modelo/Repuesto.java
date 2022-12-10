@@ -51,6 +51,6 @@ public class Repuesto {
 
     @Override
     public String toString() {
-        return  descripcion.toUpperCase();
+        return "Repuesto:" + "N° Serie: " + num_serie + " | Descripción: " + descripcion.toUpperCase() + " | Precio: " + precio + " | Stock: " + activo;
     }
 }

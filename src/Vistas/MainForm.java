@@ -1,71 +1,23 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Vistas;
 
-import Data.BicicletaData;
-import Data.ClienteData;
-import Data.Conexion;
-import Data.ReparacionData;
-import Data.RepuestoData;
-import Data.ServicioData;
-import Modelo.Bicicleta;
-import Modelo.Cliente;
-import Modelo.Reparacion;
-import Modelo.Repuesto;
-import Modelo.Servicio;
 import java.awt.Color;
-import java.sql.Connection;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Martin
  */
 public class MainForm extends javax.swing.JFrame {
-    
-    private Connection con = Conexion.getConexion();
-    private ClienteData cData;
-    private BicicletaData bData;
-    private ReparacionData repaData; 
-    private RepuestoData repuData; 
-    private ServicioData sData ;
-    
-    List<Servicio> listServicio;
-    List<Bicicleta> listBici;
-    private DefaultTableModel tablaRepa;
-    private DefaultTableModel tablaServ;
-    private DefaultTableModel tablaRepu;
-    
-    
-    
+
+    /**
+     * Creates new form MainForm
+     */
     public MainForm() {
-        cData=new ClienteData();
-        bData=new BicicletaData();
-        repaData=new ReparacionData();
-        repuData=new RepuestoData();
-        sData=new ServicioData();
         initComponents();
-        
-        
-        llenarComboRepuestos(repuData);
-        llenarComboClientes(cData);
-        llenarComboBicicleta(bData);
-       llenarComboServicio();
-        //llenarComboBicicleta();*/
-        tablaRepa = new DefaultTableModel();
-        tablaServ=new DefaultTableModel();
-        tablaRepu=new DefaultTableModel();
-        
-        cabeceraReparaciones();
-        llenarTablaReparaciones();
-        
-        cabeceraServicio();
-        llenarTablaServicio();
-        
-        cabeceraRepuesto();
-        llenarTablaRepuesto();
     }
 
     /**
@@ -234,8 +186,10 @@ public class MainForm extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jSeparator32 = new javax.swing.JSeparator();
+        comboDuenioBici = new javax.swing.JComboBox<>();
         jLabel47 = new javax.swing.JLabel();
         jSeparator33 = new javax.swing.JSeparator();
+        comboTipoBici = new javax.swing.JComboBox<>();
         jSeparator34 = new javax.swing.JSeparator();
         txtColor = new javax.swing.JTextField();
         txtMarca = new javax.swing.JTextField();
@@ -247,8 +201,6 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator37 = new javax.swing.JSeparator();
         panelBuscarBicicleta = new javax.swing.JPanel();
         btnBuscarBicicleta = new javax.swing.JLabel();
-        comboTipoBici1 = new javax.swing.JComboBox<>();
-        ComboBoxDuenio = new javax.swing.JComboBox<>();
         jSeparator12 = new javax.swing.JSeparator();
         btnHome = new javax.swing.JPanel();
         homeBtn = new javax.swing.JLabel();
@@ -898,11 +850,7 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator18.setForeground(new java.awt.Color(0, 134, 190));
         jPanel20.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 160, 140, 20));
 
-        comboBicicleta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBicicletaActionPerformed(evt);
-            }
-        });
+        comboBicicleta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel20.add(comboBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 160, 30));
 
         jSeparator19.setForeground(new java.awt.Color(0, 134, 190));
@@ -926,6 +874,7 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator20.setForeground(new java.awt.Color(0, 134, 190));
         jPanel20.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 320, 140, 20));
 
+        comboServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel20.add(comboServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 46, 160, 30));
 
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -991,6 +940,7 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator29.setForeground(new java.awt.Color(0, 134, 190));
         jPanel22.add(jSeparator29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, 20));
 
+        comboRepuestos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel22.add(comboRepuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 160, 30));
 
         tablaItemRepuesto.setModel(new javax.swing.table.DefaultTableModel(
@@ -1360,6 +1310,9 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator32.setForeground(new java.awt.Color(0, 134, 190));
         jPanel28.add(jSeparator32, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 140, 20));
 
+        comboDuenioBici.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel28.add(comboDuenioBici, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 200, 30));
+
         jLabel47.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(255, 255, 255));
         jLabel47.setText("Elija Tipo");
@@ -1367,6 +1320,9 @@ public class MainForm extends javax.swing.JFrame {
 
         jSeparator33.setForeground(new java.awt.Color(0, 134, 190));
         jPanel28.add(jSeparator33, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 140, 20));
+
+        comboTipoBici.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Urbana", "Ruta", "Contrarreloj", "Mountain", "Plegable", "BMX", "Paseo", "Híbrida", "Circuito", "Eléctrica", "Gravel" }));
+        jPanel28.add(comboTipoBici, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 200, 30));
 
         jSeparator34.setForeground(new java.awt.Color(255, 255, 255));
         jPanel28.add(jSeparator34, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 170, 20));
@@ -1453,17 +1409,6 @@ public class MainForm extends javax.swing.JFrame {
         jPanel37.add(panelBuscarBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 90, -1));
 
         jPanel28.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 160, 120));
-
-        comboTipoBici1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Urbana", "Ruta", "Contrarreloj", "Mountain", "Plegable", "BMX", "Paseo", "Híbrida", "Circuito", "pedal", "Eléctrica", "Gravel" }));
-        comboTipoBici1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboTipoBici1ActionPerformed(evt);
-            }
-        });
-        jPanel28.add(comboTipoBici1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 200, 30));
-
-        ComboBoxDuenio.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jPanel28.add(ComboBoxDuenio, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 44, 250, 30));
 
         jPanel23.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 900, 440));
 
@@ -2051,14 +1996,6 @@ public class MainForm extends javax.swing.JFrame {
         panelBuscarBicicleta.setBackground(new Color(0,134,190));
     }//GEN-LAST:event_btnBuscarBicicletaMouseExited
 
-    private void comboTipoBici1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTipoBici1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboTipoBici1ActionPerformed
-
-    private void comboBicicletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBicicletaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBicicletaActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -2093,114 +2030,8 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void llenarComboClientes(ClienteData cData){
-        for (Cliente cl : cData.listaClientes()) {
-            ComboBoxDuenio.addItem(cl);
-        }
-    }
-    
-    
-     private void borrarFilasTablaRepa() {
-        if (tablaRepa != null) {
-            int aux = tablaRepa.getRowCount() - 1;
-            for (int i = aux; i >= 0; i--) {
-                tablaRepa.removeRow(i);
-            }
-        }
-    }
-    
-    private void llenarComboServicio() {
-        listServicio = sData.listarServicios();
-        for (Servicio s : listServicio) {
-            comboServicio.addItem(s);
-        }
-    }
-    
-    private void cabeceraReparaciones(){
-     ArrayList<Object> columnasIns=new ArrayList<>();
-     columnasIns.add("ID");
-     columnasIns.add("Servicio");
-     columnasIns.add("Bicicleta");
-     columnasIns.add("Ingreso");
-     columnasIns.add("costo");
-     columnasIns.add("estado");
-     columnasIns.add("activo");
-        for (Object c: columnasIns) {
-            tablaRepa.addColumn( c);
-        }
-    tablaReparaciones.setModel(tablaRepa);
-    }
-    private void llenarTablaReparaciones(){
-            
-        for (Reparacion rep : repaData.obtenerReparaciones()) {
-            tablaRepa.addRow(new Object[]{rep.getId_reparacion(),rep.getId_servicio().getDescripcion(),rep.getId_bicicleta().getNumSerie(),rep.getFecha_entrada(),rep.getCosto(),rep.isEstado(),rep.isEstado()});
-        }
-     }
-    
-    private void cabeceraServicio(){
-     ArrayList<Object> columnasIns=new ArrayList<>();
-     columnasIns.add("Codigo");
-     columnasIns.add("Descripcion");
-     columnasIns.add("Precio");
-     columnasIns.add("Activo");
-        for (Object c: columnasIns) {
-            tablaServ.addColumn( c);
-        }
-    tablaServicios.setModel(tablaServ);
-    }
-    
-     private void llenarTablaServicio(){
-            
-        for (Servicio ser : sData.listarServicios()) {
-            tablaServ.addRow(new Object[]{ser.getCodigo(),ser.getDescripcion(),ser.getPrecio(),ser.isActivo()});
-        }
-     }
-    
-    private void cabeceraRepuesto(){
-     ArrayList<Object> columnasIns=new ArrayList<>();
-     columnasIns.add("N° Serie");
-     columnasIns.add("Descripcion");
-     columnasIns.add("Precio");
-     columnasIns.add("Activo");
-        for (Object c: columnasIns) {
-            tablaRepu.addColumn( c);
-        }
-    tablaRepuestos.setModel(tablaRepu);
-    tablaItemRepuesto.setModel(tablaRepu);
-    }
-    
-     private void llenarTablaRepuesto(){
-            
-        for (Repuesto rep : repuData.listadoRepuesto()) {
-            tablaRepu.addRow(new Object[]{rep.getNum_serie(),rep.getDescripcion(),rep.getPrecio(),rep.isActivo()});
-        }
-        
-     }
-    
-    private void llenarComboBicicleta(BicicletaData bData) {
-        
-       
-        for (Bicicleta b : bData.listarBicicletas()) {
-            comboBicicleta.addItem(b);
-        }
-    }
-    
-    private void llenarComboRepuestos(RepuestoData repuData) {
-        
-       
-        for (Repuesto re : repuData.listadoRepuesto()) {
-            comboRepuestos.addItem(re);
-        }
-    }
-    
-    
-     
-   
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<Cliente> ComboBoxDuenio;
     private javax.swing.JLabel btnActualizarBicicleta;
     private javax.swing.JLabel btnActualizarCliente;
     private javax.swing.JLabel btnActualizarItemRepuesto;
@@ -2235,12 +2066,13 @@ public class MainForm extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser calendarFechaEntrada;
     private javax.swing.JSpinner cantRepuestos;
     private javax.swing.JLabel clientBtn;
-    private javax.swing.JComboBox<Bicicleta> comboBicicleta;
+    private javax.swing.JComboBox<String> comboBicicleta;
+    private javax.swing.JComboBox<String> comboDuenioBici;
     private javax.swing.JComboBox<String> comboItemRepuesto;
     private javax.swing.JComboBox<String> comboReparacionXitemRepuesto;
-    private javax.swing.JComboBox<Repuesto> comboRepuestos;
-    private javax.swing.JComboBox<Servicio> comboServicio;
-    private javax.swing.JComboBox<String> comboTipoBici1;
+    private javax.swing.JComboBox<String> comboRepuestos;
+    private javax.swing.JComboBox<String> comboServicio;
+    private javax.swing.JComboBox<String> comboTipoBici;
     private javax.swing.JLabel homeBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

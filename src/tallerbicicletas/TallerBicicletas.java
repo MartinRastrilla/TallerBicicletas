@@ -21,7 +21,7 @@ public class TallerBicicletas {
 
     public static void main(String[] args) {
         Connection con  = Conexion.getConexion();
-        ClienteData cData = new ClienteData();
+        ClienteData cData = new ClienteData(con);
         BicicletaData bData = new BicicletaData();
         RepuestoData repuestoData = new RepuestoData();
         ServicioData servicioData = new ServicioData();
