@@ -2894,7 +2894,7 @@ public class MainForm extends javax.swing.JFrame {
             Object[] filas = new Object[7];
 
             for (ItemRepuesto aux2 : listaItems) {
-                if (aux2.getId_reparacion().getId_reparacion() == aux.getId_reparacion()) {
+                if (aux2.getId_reparacion().equals(aux)) {
                     costoTotal = itemData.costoRepuestos(aux.getId_reparacion()) + reparacionData.costoReparacion(aux.getId_reparacion());
                 } else {
                     costoTotal = reparacionData.costoReparacion(aux.getId_reparacion());
