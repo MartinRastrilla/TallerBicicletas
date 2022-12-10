@@ -34,7 +34,13 @@ public class Reparacion {
         this.activo = activo;
     }
 
-    
+    public Reparacion(Servicio id_servicio, Bicicleta id_bicicleta, LocalDate fecha_entrada, float costo, boolean activo) {
+        this.id_servicio = id_servicio;
+        this.id_bicicleta = id_bicicleta;
+        this.fecha_entrada = fecha_entrada;
+        this.costo = costo;
+        this.activo = activo;
+    }
 
     public int getId_reparacion() {
         return id_reparacion;
