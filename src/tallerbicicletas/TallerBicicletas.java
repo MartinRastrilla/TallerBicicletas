@@ -112,6 +112,9 @@ public class TallerBicicletas {
 //        System.out.println(itemData.costoRepuestos(23));
 //        float costoFinal =itemData.costoRepuestos(23)+repData.costoReparacion(23);
 //        System.out.println(costoFinal);
+//        for (ItemRepuesto aux : itemData.obtenerBicicletaXreparacion("14")) {
+//            System.out.println(aux.toString());
+//        }
     }
 
 }

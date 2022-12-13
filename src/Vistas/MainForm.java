@@ -21,6 +21,7 @@ import Modelo.Servicio;
 import java.awt.Color;
 import java.sql.Connection;
 import java.time.LocalDate;
+import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -52,6 +53,7 @@ public class MainForm extends javax.swing.JFrame {
         tableReparaciones = new DefaultTableModel();
         tableItemRepuestos = new DefaultTableModel();
         llenarCombo();
+        llenarComboBicicletaFiltrar();
         llenarComboBicicleta();
         llenarComboServicio();
         llenarComboReparacionBuscar();
@@ -88,6 +90,8 @@ public class MainForm extends javax.swing.JFrame {
         tablaReparaciones = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        panelFinalizarReparacion = new javax.swing.JPanel();
+        btnFinalizarReparacion = new javax.swing.JLabel();
         txtBuscarDNIduenioRep = new javax.swing.JTextField();
         btnBuscarXdni = new javax.swing.JPanel();
         btnBuscarReparacionxDNI = new javax.swing.JLabel();
@@ -164,35 +168,32 @@ public class MainForm extends javax.swing.JFrame {
         btnActualizarReparacion = new javax.swing.JLabel();
         panelBorrarReparacion = new javax.swing.JPanel();
         btnBorrarReparacion = new javax.swing.JLabel();
-        panelFinalizarReparacion = new javax.swing.JPanel();
-        btnFinalizarReparacion = new javax.swing.JLabel();
         panelAggReparacion = new javax.swing.JPanel();
         btnAgregarReparacion = new javax.swing.JLabel();
         jSeparator18 = new javax.swing.JSeparator();
-        comboBicicleta = new javax.swing.JComboBox<>();
         jSeparator19 = new javax.swing.JSeparator();
         calendarFechaEntrada = new com.toedter.calendar.JDateChooser();
-        txtPrecioReparacion = new javax.swing.JTextField();
-        jSeparator20 = new javax.swing.JSeparator();
         comboServicio = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtBuscarReparacionID = new javax.swing.JTextField();
-        jSeparator31 = new javax.swing.JSeparator();
         radioBtnRepEntregada = new javax.swing.JRadioButton();
+        jLabel41 = new javax.swing.JLabel();
+        jSeparator26 = new javax.swing.JSeparator();
+        comboItemRepuesto = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator27 = new javax.swing.JSeparator();
+        cantRepuestos = new javax.swing.JSpinner();
+        comboBicicleta = new javax.swing.JComboBox<>();
         jPanel22 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaItemRepuesto = new javax.swing.JTable();
-        panelBtnRefreshServicios1 = new javax.swing.JPanel();
-        btnRefreshServicios1 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator29 = new javax.swing.JSeparator();
+        comboBicicletaFiltrar = new javax.swing.JComboBox<>();
         jPanel26 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
-        jSeparator26 = new javax.swing.JSeparator();
-        comboItemRepuesto = new javax.swing.JComboBox<>();
-        jSeparator27 = new javax.swing.JSeparator();
-        cantRepuestos = new javax.swing.JSpinner();
         panelAggItemRepuesto = new javax.swing.JPanel();
         btnAggItemRepuesto = new javax.swing.JLabel();
         panelActualizarItemRepuesto = new javax.swing.JPanel();
@@ -201,9 +202,11 @@ public class MainForm extends javax.swing.JFrame {
         btnBorrarItemRepuesto = new javax.swing.JLabel();
         jSeparator28 = new javax.swing.JSeparator();
         comboReparacionXitemRepuesto = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        txtPrecioReparacion = new javax.swing.JTextField();
+        jSeparator20 = new javax.swing.JSeparator();
+        txtBuscarReparacionID = new javax.swing.JTextField();
+        jSeparator31 = new javax.swing.JSeparator();
         radioBtnRepTerminada = new javax.swing.JRadioButton();
         jPanel23 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
@@ -310,7 +313,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel1.setText("El Pepe");
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 120, 40));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 70));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 50));
 
         jTabbedPane1.setBackground(new java.awt.Color(35, 35, 35));
         jTabbedPane1.setForeground(new java.awt.Color(35, 35, 35));
@@ -324,7 +327,9 @@ public class MainForm extends javax.swing.JFrame {
         jPanel3.setForeground(new java.awt.Color(103, 103, 103));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tablaReparaciones.setBackground(new java.awt.Color(48, 46, 46));
         tablaReparaciones.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        tablaReparaciones.setForeground(new java.awt.Color(153, 153, 153));
         tablaReparaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -335,8 +340,23 @@ public class MainForm extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaReparaciones.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tablaReparaciones);
+        if (tablaReparaciones.getColumnModel().getColumnCount() > 0) {
+            tablaReparaciones.getColumnModel().getColumn(0).setResizable(false);
+            tablaReparaciones.getColumnModel().getColumn(1).setResizable(false);
+            tablaReparaciones.getColumnModel().getColumn(2).setResizable(false);
+            tablaReparaciones.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 730, 250));
 
@@ -348,6 +368,28 @@ public class MainForm extends javax.swing.JFrame {
 
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 160, 20));
+
+        panelFinalizarReparacion.setBackground(new java.awt.Color(0, 134, 190));
+        panelFinalizarReparacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnFinalizarReparacion.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnFinalizarReparacion.setForeground(new java.awt.Color(255, 255, 255));
+        btnFinalizarReparacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnFinalizarReparacion.setText("Finalizar\nReparación");
+        btnFinalizarReparacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFinalizarReparacionMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnFinalizarReparacionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnFinalizarReparacionMouseExited(evt);
+            }
+        });
+        panelFinalizarReparacion.add(btnFinalizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 30));
+
+        jPanel3.add(panelFinalizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 150, 30));
 
         txtBuscarDNIduenioRep.setBackground(new java.awt.Color(51, 51, 51));
         txtBuscarDNIduenioRep.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -521,6 +563,8 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
         jPanel6.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 170, 230, 20));
 
+        tablaRepuestos.setBackground(new java.awt.Color(48, 46, 46));
+        tablaRepuestos.setForeground(new java.awt.Color(153, 153, 153));
         tablaRepuestos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -531,8 +575,24 @@ public class MainForm extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaRepuestos.setEnabled(false);
+        tablaRepuestos.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(tablaRepuestos);
+        if (tablaRepuestos.getColumnModel().getColumnCount() > 0) {
+            tablaRepuestos.getColumnModel().getColumn(0).setResizable(false);
+            tablaRepuestos.getColumnModel().getColumn(1).setResizable(false);
+            tablaRepuestos.getColumnModel().getColumn(2).setResizable(false);
+            tablaRepuestos.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 350, 160));
 
@@ -714,6 +774,11 @@ public class MainForm extends javax.swing.JFrame {
                 txtPrecioServicioActionPerformed(evt);
             }
         });
+        txtPrecioServicio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioServicioKeyTyped(evt);
+            }
+        });
         jPanel13.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, 230, 20));
 
         jSeparator11.setForeground(new java.awt.Color(255, 255, 255));
@@ -745,6 +810,8 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel13.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 20, 140));
 
+        tablaServicios.setBackground(new java.awt.Color(48, 46, 46));
+        tablaServicios.setForeground(new java.awt.Color(153, 153, 153));
         tablaServicios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -755,8 +822,24 @@ public class MainForm extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaServicios.setEnabled(false);
+        tablaServicios.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(tablaServicios);
+        if (tablaServicios.getColumnModel().getColumnCount() > 0) {
+            tablaServicios.getColumnModel().getColumn(0).setResizable(false);
+            tablaServicios.getColumnModel().getColumn(1).setResizable(false);
+            tablaServicios.getColumnModel().getColumn(2).setResizable(false);
+            tablaServicios.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jPanel13.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 410, 150));
 
@@ -936,7 +1019,7 @@ public class MainForm extends javax.swing.JFrame {
 
         jSeparator14.setBackground(new java.awt.Color(0, 134, 190));
         jSeparator14.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel20.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, 140, 20));
+        jPanel20.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 100, 20));
 
         jLabel27.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
@@ -988,28 +1071,6 @@ public class MainForm extends javax.swing.JFrame {
 
         jPanel20.add(panelBorrarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 90, 30));
 
-        panelFinalizarReparacion.setBackground(new java.awt.Color(0, 134, 190));
-        panelFinalizarReparacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnFinalizarReparacion.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        btnFinalizarReparacion.setForeground(new java.awt.Color(255, 255, 255));
-        btnFinalizarReparacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnFinalizarReparacion.setText("Finalizar\nReparación");
-        btnFinalizarReparacion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnFinalizarReparacionMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnFinalizarReparacionMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnFinalizarReparacionMouseExited(evt);
-            }
-        });
-        panelFinalizarReparacion.add(btnFinalizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 30));
-
-        jPanel20.add(panelFinalizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 150, 30));
-
         panelAggReparacion.setBackground(new java.awt.Color(0, 134, 190));
         panelAggReparacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1034,74 +1095,31 @@ public class MainForm extends javax.swing.JFrame {
 
         jSeparator18.setBackground(new java.awt.Color(0, 134, 190));
         jSeparator18.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel20.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 160, 140, 20));
-
-        jPanel20.add(comboBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 170, 30));
+        jPanel20.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 100, 20));
 
         jSeparator19.setBackground(new java.awt.Color(0, 134, 190));
         jSeparator19.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel20.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 250, 140, 20));
+        jPanel20.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 140, 20));
 
         calendarFechaEntrada.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel20.add(calendarFechaEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 170, 30));
+        jPanel20.add(calendarFechaEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 170, 30));
 
-        txtPrecioReparacion.setBackground(new java.awt.Color(51, 51, 51));
-        txtPrecioReparacion.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        txtPrecioReparacion.setForeground(new java.awt.Color(123, 123, 123));
-        txtPrecioReparacion.setText("Ingrese Precio");
-        txtPrecioReparacion.setBorder(null);
-        txtPrecioReparacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrecioReparacionActionPerformed(evt);
-            }
-        });
-        txtPrecioReparacion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtPrecioReparacionKeyTyped(evt);
-            }
-        });
-        jPanel20.add(txtPrecioReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 300, 140, 20));
-
-        jSeparator20.setBackground(new java.awt.Color(0, 134, 190));
-        jSeparator20.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel20.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 320, 140, 20));
-
-        jPanel20.add(comboServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 46, 170, 30));
+        jPanel20.add(comboServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 46, 200, 30));
 
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha de Entrada");
-        jPanel20.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 230, -1, -1));
+        jPanel20.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Elija Bicicleta");
-        jPanel20.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 140, -1, -1));
+        jPanel20.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Elija Servicio");
-        jPanel20.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 50, -1, -1));
-
-        txtBuscarReparacionID.setBackground(new java.awt.Color(51, 51, 51));
-        txtBuscarReparacionID.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        txtBuscarReparacionID.setForeground(new java.awt.Color(123, 123, 123));
-        txtBuscarReparacionID.setText("Ingrese ID Reparación");
-        txtBuscarReparacionID.setBorder(null);
-        txtBuscarReparacionID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarReparacionIDActionPerformed(evt);
-            }
-        });
-        txtBuscarReparacionID.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtBuscarReparacionIDKeyTyped(evt);
-            }
-        });
-        jPanel20.add(txtBuscarReparacionID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 160, 20));
-
-        jSeparator31.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel20.add(jSeparator31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 160, 20));
+        jPanel20.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         radioBtnRepEntregada.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         radioBtnRepEntregada.setForeground(new java.awt.Color(255, 255, 255));
@@ -1112,6 +1130,27 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel20.add(radioBtnRepEntregada, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 70, -1));
+
+        jLabel41.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("Elija Repuesto");
+        jPanel20.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+
+        jSeparator26.setForeground(new java.awt.Color(0, 134, 190));
+        jPanel20.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 110, 20));
+
+        jPanel20.add(comboItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 200, 30));
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Cant.");
+        jPanel20.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
+
+        jSeparator27.setForeground(new java.awt.Color(0, 134, 190));
+        jPanel20.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 50, 20));
+        jPanel20.add(cantRepuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 70, -1));
+
+        jPanel20.add(comboBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 200, 30));
 
         jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 350, 450));
 
@@ -1124,6 +1163,8 @@ public class MainForm extends javax.swing.JFrame {
         jLabel30.setText("Repuestos");
         jPanel22.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 30));
 
+        tablaItemRepuesto.setBackground(new java.awt.Color(48, 46, 46));
+        tablaItemRepuesto.setForeground(new java.awt.Color(153, 153, 153));
         tablaItemRepuesto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1134,34 +1175,43 @@ public class MainForm extends javax.swing.JFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
-        jScrollPane4.setViewportView(tablaItemRepuesto);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
-        jPanel22.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 470, 170));
-
-        panelBtnRefreshServicios1.setBackground(new java.awt.Color(0, 111, 157));
-        panelBtnRefreshServicios1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnRefreshServicios1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        btnRefreshServicios1.setForeground(new java.awt.Color(255, 255, 255));
-        btnRefreshServicios1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnRefreshServicios1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/refresh.png"))); // NOI18N
-        btnRefreshServicios1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRefreshServicios1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnRefreshServicios1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnRefreshServicios1MouseExited(evt);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        panelBtnRefreshServicios1.add(btnRefreshServicios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
+        tablaItemRepuesto.setEnabled(false);
+        tablaItemRepuesto.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(tablaItemRepuesto);
+        if (tablaItemRepuesto.getColumnModel().getColumnCount() > 0) {
+            tablaItemRepuesto.getColumnModel().getColumn(0).setResizable(false);
+            tablaItemRepuesto.getColumnModel().getColumn(1).setResizable(false);
+            tablaItemRepuesto.getColumnModel().getColumn(2).setResizable(false);
+            tablaItemRepuesto.getColumnModel().getColumn(3).setResizable(false);
+        }
 
-        jPanel22.add(panelBtnRefreshServicios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, -1, -1));
+        jPanel22.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 470, 170));
 
-        jPanel19.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 470, 250));
+        jLabel14.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Elija Bicicleta a Filtrar");
+        jPanel22.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        jSeparator29.setForeground(new java.awt.Color(0, 134, 190));
+        jPanel22.add(jSeparator29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 160, 20));
+
+        comboBicicletaFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBicicletaFiltrarActionPerformed(evt);
+            }
+        });
+        jPanel22.add(comboBicicletaFiltrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 200, 30));
+
+        jPanel19.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 470, 260));
 
         jPanel26.setBackground(new java.awt.Color(51, 51, 51));
         jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1170,16 +1220,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel34.setText("Agregar Repuestos a Reparaciones");
-        jPanel26.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 30));
-
-        jSeparator26.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel26.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, 20));
-
-        jPanel26.add(comboItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 160, 30));
-
-        jSeparator27.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel26.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 50, 20));
-        jPanel26.add(cantRepuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 70, -1));
+        jPanel26.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 30));
 
         panelAggItemRepuesto.setBackground(new java.awt.Color(0, 134, 190));
         panelAggItemRepuesto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1252,22 +1293,53 @@ public class MainForm extends javax.swing.JFrame {
 
         jPanel26.add(comboReparacionXitemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 160, 30));
 
-        jLabel7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Cant.");
-        jPanel26.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
-
-        jLabel41.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("Elija Repuesto");
-        jPanel26.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
         jLabel10.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Elija Reparación");
         jPanel26.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
-        jPanel19.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 450, 190));
+        txtPrecioReparacion.setBackground(new java.awt.Color(51, 51, 51));
+        txtPrecioReparacion.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtPrecioReparacion.setForeground(new java.awt.Color(123, 123, 123));
+        txtPrecioReparacion.setText("Ingrese Precio");
+        txtPrecioReparacion.setBorder(null);
+        txtPrecioReparacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrecioReparacionActionPerformed(evt);
+            }
+        });
+        txtPrecioReparacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioReparacionKeyTyped(evt);
+            }
+        });
+        jPanel26.add(txtPrecioReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 140, 20));
+
+        jSeparator20.setBackground(new java.awt.Color(0, 134, 190));
+        jSeparator20.setForeground(new java.awt.Color(0, 134, 190));
+        jPanel26.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, 20));
+
+        txtBuscarReparacionID.setBackground(new java.awt.Color(51, 51, 51));
+        txtBuscarReparacionID.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        txtBuscarReparacionID.setForeground(new java.awt.Color(123, 123, 123));
+        txtBuscarReparacionID.setText("Ingrese ID Reparación");
+        txtBuscarReparacionID.setBorder(null);
+        txtBuscarReparacionID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarReparacionIDActionPerformed(evt);
+            }
+        });
+        txtBuscarReparacionID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscarReparacionIDKeyTyped(evt);
+            }
+        });
+        jPanel26.add(txtBuscarReparacionID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, 20));
+
+        jSeparator31.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel26.add(jSeparator31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 160, 20));
+
+        jPanel19.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 470, 190));
 
         radioBtnRepTerminada.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         radioBtnRepTerminada.setForeground(new java.awt.Color(255, 255, 255));
@@ -2318,6 +2390,7 @@ public class MainForm extends javax.swing.JFrame {
             txtDniCliente.setText("Ingrese DNI");
             txtApellido.setText("Ingrese Apellido");
             txtNombre.setText("Ingrese Nombre");
+            llenarCombo();
         }
 
     }//GEN-LAST:event_btnAggClienteMouseClicked
@@ -2350,6 +2423,7 @@ public class MainForm extends javax.swing.JFrame {
             Cliente cliente = cData.buscarClienteDNI(dni);
             if (cliente != null) {
                 cData.borrarCliente(dni);
+                llenarCombo();
             } else {
                 JOptionPane.showMessageDialog(null, "Cliente no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2377,6 +2451,7 @@ public class MainForm extends javax.swing.JFrame {
             Cliente cliente = new Cliente(dni, nombre, apellido, domicilio, telefono, rootPaneCheckingEnabled);
             if (cliente != null) {
                 cData.actualizarCliente(cliente, dni);
+                llenarCombo();
             } else {
                 JOptionPane.showMessageDialog(null, "Cliente no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2398,6 +2473,8 @@ public class MainForm extends javax.swing.JFrame {
             txtNumSerieBicicleta.setText("Ingrese N° de Serie");
             txtColor.setText("Ingrese Color");
             txtMarca.setText("Ingrese Marca");
+            llenarComboBicicleta();
+            llenarComboBicicletaFiltrar();
         }
     }//GEN-LAST:event_btnAggBicicletaMouseClicked
 
@@ -2458,6 +2535,8 @@ public class MainForm extends javax.swing.JFrame {
                 txtBuscarxNumSertieBicicleta.setText("Ingrese N° de Serie");
                 txtColor.setText("Ingrese Color");
                 txtMarca.setText("Ingrese Marca");
+                llenarComboBicicleta();
+                llenarComboBicicletaFiltrar();
             }
         }
 
@@ -2475,6 +2554,8 @@ public class MainForm extends javax.swing.JFrame {
             txtRepuestoNumSerie.setText("Ingrese N° de Serie");
             txtNombreRepuesto.setText("Ingrese Repuesto");
             txtPrecioRepuesto.setText("Ingrese el Precio");
+            llenarComboRepuesto();
+            cargarTablaRepuestos();
         }
     }//GEN-LAST:event_btnAggRepuestoMouseClicked
 
@@ -2515,6 +2596,8 @@ public class MainForm extends javax.swing.JFrame {
             Repuesto repuesto = repuestoData.obtenerRepuesto(numSerie);
             if (repuesto != null && repuesto.isActivo()) {
                 repuestoData.eliminarRepuestoPorNumSerie(numSerie);
+                llenarComboRepuesto();
+                cargarTablaRepuestos();
             } else {
                 JOptionPane.showMessageDialog(null, "Repuesto no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2533,6 +2616,8 @@ public class MainForm extends javax.swing.JFrame {
             txtBuscarRepuestoXnumSerie.setText("Ingrese N° de Serie");
             txtNombreRepuestoActualizar.setText("Repuesto");
             txtPrecioRepuestoActualizar.setText("Precio");
+            llenarComboRepuesto();
+            cargarTablaRepuestos();
         }
     }//GEN-LAST:event_btnActualizarRepuestoMouseClicked
 
@@ -2557,6 +2642,8 @@ public class MainForm extends javax.swing.JFrame {
             float precio = Float.parseFloat(txtPrecioServicio.getText());
             Servicio servicio = new Servicio(precio, nombre, true);
             servicioData.agregarServicio(servicio);
+            llenarComboServicio();
+            cargarTablaServicios();
         }
     }//GEN-LAST:event_btnAggServicioMouseClicked
 
@@ -2593,6 +2680,8 @@ public class MainForm extends javax.swing.JFrame {
                 txtCodServicioBuscar.setText("Ingrese Código de Servicio");
                 txtServicioNombreActualizar.setText("Servicio");
                 txtServicioPrecioActualizar.setText("Precio");
+                cargarTablaServicios();
+                llenarComboServicio();
             } else {
                 JOptionPane.showMessageDialog(null, "No se encontró el servicio.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2611,6 +2700,8 @@ public class MainForm extends javax.swing.JFrame {
             txtCodServicioBuscar.setText("Ingrese Código de Servicio");
             txtServicioNombreActualizar.setText("Servicio");
             txtServicioPrecioActualizar.setText("Precio");
+            llenarComboServicio();
+            cargarTablaServicios();
         }
     }//GEN-LAST:event_btnActualizarServicioMouseClicked
 
@@ -2641,21 +2732,29 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPrecioReparacionKeyTyped
 
     private void btnAgregarReparacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarReparacionMouseClicked
-        if (comboBicicleta.getSelectedIndex() == -1 || comboServicio.getSelectedIndex() == -1 || txtPrecioReparacion.getText().equals("") || txtPrecioReparacion.getText().equals("Ingrese Precio")) {
+        int cantidad = Integer.parseInt(cantRepuestos.getValue().toString());
+        if (comboBicicleta.getSelectedIndex() == -1 || comboServicio.getSelectedIndex() == -1 || comboItemRepuesto.getSelectedIndex() == -1 || cantidad < 1) {
             JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             if (calendarFechaEntrada.getCalendar() != null) {
+
+                Repuesto repuesto = (Repuesto) comboItemRepuesto.getSelectedItem();
                 Servicio servicio = (Servicio) comboServicio.getSelectedItem();
                 Bicicleta bicicleta = (Bicicleta) comboBicicleta.getSelectedItem();
                 int dia = calendarFechaEntrada.getCalendar().get(Calendar.DAY_OF_MONTH);
                 int mes = calendarFechaEntrada.getCalendar().get(Calendar.MONTH);
                 int anio = calendarFechaEntrada.getCalendar().get(Calendar.YEAR);
-                float precio = Float.parseFloat(txtPrecioReparacion.getText());
+                float precio = servicio.getPrecio();
                 Reparacion reparacion = new Reparacion(servicio, bicicleta, LocalDate.of(anio, mes + 1, dia), precio, true, true);
+                ItemRepuesto item = new ItemRepuesto(repuesto, reparacion, cantidad, true);
+                precio += repuesto.getPrecio() * cantidad;
+                reparacion.setCosto(precio);
                 reparacionData.ingresarReparacion(reparacion);
+                itemData.ingresarItems(item);
                 comboServicio.setSelectedIndex(-1);
                 comboBicicleta.setSelectedIndex(-1);
-                txtPrecioReparacion.setText("Ingrese Precio");
+                comboItemRepuesto.setSelectedIndex(-1);
+                cargarTablaItemRepuesto();
             } else {
                 JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2677,6 +2776,7 @@ public class MainForm extends javax.swing.JFrame {
             Reparacion reparacion = reparacionData.buscarReparacion(id);
             if (reparacion != null) {
                 reparacionData.BorrarReparacion(id);
+                cargarTablaItemRepuesto();
             } else {
                 JOptionPane.showMessageDialog(null, "Reparación no encontrada.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2699,23 +2799,12 @@ public class MainForm extends javax.swing.JFrame {
                 comboServicio.setSelectedIndex(-1);
                 comboBicicleta.setSelectedIndex(-1);
                 txtPrecioReparacion.setText("Ingrese Precio");
+                cargarTablaItemRepuesto();
             } else {
                 JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnActualizarReparacionMouseClicked
-
-    private void btnRefreshServicios1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshServicios1MouseClicked
-        cargarTablaItemRepuesto();
-    }//GEN-LAST:event_btnRefreshServicios1MouseClicked
-
-    private void btnRefreshServicios1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshServicios1MouseEntered
-        panelBtnRefreshServicios1.setBackground(new Color(0, 196, 223));
-    }//GEN-LAST:event_btnRefreshServicios1MouseEntered
-
-    private void btnRefreshServicios1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshServicios1MouseExited
-        panelBtnRefreshServicios1.setBackground(new Color(0, 111, 157));
-    }//GEN-LAST:event_btnRefreshServicios1MouseExited
 
     private void btnAggItemRepuestoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggItemRepuestoMouseClicked
         int cantidad = Integer.parseInt(cantRepuestos.getValue().toString());
@@ -2806,28 +2895,77 @@ public class MainForm extends javax.swing.JFrame {
         panelBtnRefreshReparacion.setBackground(new Color(0, 111, 157));
     }//GEN-LAST:event_btnRefreshReparacionMouseExited
 
+    private void txtPrecioServicioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioServicioKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtPrecioServicioKeyTyped
+
+    private void comboBicicletaFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBicicletaFiltrarActionPerformed
+        borrarFilasTabla(tableItemRepuestos);
+        Bicicleta bici = (Bicicleta) comboBicicletaFiltrar.getSelectedItem();
+        if (bici!=null) {
+            ArrayList<ItemRepuesto> lista = (ArrayList) itemData.obtenerBicicletaXreparacion(bici.getNumSerie());
+            for (ItemRepuesto aux : lista) {
+                Object[] filas = new Object[5];
+                filas[0] = aux.getId_reparacion().getId_bicicleta().getNumSerie();
+                filas[1] = aux.getId_reparacion().getId_reparacion();
+                filas[2] = aux.getNum_serie().getDescripcion();
+                filas[3] = aux.getCantidad();
+                filas[4] = aux.getId_reparacion().getFecha_entrada();
+                tableItemRepuestos.addRow(filas);
+            }
+            tablaItemRepuesto.setModel(tableItemRepuestos);
+        }
+
+    }//GEN-LAST:event_comboBicicletaFiltrarActionPerformed
+
     private void llenarCombo() {
         List<Cliente> listaCliente = cData.obtenerClientes();
+        comboDuenioBici.removeAllItems();
         for (Cliente cliente : listaCliente) {
-            comboDuenioBici.addItem(cliente);
+            if (cliente.isActivo()) {
+                comboDuenioBici.addItem(cliente);
+            }
         }
         comboDuenioBici.setSelectedIndex(-1);
     }
 
     private void llenarComboServicio() {
+        comboServicio.removeAllItems();
         List<Servicio> lista = servicioData.listarServicios();
         for (Servicio aux : lista) {
-            comboServicio.addItem(aux);
+            if (aux.isActivo()) {
+                comboServicio.addItem(aux);
+            }
+
         }
         comboServicio.setSelectedIndex(-1);
     }
 
     private void llenarComboBicicleta() {
+        comboBicicleta.removeAllItems();
         List<Bicicleta> lista = bData.obtenerBicicletas();
         for (Bicicleta aux : lista) {
-            comboBicicleta.addItem(aux);
+            if (aux.isActivo()) {
+                comboBicicleta.addItem(aux);
+            }
+
         }
         comboBicicleta.setSelectedIndex(-1);
+    }
+
+    private void llenarComboBicicletaFiltrar() {
+        comboBicicletaFiltrar.removeAllItems();
+        List<Bicicleta> lista = bData.obtenerBicicletas();
+        for (Bicicleta aux : lista) {
+            if (aux.isActivo()) {
+                comboBicicletaFiltrar.addItem(aux);
+            }
+
+        }
+        comboBicicletaFiltrar.setSelectedIndex(-1);
     }
 
     private void borrarFilasTabla(DefaultTableModel tabla) {
@@ -2887,19 +3025,9 @@ public class MainForm extends javax.swing.JFrame {
         borrarFilasTabla(tableReparaciones);
         String x;
         ArrayList<Reparacion> lsitaRepuesto = reparacionData.obtenerReparaciones();
-        ArrayList<ItemRepuesto> listaItems = itemData.obtenerRepuestos();
-        float costoTotal=0;
 
         for (Reparacion aux : lsitaRepuesto) {
             Object[] filas = new Object[7];
-
-            for (ItemRepuesto aux2 : listaItems) {
-                if (aux2.getId_reparacion().getId_reparacion() == aux.getId_reparacion()) {
-                    costoTotal = itemData.costoRepuestos(aux.getId_reparacion()) + reparacionData.costoReparacion(aux.getId_reparacion());
-                } else {
-                    costoTotal = reparacionData.costoReparacion(aux.getId_reparacion());
-                }
-            }
 
             if (!aux.isEstado()) {
                 x = "Finalizada";
@@ -2913,7 +3041,7 @@ public class MainForm extends javax.swing.JFrame {
             filas[2] = aux.getId_servicio().getDescripcion();
             filas[3] = aux.getId_bicicleta().getNumSerie();
             filas[4] = aux.getFecha_entrada();
-            filas[5] = costoTotal;
+            filas[5] = aux.getCosto()*1.15;
             filas[6] = x;
             tableReparaciones.addRow(filas);
         }
@@ -2935,10 +3063,11 @@ public class MainForm extends javax.swing.JFrame {
 
     private void armarCabeceraTablaItem() {
         ArrayList<Object> columnas = new ArrayList();
-        columnas.add("N° Serie");
+        columnas.add("N°SerieBici");
         columnas.add("ID Reparación");
+        columnas.add("Repuesto");
         columnas.add("Cantidad");
-        columnas.add("Activo");
+        columnas.add("Fecha");
 
         for (Object aux : columnas) {
             tableItemRepuestos.addColumn(aux);
@@ -2951,11 +3080,12 @@ public class MainForm extends javax.swing.JFrame {
         ArrayList<ItemRepuesto> lista = itemData.obtenerRepuestos();
 
         for (ItemRepuesto aux : lista) {
-            Object[] filas = new Object[4];
-            filas[0] = aux.getNum_serie().getNum_serie();
+            Object[] filas = new Object[5];
+            filas[0] = aux.getId_reparacion().getId_bicicleta().getNumSerie();
             filas[1] = aux.getId_reparacion().getId_reparacion();
-            filas[2] = aux.getCantidad();
-            filas[3] = aux.isActivo();
+            filas[2] = aux.getNum_serie().getDescripcion();
+            filas[3] = aux.getCantidad();
+            filas[4] = aux.getId_reparacion().getFecha_entrada();
             tableItemRepuestos.addRow(filas);
         }
         tablaItemRepuesto.setModel(tableItemRepuestos);
@@ -2976,25 +3106,24 @@ public class MainForm extends javax.swing.JFrame {
         tablaServicios.setModel(tableServicios);
     }
 
-//    private void llenarComboRepaXitemRepuesto() {
-//        List<Reparacion> lista = reparacionData.obtenerReparaciones();
-//        for (Reparacion aux : lista) {
-//            comboRepuestos.addItem(aux);
-//        }
-//        comboRepuestos.setSelectedIndex(-1);
-//    }
     private void llenarComboRepuesto() {
+        comboItemRepuesto.removeAllItems();
         List<Repuesto> lista = repuestoData.listadoRepuesto();
         for (Repuesto aux : lista) {
-            comboItemRepuesto.addItem(aux);
+            if (aux.isActivo()) {
+                comboItemRepuesto.addItem(aux);
+            }
         }
         comboItemRepuesto.setSelectedIndex(-1);
     }
 
     private void llenarComboReparacionBuscar() {
+        comboReparacionXitemRepuesto.removeAllItems();
         List<Reparacion> lista = reparacionData.obtenerReparaciones();
         for (Reparacion aux : lista) {
-            comboReparacionXitemRepuesto.addItem(aux);
+            if (aux.isActivo()) {
+                comboReparacionXitemRepuesto.addItem(aux);
+            }
         }
         comboReparacionXitemRepuesto.setSelectedIndex(-1);
     }
@@ -3064,7 +3193,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel btnRefreshReparacion;
     private javax.swing.JLabel btnRefreshRepuesto;
     private javax.swing.JLabel btnRefreshServicios;
-    private javax.swing.JLabel btnRefreshServicios1;
     private javax.swing.JPanel btnSalir;
     private javax.swing.JPanel btnirBiciCliente;
     private javax.swing.JPanel btnirReparaciones;
@@ -3074,6 +3202,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JSpinner cantRepuestos;
     private javax.swing.JLabel clientBtn;
     private javax.swing.JComboBox<Bicicleta> comboBicicleta;
+    private javax.swing.JComboBox<Bicicleta> comboBicicletaFiltrar;
     private javax.swing.JComboBox<Cliente> comboDuenioBici;
     private javax.swing.JComboBox<Repuesto> comboItemRepuesto;
     private javax.swing.JComboBox<Reparacion> comboReparacionXitemRepuesto;
@@ -3085,6 +3214,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -3148,6 +3278,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator27;
     private javax.swing.JSeparator jSeparator28;
+    private javax.swing.JSeparator jSeparator29;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator30;
     private javax.swing.JSeparator jSeparator31;
@@ -3185,7 +3316,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel panelBtnRefreshReparacion;
     private javax.swing.JPanel panelBtnRefreshRepuesto;
     private javax.swing.JPanel panelBtnRefreshServicios;
-    private javax.swing.JPanel panelBtnRefreshServicios1;
     private javax.swing.JPanel panelBuscarBicicleta;
     private javax.swing.JPanel panelBuscarCliente;
     private javax.swing.JPanel panelBuscarRepuesto;

@@ -1,8 +1,10 @@
 package Data;
 
 
+import Modelo.Bicicleta;
 import Modelo.ItemRepuesto;
 import Modelo.Reparacion;
+import Modelo.Repuesto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -183,5 +185,27 @@ public class ItemRepuestoData {
             Logger.getLogger(ReparacionData.class.getName()).log(Level.SEVERE, null, ex);
         }
         return costo;
+    }
+    
+    public ArrayList<ItemRepuesto> obtenerBicicletaXreparacion(String num_serie){
+        String query = "SELECT itemrepuesto.num_serie,itemrepuesto.id_reparacion, itemrepuesto.cantidad,itemrepuesto.activo FROM repuesto AS r, bicicleta AS b, itemrepuesto,reparacion WHERE itemrepuesto.num_serie=r.num_serie AND reparacion.id_reparacion = itemrepuesto.id_reparacion AND reparacion.id_bicicleta = b.num_serie AND itemrepuesto.activo=true AND reparacion.activo=true AND b.num_serie = ?;";
+        ArrayList<ItemRepuesto> itemsReparacion = new ArrayList();
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, num_serie);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                ItemRepuesto item = new ItemRepuesto();
+                item.setNum_serie(rData.obtenerRepuesto(rs.getString("num_serie")));
+                item.setId_reparacion(repData.buscarReparacion(rs.getInt("id_reparacion")));
+                item.setCantidad(rs.getInt("cantidad"));
+                item.setActivo(rs.getBoolean("activo"));
+                itemsReparacion.add(item);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-obtenerBicicletaXreparacion | "+ex.getMessage());
+        }
+        return itemsReparacion;
     }
 }
