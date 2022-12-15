@@ -37,7 +37,7 @@ public class ItemRepuestoData {
             ps.setBoolean(4, i.isActivo());
 
             if (ps.executeUpdate() > 0) {
-                JOptionPane.showMessageDialog(null, "Item Agregado");
+                JOptionPane.showMessageDialog(null, "Repuesto Agregado");
 
             } else {
                 JOptionPane.showMessageDialog(null, "Item No Agregado");
