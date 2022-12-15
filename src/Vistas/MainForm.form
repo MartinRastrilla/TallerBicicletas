@@ -517,9 +517,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRepuestoNumSerieActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="// Establecer un manejador de eventos para los eventos focusGained() y focusLost()&#xa;txtRepuestoNumSerie.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtRepuestoNumSerie.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtRepuestoNumSerie.getText().isEmpty()) {&#xa;            txtRepuestoNumSerie.setText(&quot;Ingrese N&#xb0; de Serie&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="50" width="230" height="20"/>
@@ -545,9 +542,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreRepuestoActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtNombreRepuesto.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtNombreRepuesto.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtNombreRepuesto.getText().isEmpty()) {&#xa;            txtNombreRepuesto.setText(&quot;Ingrese Repuesto&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="100" width="230" height="20"/>
@@ -586,9 +580,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrecioRepuestoActionPerformed"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPrecioRepuestoKeyTyped"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtPrecioRepuesto.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtPrecioRepuesto.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtPrecioRepuesto.getText().isEmpty()) {&#xa;            txtPrecioRepuesto.setText(&quot;Ingrese el Precio&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="150" width="230" height="20"/>
@@ -832,9 +823,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBuscarRepuestoXnumSerieActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtBuscarRepuestoXnumSerie.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtBuscarRepuestoXnumSerie.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtBuscarRepuestoXnumSerie.getText().isEmpty()) {&#xa;            txtBuscarRepuestoXnumSerie.setText(&quot;Ingrese N&#xb0; de Serie&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="50" width="230" height="20"/>
@@ -912,9 +900,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreRepuestoActualizarActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtNombreRepuestoActualizar.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtNombreRepuestoActualizar.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtNombreRepuestoActualizar.getText().isEmpty()) {&#xa;            txtNombreRepuestoActualizar.setText(&quot;Repuesto&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="130" width="230" height="20"/>
@@ -953,9 +938,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrecioRepuestoActualizarActionPerformed"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPrecioRepuestoActualizarKeyTyped"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtPrecioRepuestoActualizar.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtPrecioRepuestoActualizar.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtPrecioRepuestoActualizar.getText().isEmpty()) {&#xa;            txtPrecioRepuestoActualizar.setText(&quot;Precio&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="180" width="230" height="20"/>
@@ -1158,9 +1140,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreServicioActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtNombreServicio.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtNombreServicio.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtNombreServicio.getText().isEmpty()) {&#xa;            txtNombreServicio.setText(&quot;Ingrese Servicio&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="40" width="230" height="20"/>
@@ -1199,9 +1178,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrecioServicioActionPerformed"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPrecioServicioKeyTyped"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtPrecioServicio.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtPrecioServicio.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtPrecioServicio.getText().isEmpty()) {&#xa;            txtPrecioServicio.setText(&quot;Ingrese Precio&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="110" width="230" height="20"/>
@@ -1430,9 +1406,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodServicioBuscarActionPerformed"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodServicioBuscarKeyTyped"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtCodServicioBuscar.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtCodServicioBuscar.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtCodServicioBuscar.getText().isEmpty()) {&#xa;            txtCodServicioBuscar.setText(&quot;Ingrese C&#xf3;digo de Servicio&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="40" width="230" height="20"/>
@@ -1616,9 +1589,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtServicioPrecioActualizarActionPerformed"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtServicioPrecioActualizarKeyTyped"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtServicioPrecioActualizar.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtServicioPrecioActualizar.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtServicioPrecioActualizar.getText().isEmpty()) {&#xa;            txtServicioPrecioActualizar.setText(&quot;Precio&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="370" y="110" width="170" height="20"/>
@@ -1644,9 +1614,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtServicioNombreActualizarActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtServicioNombreActualizar.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtServicioNombreActualizar.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtServicioNombreActualizar.getText().isEmpty()) {&#xa;            txtServicioNombreActualizar.setText(&quot;Servicio&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="20" y="110" width="280" height="20"/>
@@ -2619,9 +2586,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDniClienteActionPerformed"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDniClienteKeyTyped"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtDniCliente.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtDniCliente.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtDniCliente.getText().isEmpty()) {&#xa;            txtDniCliente.setText(&quot;Ingrese DNI&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="60" width="230" height="20"/>
@@ -2661,9 +2625,6 @@
                         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNombreFocusGained"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtNombre.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtNombre.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtNombre.getText().isEmpty()) {&#xa;            txtNombre.setText(&quot;Ingrese Nombre&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="160" width="230" height="20"/>
@@ -2703,9 +2664,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelefonoActionPerformed"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefonoKeyTyped"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtTelefono.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtTelefono.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtTelefono.getText().isEmpty()) {&#xa;            txtTelefono.setText(&quot;Ingrese Telefono&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="210" width="230" height="20"/>
@@ -2756,9 +2714,6 @@
                         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtDomicilioFocusGained"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDomicilioActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtDomicilio.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtDomicilio.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtDomicilio.getText().isEmpty()) {&#xa;            txtDomicilio.setText(&quot;Ingrese Domicilio&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="260" width="230" height="20"/>
@@ -2785,9 +2740,6 @@
                         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtApellidoFocusGained"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtApellidoActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtApellido.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtApellido.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtApellido.getText().isEmpty()) {&#xa;            txtApellido.setText(&quot;Ingrese Apellido&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="5" y="110" width="230" height="20"/>
@@ -3165,9 +3117,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtColorActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtColor.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtColor.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtColor.getText().isEmpty()) {&#xa;            txtColor.setText(&quot;Ingrese Color&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="470" y="150" width="170" height="20"/>
@@ -3193,9 +3142,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMarcaActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtMarca.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtMarca.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtMarca.getText().isEmpty()) {&#xa;            txtMarca.setText(&quot;Ingrese Marca&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="470" y="200" width="170" height="20"/>
@@ -3233,9 +3179,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumSerieBicicletaActionPerformed"/>
                       </Events>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtNumSerieBicicleta.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtNumSerieBicicleta.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtNumSerieBicicleta.getText().isEmpty()) {&#xa;            txtNumSerieBicicleta.setText(&quot;Ingrese N&#xb0; de Serie&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="470" y="250" width="170" height="20"/>
@@ -3299,9 +3242,6 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBuscarxNumSertieBicicletaActionPerformed"/>
                           </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="txtBuscarxNumSertieBicicleta.addFocusListener(new FocusAdapter() {&#xa;    @Override&#xa;    public void focusGained(FocusEvent e) {&#xa;        // Borrar la cadena inicial cuando el control adquiera el foco&#xa;        txtBuscarxNumSertieBicicleta.setText(&quot;&quot;);&#xa;    }&#xa;&#xa;    @Override&#xa;    public void focusLost(FocusEvent e) {&#xa;        // Si el control queda en blanco despu&#xe9;s de perder el foco,&#xa;        // volver a establecer la cadena inicial&#xa;        if (txtBuscarxNumSertieBicicleta.getText().isEmpty()) {&#xa;            txtBuscarxNumSertieBicicleta.setText(&quot;Ingrese N&#xb0; de Serie&quot;);&#xa;        }&#xa;    }&#xa;});"/>
-                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="5" y="10" width="150" height="20"/>
