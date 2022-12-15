@@ -19,6 +19,8 @@ import Modelo.Reparacion;
 import Modelo.Repuesto;
 import Modelo.Servicio;
 import java.awt.Color;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.sql.Connection;
 import java.time.LocalDate;
 import java.util.AbstractList;
@@ -474,6 +476,23 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel6.add(txtRepuestoNumSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 50, 230, 20));
+        // Establecer un manejador de eventos para los eventos focusGained() y focusLost()
+        txtRepuestoNumSerie.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtRepuestoNumSerie.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtRepuestoNumSerie.getText().isEmpty()) {
+                    txtRepuestoNumSerie.setText("Ingrese N° de Serie");
+                }
+            }
+        });
 
         txtNombreRepuesto.setBackground(new java.awt.Color(51, 51, 51));
         txtNombreRepuesto.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -486,6 +505,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel6.add(txtNombreRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 100, 230, 20));
+        txtNombreRepuesto.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtNombreRepuesto.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtNombreRepuesto.getText().isEmpty()) {
+                    txtNombreRepuesto.setText("Ingrese Repuesto");
+                }
+            }
+        });
 
         jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel6.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 120, 230, 20));
@@ -506,6 +541,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel6.add(txtPrecioRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 150, 230, 20));
+        txtPrecioRepuesto.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtPrecioRepuesto.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtPrecioRepuesto.getText().isEmpty()) {
+                    txtPrecioRepuesto.setText("Ingrese el Precio");
+                }
+            }
+        });
 
         jSeparator5.setForeground(new java.awt.Color(60, 63, 65));
         jPanel6.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 350, 20));
@@ -618,6 +669,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel8.add(txtBuscarRepuestoXnumSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 50, 230, 20));
+        txtBuscarRepuestoXnumSerie.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtBuscarRepuestoXnumSerie.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtBuscarRepuestoXnumSerie.getText().isEmpty()) {
+                    txtBuscarRepuestoXnumSerie.setText("Ingrese N° de Serie");
+                }
+            }
+        });
 
         jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
         jPanel8.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 70, 230, 20));
@@ -655,6 +722,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel8.add(txtNombreRepuestoActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 130, 230, 20));
+        txtNombreRepuestoActualizar.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtNombreRepuestoActualizar.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtNombreRepuestoActualizar.getText().isEmpty()) {
+                    txtNombreRepuestoActualizar.setText("Repuesto");
+                }
+            }
+        });
 
         jSeparator8.setForeground(new java.awt.Color(255, 255, 255));
         jPanel8.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 150, 230, 20));
@@ -675,6 +758,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel8.add(txtPrecioRepuestoActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 180, 230, 20));
+        txtPrecioRepuestoActualizar.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtPrecioRepuestoActualizar.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtPrecioRepuestoActualizar.getText().isEmpty()) {
+                    txtPrecioRepuestoActualizar.setText("Precio");
+                }
+            }
+        });
 
         jSeparator9.setForeground(new java.awt.Color(255, 255, 255));
         jPanel8.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 200, 230, 20));
@@ -760,6 +859,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel13.add(txtNombreServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, 230, 20));
+        txtNombreServicio.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtNombreServicio.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtNombreServicio.getText().isEmpty()) {
+                    txtNombreServicio.setText("Ingrese Servicio");
+                }
+            }
+        });
 
         jSeparator10.setForeground(new java.awt.Color(255, 255, 255));
         jPanel13.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 60, 230, 20));
@@ -780,6 +895,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel13.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, 230, 20));
+        txtPrecioServicio.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtPrecioServicio.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtPrecioServicio.getText().isEmpty()) {
+                    txtPrecioServicio.setText("Ingrese Precio");
+                }
+            }
+        });
 
         jSeparator11.setForeground(new java.awt.Color(255, 255, 255));
         jPanel13.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 130, 230, 20));
@@ -892,6 +1023,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel15.add(txtCodServicioBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 40, 230, 20));
+        txtCodServicioBuscar.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtCodServicioBuscar.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtCodServicioBuscar.getText().isEmpty()) {
+                    txtCodServicioBuscar.setText("Ingrese Código de Servicio");
+                }
+            }
+        });
 
         jSeparator13.setForeground(new java.awt.Color(255, 255, 255));
         jPanel15.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 60, 230, 20));
@@ -985,6 +1132,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel15.add(txtServicioPrecioActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 170, 20));
+        txtServicioPrecioActualizar.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtServicioPrecioActualizar.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtServicioPrecioActualizar.getText().isEmpty()) {
+                    txtServicioPrecioActualizar.setText("Precio");
+                }
+            }
+        });
 
         txtServicioNombreActualizar.setBackground(new java.awt.Color(51, 51, 51));
         txtServicioNombreActualizar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -997,6 +1160,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel15.add(txtServicioNombreActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 280, 20));
+        txtServicioNombreActualizar.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtServicioNombreActualizar.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtServicioNombreActualizar.getText().isEmpty()) {
+                    txtServicioNombreActualizar.setText("Servicio");
+                }
+            }
+        });
 
         jSeparator17.setForeground(new java.awt.Color(255, 255, 255));
         jPanel15.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 280, 20));
@@ -1392,6 +1571,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel28.add(txtDniCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 60, 230, 20));
+        txtDniCliente.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtDniCliente.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtDniCliente.getText().isEmpty()) {
+                    txtDniCliente.setText("Ingrese DNI");
+                }
+            }
+        });
 
         jSeparator21.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator21.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -1413,6 +1608,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel28.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 160, 230, 20));
+        txtNombre.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtNombre.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtNombre.getText().isEmpty()) {
+                    txtNombre.setText("Ingrese Nombre");
+                }
+            }
+        });
 
         jSeparator22.setForeground(new java.awt.Color(255, 255, 255));
         jPanel28.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 180, 230, 20));
@@ -1438,6 +1649,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel28.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 210, 230, 20));
+        txtTelefono.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtTelefono.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtTelefono.getText().isEmpty()) {
+                    txtTelefono.setText("Ingrese Telefono");
+                }
+            }
+        });
 
         jSeparator23.setForeground(new java.awt.Color(255, 255, 255));
         jPanel28.add(jSeparator23, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 230, 230, 20));
@@ -1461,6 +1688,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel28.add(txtDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 260, 230, 20));
+        txtDomicilio.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtDomicilio.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtDomicilio.getText().isEmpty()) {
+                    txtDomicilio.setText("Ingrese Domicilio");
+                }
+            }
+        });
 
         txtApellido.setBackground(new java.awt.Color(51, 51, 51));
         txtApellido.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -1478,6 +1721,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel28.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 110, 230, 20));
+        txtApellido.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtApellido.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtApellido.getText().isEmpty()) {
+                    txtApellido.setText("Ingrese Apellido");
+                }
+            }
+        });
 
         jSeparator25.setForeground(new java.awt.Color(255, 255, 255));
         jPanel28.add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 130, 230, 20));
@@ -1637,6 +1896,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel28.add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 170, 20));
+        txtColor.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtColor.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtColor.getText().isEmpty()) {
+                    txtColor.setText("Ingrese Color");
+                }
+            }
+        });
 
         txtMarca.setBackground(new java.awt.Color(51, 51, 51));
         txtMarca.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -1649,6 +1924,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel28.add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 170, 20));
+        txtMarca.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtMarca.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtMarca.getText().isEmpty()) {
+                    txtMarca.setText("Ingrese Marca");
+                }
+            }
+        });
 
         jSeparator35.setForeground(new java.awt.Color(255, 255, 255));
         jPanel28.add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 170, 20));
@@ -1664,6 +1955,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel28.add(txtNumSerieBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 170, 20));
+        txtNumSerieBicicleta.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtNumSerieBicicleta.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtNumSerieBicicleta.getText().isEmpty()) {
+                    txtNumSerieBicicleta.setText("Ingrese N° de Serie");
+                }
+            }
+        });
 
         jSeparator36.setForeground(new java.awt.Color(255, 255, 255));
         jPanel28.add(jSeparator36, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 170, 20));
@@ -1684,6 +1991,22 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         jPanel37.add(txtBuscarxNumSertieBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 10, 150, 20));
+        txtBuscarxNumSertieBicicleta.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Borrar la cadena inicial cuando el control adquiera el foco
+                txtBuscarxNumSertieBicicleta.setText("");
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Si el control queda en blanco después de perder el foco,
+                // volver a establecer la cadena inicial
+                if (txtBuscarxNumSertieBicicleta.getText().isEmpty()) {
+                    txtBuscarxNumSertieBicicleta.setText("Ingrese N° de Serie");
+                }
+            }
+        });
 
         jSeparator37.setForeground(new java.awt.Color(255, 255, 255));
         jPanel37.add(jSeparator37, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 30, 150, 20));
