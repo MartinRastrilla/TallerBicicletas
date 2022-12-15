@@ -185,6 +185,11 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator27 = new javax.swing.JSeparator();
         cantRepuestos = new javax.swing.JSpinner();
         comboBicicleta = new javax.swing.JComboBox<>();
+        jSeparator28 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        comboReparacionXitemRepuesto = new javax.swing.JComboBox<>();
+        radioBtnNuevaReparacion = new javax.swing.JRadioButton();
+        jSeparator38 = new javax.swing.JSeparator();
         jPanel22 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -200,9 +205,6 @@ public class MainForm extends javax.swing.JFrame {
         btnActualizarItemRepuesto = new javax.swing.JLabel();
         panelBorrarItemRepuesto = new javax.swing.JPanel();
         btnBorrarItemRepuesto = new javax.swing.JLabel();
-        jSeparator28 = new javax.swing.JSeparator();
-        comboReparacionXitemRepuesto = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
         txtPrecioReparacion = new javax.swing.JTextField();
         jSeparator20 = new javax.swing.JSeparator();
         txtBuscarReparacionID = new javax.swing.JTextField();
@@ -396,9 +398,27 @@ public class MainForm extends javax.swing.JFrame {
         txtBuscarDNIduenioRep.setForeground(new java.awt.Color(123, 123, 123));
         txtBuscarDNIduenioRep.setText("Ingrese el DNI del dueño");
         txtBuscarDNIduenioRep.setBorder(null);
+        txtBuscarDNIduenioRep.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtBuscarDNIduenioRepFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtBuscarDNIduenioRepFocusLost(evt);
+            }
+        });
+        txtBuscarDNIduenioRep.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtBuscarDNIduenioRepMouseClicked(evt);
+            }
+        });
         txtBuscarDNIduenioRep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarDNIduenioRepActionPerformed(evt);
+            }
+        });
+        txtBuscarDNIduenioRep.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscarDNIduenioRepKeyTyped(evt);
             }
         });
         jPanel3.add(txtBuscarDNIduenioRep, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 160, 20));
@@ -418,6 +438,17 @@ public class MainForm extends javax.swing.JFrame {
         btnBuscarReparacionxDNI.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscarReparacionxDNI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnBuscarReparacionxDNI.setText("Buscar");
+        btnBuscarReparacionxDNI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBuscarReparacionxDNIMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBuscarReparacionxDNIMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBuscarReparacionxDNIMouseExited(evt);
+            }
+        });
         btnBuscarXdni.add(btnBuscarReparacionxDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 80, 40));
 
         jPanel3.add(btnBuscarXdni, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 80, 30));
@@ -468,6 +499,14 @@ public class MainForm extends javax.swing.JFrame {
         txtRepuestoNumSerie.setForeground(new java.awt.Color(123, 123, 123));
         txtRepuestoNumSerie.setText("Ingrese N° de Serie");
         txtRepuestoNumSerie.setBorder(null);
+        txtRepuestoNumSerie.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtRepuestoNumSerieFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtRepuestoNumSerieFocusLost(evt);
+            }
+        });
         txtRepuestoNumSerie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRepuestoNumSerieActionPerformed(evt);
@@ -480,6 +519,14 @@ public class MainForm extends javax.swing.JFrame {
         txtNombreRepuesto.setForeground(new java.awt.Color(123, 123, 123));
         txtNombreRepuesto.setText("Ingrese Repuesto");
         txtNombreRepuesto.setBorder(null);
+        txtNombreRepuesto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNombreRepuestoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNombreRepuestoFocusLost(evt);
+            }
+        });
         txtNombreRepuesto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreRepuestoActionPerformed(evt);
@@ -495,6 +542,14 @@ public class MainForm extends javax.swing.JFrame {
         txtPrecioRepuesto.setForeground(new java.awt.Color(123, 123, 123));
         txtPrecioRepuesto.setText("Ingrese el Precio");
         txtPrecioRepuesto.setBorder(null);
+        txtPrecioRepuesto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPrecioRepuestoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPrecioRepuestoFocusLost(evt);
+            }
+        });
         txtPrecioRepuesto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecioRepuestoActionPerformed(evt);
@@ -612,6 +667,14 @@ public class MainForm extends javax.swing.JFrame {
         txtBuscarRepuestoXnumSerie.setForeground(new java.awt.Color(123, 123, 123));
         txtBuscarRepuestoXnumSerie.setText("Ingrese N° de Serie");
         txtBuscarRepuestoXnumSerie.setBorder(null);
+        txtBuscarRepuestoXnumSerie.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtBuscarRepuestoXnumSerieFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtBuscarRepuestoXnumSerieFocusLost(evt);
+            }
+        });
         txtBuscarRepuestoXnumSerie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarRepuestoXnumSerieActionPerformed(evt);
@@ -649,6 +712,14 @@ public class MainForm extends javax.swing.JFrame {
         txtNombreRepuestoActualizar.setForeground(new java.awt.Color(123, 123, 123));
         txtNombreRepuestoActualizar.setText("Repuesto");
         txtNombreRepuestoActualizar.setBorder(null);
+        txtNombreRepuestoActualizar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNombreRepuestoActualizarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNombreRepuestoActualizarFocusLost(evt);
+            }
+        });
         txtNombreRepuestoActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreRepuestoActualizarActionPerformed(evt);
@@ -664,6 +735,14 @@ public class MainForm extends javax.swing.JFrame {
         txtPrecioRepuestoActualizar.setForeground(new java.awt.Color(123, 123, 123));
         txtPrecioRepuestoActualizar.setText("Precio");
         txtPrecioRepuestoActualizar.setBorder(null);
+        txtPrecioRepuestoActualizar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPrecioRepuestoActualizarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPrecioRepuestoActualizarFocusLost(evt);
+            }
+        });
         txtPrecioRepuestoActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecioRepuestoActualizarActionPerformed(evt);
@@ -754,6 +833,14 @@ public class MainForm extends javax.swing.JFrame {
         txtNombreServicio.setForeground(new java.awt.Color(123, 123, 123));
         txtNombreServicio.setText("Ingrese Servicio");
         txtNombreServicio.setBorder(null);
+        txtNombreServicio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNombreServicioFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNombreServicioFocusLost(evt);
+            }
+        });
         txtNombreServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreServicioActionPerformed(evt);
@@ -769,6 +856,14 @@ public class MainForm extends javax.swing.JFrame {
         txtPrecioServicio.setForeground(new java.awt.Color(123, 123, 123));
         txtPrecioServicio.setText("Ingrese Precio");
         txtPrecioServicio.setBorder(null);
+        txtPrecioServicio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPrecioServicioFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPrecioServicioFocusLost(evt);
+            }
+        });
         txtPrecioServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecioServicioActionPerformed(evt);
@@ -881,6 +976,14 @@ public class MainForm extends javax.swing.JFrame {
         txtCodServicioBuscar.setForeground(new java.awt.Color(123, 123, 123));
         txtCodServicioBuscar.setText("Ingrese Código de Servicio");
         txtCodServicioBuscar.setBorder(null);
+        txtCodServicioBuscar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCodServicioBuscarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCodServicioBuscarFocusLost(evt);
+            }
+        });
         txtCodServicioBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodServicioBuscarActionPerformed(evt);
@@ -974,6 +1077,14 @@ public class MainForm extends javax.swing.JFrame {
         txtServicioPrecioActualizar.setForeground(new java.awt.Color(123, 123, 123));
         txtServicioPrecioActualizar.setText("Precio");
         txtServicioPrecioActualizar.setBorder(null);
+        txtServicioPrecioActualizar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtServicioPrecioActualizarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtServicioPrecioActualizarFocusLost(evt);
+            }
+        });
         txtServicioPrecioActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtServicioPrecioActualizarActionPerformed(evt);
@@ -991,6 +1102,14 @@ public class MainForm extends javax.swing.JFrame {
         txtServicioNombreActualizar.setForeground(new java.awt.Color(123, 123, 123));
         txtServicioNombreActualizar.setText("Servicio");
         txtServicioNombreActualizar.setBorder(null);
+        txtServicioNombreActualizar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtServicioNombreActualizarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtServicioNombreActualizarFocusLost(evt);
+            }
+        });
         txtServicioNombreActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtServicioNombreActualizarActionPerformed(evt);
@@ -1019,12 +1138,12 @@ public class MainForm extends javax.swing.JFrame {
 
         jSeparator14.setBackground(new java.awt.Color(0, 134, 190));
         jSeparator14.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel20.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 100, 20));
+        jPanel20.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 120, 20));
 
         jLabel27.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("Reparación");
+        jLabel27.setText("Agregar Reparación");
         jPanel20.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 30));
 
         panelActualizarReparacion.setBackground(new java.awt.Color(0, 134, 190));
@@ -1095,31 +1214,31 @@ public class MainForm extends javax.swing.JFrame {
 
         jSeparator18.setBackground(new java.awt.Color(0, 134, 190));
         jSeparator18.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel20.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 100, 20));
+        jPanel20.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 120, 20));
 
         jSeparator19.setBackground(new java.awt.Color(0, 134, 190));
         jSeparator19.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel20.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 140, 20));
+        jPanel20.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 140, 20));
 
         calendarFechaEntrada.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel20.add(calendarFechaEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 170, 30));
+        jPanel20.add(calendarFechaEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 170, 30));
 
-        jPanel20.add(comboServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 46, 200, 30));
+        jPanel20.add(comboServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 200, 30));
 
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha de Entrada");
-        jPanel20.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        jPanel20.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Elija Bicicleta");
-        jPanel20.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        jPanel20.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 110, -1));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Elija Servicio");
-        jPanel20.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        jPanel20.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 110, -1));
 
         radioBtnRepEntregada.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         radioBtnRepEntregada.setForeground(new java.awt.Color(255, 255, 255));
@@ -1134,25 +1253,51 @@ public class MainForm extends javax.swing.JFrame {
         jLabel41.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(255, 255, 255));
         jLabel41.setText("Elija Repuesto");
-        jPanel20.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        jPanel20.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
         jSeparator26.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel20.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 110, 20));
+        jPanel20.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 110, 20));
 
-        jPanel20.add(comboItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 200, 30));
+        jPanel20.add(comboItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 200, 30));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Cant.");
-        jPanel20.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
+        jPanel20.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, -1, -1));
 
         jSeparator27.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel20.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 50, 20));
-        jPanel20.add(cantRepuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 70, -1));
+        jPanel20.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 50, 20));
+        jPanel20.add(cantRepuestos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 70, -1));
 
-        jPanel20.add(comboBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 200, 30));
+        jPanel20.add(comboBicicleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 200, 30));
 
-        jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 350, 450));
+        jSeparator28.setBackground(new java.awt.Color(0, 134, 190));
+        jSeparator28.setForeground(new java.awt.Color(0, 134, 190));
+        jPanel20.add(jSeparator28, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 170, 20));
+
+        jLabel10.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Elija Reparación");
+        jPanel20.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        jPanel20.add(comboReparacionXitemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 200, 30));
+
+        radioBtnNuevaReparacion.setBackground(new java.awt.Color(51, 51, 51));
+        radioBtnNuevaReparacion.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        radioBtnNuevaReparacion.setForeground(new java.awt.Color(255, 255, 255));
+        radioBtnNuevaReparacion.setText("Nueva Reparación");
+        radioBtnNuevaReparacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioBtnNuevaReparacionActionPerformed(evt);
+            }
+        });
+        jPanel20.add(radioBtnNuevaReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 190, -1));
+
+        jSeparator38.setBackground(new java.awt.Color(0, 134, 190));
+        jSeparator38.setForeground(new java.awt.Color(0, 134, 190));
+        jPanel20.add(jSeparator38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 120, 20));
+
+        jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 350, 460));
 
         jPanel22.setBackground(new java.awt.Color(51, 51, 51));
         jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1160,7 +1305,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("Repuestos");
+        jLabel30.setText("Reparaciones de Bicicletas");
         jPanel22.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 30));
 
         tablaItemRepuesto.setBackground(new java.awt.Color(48, 46, 46));
@@ -1288,16 +1433,6 @@ public class MainForm extends javax.swing.JFrame {
 
         jPanel26.add(panelBorrarItemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 90, 30));
 
-        jSeparator28.setForeground(new java.awt.Color(0, 134, 190));
-        jPanel26.add(jSeparator28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 140, 20));
-
-        jPanel26.add(comboReparacionXitemRepuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 160, 30));
-
-        jLabel10.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Elija Reparación");
-        jPanel26.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
-
         txtPrecioReparacion.setBackground(new java.awt.Color(51, 51, 51));
         txtPrecioReparacion.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         txtPrecioReparacion.setForeground(new java.awt.Color(123, 123, 123));
@@ -1380,6 +1515,9 @@ public class MainForm extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtDniClienteFocusGained(evt);
             }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDniClienteFocusLost(evt);
+            }
         });
         txtDniCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1406,6 +1544,9 @@ public class MainForm extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtNombreFocusGained(evt);
             }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNombreFocusLost(evt);
+            }
         });
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1425,6 +1566,9 @@ public class MainForm extends javax.swing.JFrame {
         txtTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtTelefonoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTelefonoFocusLost(evt);
             }
         });
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -1454,6 +1598,9 @@ public class MainForm extends javax.swing.JFrame {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtDomicilioFocusGained(evt);
             }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDomicilioFocusLost(evt);
+            }
         });
         txtDomicilio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1470,6 +1617,9 @@ public class MainForm extends javax.swing.JFrame {
         txtApellido.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtApellidoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtApellidoFocusLost(evt);
             }
         });
         txtApellido.addActionListener(new java.awt.event.ActionListener() {
@@ -1631,6 +1781,14 @@ public class MainForm extends javax.swing.JFrame {
         txtColor.setForeground(new java.awt.Color(123, 123, 123));
         txtColor.setText("Ingrese Color");
         txtColor.setBorder(null);
+        txtColor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtColorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtColorFocusLost(evt);
+            }
+        });
         txtColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtColorActionPerformed(evt);
@@ -1643,6 +1801,14 @@ public class MainForm extends javax.swing.JFrame {
         txtMarca.setForeground(new java.awt.Color(123, 123, 123));
         txtMarca.setText("Ingrese Marca");
         txtMarca.setBorder(null);
+        txtMarca.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtMarcaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtMarcaFocusLost(evt);
+            }
+        });
         txtMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMarcaActionPerformed(evt);
@@ -1658,6 +1824,14 @@ public class MainForm extends javax.swing.JFrame {
         txtNumSerieBicicleta.setForeground(new java.awt.Color(123, 123, 123));
         txtNumSerieBicicleta.setText("Ingrese N° de Serie");
         txtNumSerieBicicleta.setBorder(null);
+        txtNumSerieBicicleta.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNumSerieBicicletaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNumSerieBicicletaFocusLost(evt);
+            }
+        });
         txtNumSerieBicicleta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumSerieBicicletaActionPerformed(evt);
@@ -1678,6 +1852,14 @@ public class MainForm extends javax.swing.JFrame {
         txtBuscarxNumSertieBicicleta.setForeground(new java.awt.Color(123, 123, 123));
         txtBuscarxNumSertieBicicleta.setText("Ingrese N° de Serie");
         txtBuscarxNumSertieBicicleta.setBorder(null);
+        txtBuscarxNumSertieBicicleta.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtBuscarxNumSertieBicicletaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtBuscarxNumSertieBicicletaFocusLost(evt);
+            }
+        });
         txtBuscarxNumSertieBicicleta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarxNumSertieBicicletaActionPerformed(evt);
@@ -1764,7 +1946,7 @@ public class MainForm extends javax.swing.JFrame {
 
         jSeparator12.setForeground(new java.awt.Color(125, 125, 125));
         jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 20, 320));
+        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 20, 310));
 
         btnHome.setBackground(new java.awt.Color(35, 35, 35));
         btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2342,18 +2524,30 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDniClienteKeyTyped
 
     private void txtDniClienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniClienteFocusGained
-        txtDniCliente.setText("");
-        txtDniCliente.setForeground(Color.white);
+        if (txtDniCliente.getText().equals("Ingrese DNI")) {
+            txtDniCliente.setText("");
+            txtDniCliente.setForeground(Color.white);
+        } else {
+            txtDniCliente.setForeground(Color.white);
+        }
     }//GEN-LAST:event_txtDniClienteFocusGained
 
     private void txtApellidoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtApellidoFocusGained
-        txtApellido.setText("");
-        txtApellido.setForeground(Color.white);
+        if (txtApellido.getText().equals("Ingrese Apellido")) {
+            txtApellido.setText("");
+            txtApellido.setForeground(Color.white);
+        } else {
+            txtApellido.setForeground(Color.white);
+        }
     }//GEN-LAST:event_txtApellidoFocusGained
 
     private void txtNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusGained
-        txtNombre.setText("");
-        txtNombre.setForeground(Color.white);
+        if (txtNombre.getText().equals("Ingrese Nombre")) {
+            txtNombre.setText("");
+            txtNombre.setForeground(Color.white);
+        } else {
+            txtNombre.setForeground(Color.white);
+        }
     }//GEN-LAST:event_txtNombreFocusGained
 
     private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
@@ -2364,13 +2558,21 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonoKeyTyped
 
     private void txtTelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoFocusGained
-        txtTelefono.setText("");
-        txtTelefono.setForeground(Color.white);
+        if (txtTelefono.getText().equals("Ingrese Telefono")) {
+            txtTelefono.setText("");
+            txtTelefono.setForeground(Color.white);
+        } else {
+            txtTelefono.setForeground(Color.white);
+        }
     }//GEN-LAST:event_txtTelefonoFocusGained
 
     private void txtDomicilioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDomicilioFocusGained
-        txtDomicilio.setText("");
-        txtDomicilio.setForeground(Color.white);
+        if (txtDomicilio.getText().equals("Ingrese Domicilio")) {
+            txtDomicilio.setText("");
+            txtDomicilio.setForeground(Color.white);
+        } else {
+            txtDomicilio.setForeground(Color.white);
+        }
     }//GEN-LAST:event_txtDomicilioFocusGained
 
     private void btnAggClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAggClienteMouseClicked
@@ -2448,10 +2650,15 @@ public class MainForm extends javax.swing.JFrame {
         } else if (dni.equals("") || apellido.equals("") || nombre.equals("") || telefono.equals("") || domicilio.equals("")) {
             JOptionPane.showMessageDialog(null, "Rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            Cliente cliente = new Cliente(dni, nombre, apellido, domicilio, telefono, rootPaneCheckingEnabled);
+            Cliente cliente = new Cliente(dni, nombre, apellido, domicilio, telefono, true);
             if (cliente != null) {
                 cData.actualizarCliente(cliente, dni);
                 llenarCombo();
+                txtDomicilio.setText("Ingrese Domicilio");
+                txtTelefono.setText("Ingrese Telefono");
+                txtDniCliente.setText("Ingrese DNI");
+                txtApellido.setText("Ingrese Apellido");
+                txtNombre.setText("Ingrese Nombre");
             } else {
                 JOptionPane.showMessageDialog(null, "Cliente no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -2861,17 +3068,15 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_radioBtnRepEntregadaActionPerformed
 
     private void btnFinalizarReparacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinalizarReparacionMouseClicked
-        if (txtBuscarReparacionID.getText().equals("") || txtBuscarReparacionID.getText().equals("Ingrese ID Reparación")) {
-            JOptionPane.showMessageDialog(null, "Rellene el campo ID Reparación.", "Error", JOptionPane.ERROR_MESSAGE);
+        if (tablaReparaciones.getSelectedRow() < 0) {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila de la tabla.", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            int id = Integer.parseInt(txtBuscarReparacionID.getText());
-            Reparacion reparacion = reparacionData.buscarReparacion(id);
-            if (reparacion != null) {
-                reparacion.setEstado(false);
-                reparacionData.actualizarReparacion(reparacion, id, reparacion.getId_servicio().getCodigo());
-            } else {
-                JOptionPane.showMessageDialog(null, "Reparación no encontrada.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
+            int fila = tablaReparaciones.getSelectedRow();
+            int idReparacion = (int) tableReparaciones.getValueAt(fila, 0);
+            Reparacion reparacion = reparacionData.buscarReparacion(idReparacion);
+            reparacion.setEstado(false);
+            reparacionData.actualizarReparacion(reparacion, idReparacion, reparacion.getId_servicio().getCodigo());
+            cargarTablaReparaciones();
         }
     }//GEN-LAST:event_btnFinalizarReparacionMouseClicked
 
@@ -2905,7 +3110,7 @@ public class MainForm extends javax.swing.JFrame {
     private void comboBicicletaFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBicicletaFiltrarActionPerformed
         borrarFilasTabla(tableItemRepuestos);
         Bicicleta bici = (Bicicleta) comboBicicletaFiltrar.getSelectedItem();
-        if (bici!=null) {
+        if (bici != null) {
             ArrayList<ItemRepuesto> lista = (ArrayList) itemData.obtenerBicicletaXreparacion(bici.getNumSerie());
             for (ItemRepuesto aux : lista) {
                 Object[] filas = new Object[5];
@@ -2920,6 +3125,378 @@ public class MainForm extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_comboBicicletaFiltrarActionPerformed
+
+    private void btnBuscarReparacionxDNIMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarReparacionxDNIMouseEntered
+        btnBuscarXdni.setBackground(new Color(0, 196, 223));
+    }//GEN-LAST:event_btnBuscarReparacionxDNIMouseEntered
+
+    private void btnBuscarReparacionxDNIMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarReparacionxDNIMouseExited
+        btnBuscarXdni.setBackground(new Color(0, 134, 190));
+    }//GEN-LAST:event_btnBuscarReparacionxDNIMouseExited
+
+    private void txtBuscarDNIduenioRepKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarDNIduenioRepKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtBuscarDNIduenioRepKeyTyped
+
+    private void btnBuscarReparacionxDNIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarReparacionxDNIMouseClicked
+        if (txtBuscarDNIduenioRep.getText().equals("") || txtBuscarDNIduenioRep.getText().equals("Ingrese el DNI del dueño")) {
+            JOptionPane.showMessageDialog(null, "Rellene el campo DNI.", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (cData.buscarClienteDNI(txtBuscarDNIduenioRep.getText()) != null) {
+                cargarTablaReparacionesXdni(txtBuscarDNIduenioRep.getText());
+            } else {
+                JOptionPane.showMessageDialog(null, "Cliente no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnBuscarReparacionxDNIMouseClicked
+
+    private void txtBuscarDNIduenioRepFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarDNIduenioRepFocusGained
+        if (txtBuscarDNIduenioRep.getText().equals("Ingrese el DNI del dueño")) {
+            txtBuscarDNIduenioRep.setText("");
+            txtBuscarDNIduenioRep.setForeground(Color.white);
+        } else {
+            txtBuscarDNIduenioRep.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtBuscarDNIduenioRepFocusGained
+
+    private void txtBuscarDNIduenioRepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarDNIduenioRepFocusLost
+        if (txtBuscarDNIduenioRep.getText().equals("")) {
+            txtBuscarDNIduenioRep.setText("Ingrese el DNI del dueño");
+            txtBuscarDNIduenioRep.setForeground(new Color(123, 123, 123));
+        } else {
+            txtBuscarDNIduenioRep.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtBuscarDNIduenioRepFocusLost
+
+    private void txtBuscarDNIduenioRepMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarDNIduenioRepMouseClicked
+
+    }//GEN-LAST:event_txtBuscarDNIduenioRepMouseClicked
+
+    private void txtRepuestoNumSerieFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRepuestoNumSerieFocusGained
+        if (txtRepuestoNumSerie.getText().equals("Ingrese N° de Serie")) {
+            txtRepuestoNumSerie.setText("");
+            txtRepuestoNumSerie.setForeground(Color.white);
+        } else {
+            txtRepuestoNumSerie.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtRepuestoNumSerieFocusGained
+
+    private void txtRepuestoNumSerieFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRepuestoNumSerieFocusLost
+        if (txtRepuestoNumSerie.getText().equals("")) {
+            txtRepuestoNumSerie.setText("Ingrese N° de Serie");
+            txtRepuestoNumSerie.setForeground(new Color(123, 123, 123));
+        } else {
+            txtRepuestoNumSerie.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtRepuestoNumSerieFocusLost
+
+    private void txtNombreRepuestoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreRepuestoFocusGained
+        if (txtNombreRepuesto.getText().equals("Ingrese Repuesto")) {
+            txtNombreRepuesto.setText("");
+            txtNombreRepuesto.setForeground(Color.white);
+        } else {
+            txtNombreRepuesto.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtNombreRepuestoFocusGained
+
+    private void txtNombreRepuestoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreRepuestoFocusLost
+        if (txtNombreRepuesto.getText().equals("")) {
+            txtNombreRepuesto.setText("Ingrese Repuesto");
+            txtNombreRepuesto.setForeground(new Color(123, 123, 123));
+        } else {
+            txtNombreRepuesto.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtNombreRepuestoFocusLost
+
+    private void txtPrecioRepuestoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioRepuestoFocusGained
+        if (txtPrecioRepuesto.getText().equals("Ingrese el Precio")) {
+            txtPrecioRepuesto.setText("");
+            txtPrecioRepuesto.setForeground(Color.white);
+        } else {
+            txtPrecioRepuesto.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtPrecioRepuestoFocusGained
+
+    private void txtPrecioRepuestoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioRepuestoFocusLost
+        if (txtPrecioRepuesto.getText().equals("")) {
+            txtPrecioRepuesto.setText("Ingrese el Precio");
+            txtPrecioRepuesto.setForeground(new Color(123, 123, 123));
+        } else {
+            txtPrecioRepuesto.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtPrecioRepuestoFocusLost
+
+    private void txtBuscarRepuestoXnumSerieFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarRepuestoXnumSerieFocusGained
+        if (txtBuscarRepuestoXnumSerie.getText().equals("Ingrese N° de Serie")) {
+            txtBuscarRepuestoXnumSerie.setText("");
+            txtBuscarRepuestoXnumSerie.setForeground(Color.white);
+        } else {
+            txtBuscarRepuestoXnumSerie.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtBuscarRepuestoXnumSerieFocusGained
+
+    private void txtBuscarRepuestoXnumSerieFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarRepuestoXnumSerieFocusLost
+        if (txtBuscarRepuestoXnumSerie.getText().equals("")) {
+            txtBuscarRepuestoXnumSerie.setText("Ingrese N° de Serie");
+            txtBuscarRepuestoXnumSerie.setForeground(new Color(123, 123, 123));
+        } else {
+            txtBuscarRepuestoXnumSerie.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtBuscarRepuestoXnumSerieFocusLost
+
+    private void txtNombreRepuestoActualizarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreRepuestoActualizarFocusGained
+        if (txtNombreRepuestoActualizar.getText().equals("Repuesto")) {
+            txtNombreRepuestoActualizar.setText("");
+            txtNombreRepuestoActualizar.setForeground(Color.white);
+        } else {
+            txtNombreRepuestoActualizar.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtNombreRepuestoActualizarFocusGained
+
+    private void txtNombreRepuestoActualizarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreRepuestoActualizarFocusLost
+        if (txtNombreRepuestoActualizar.getText().equals("")) {
+            txtNombreRepuestoActualizar.setText("Repuesto");
+            txtNombreRepuestoActualizar.setForeground(new Color(123, 123, 123));
+        } else {
+            txtNombreRepuestoActualizar.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtNombreRepuestoActualizarFocusLost
+
+    private void txtPrecioRepuestoActualizarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioRepuestoActualizarFocusGained
+        if (txtPrecioRepuestoActualizar.getText().equals("Precio")) {
+            txtPrecioRepuestoActualizar.setText("");
+            txtPrecioRepuestoActualizar.setForeground(Color.white);
+        } else {
+            txtPrecioRepuestoActualizar.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtPrecioRepuestoActualizarFocusGained
+
+    private void txtPrecioRepuestoActualizarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioRepuestoActualizarFocusLost
+        if (txtPrecioRepuestoActualizar.getText().equals("")) {
+            txtPrecioRepuestoActualizar.setText("Precio");
+            txtPrecioRepuestoActualizar.setForeground(new Color(123, 123, 123));
+        } else {
+            txtPrecioRepuestoActualizar.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtPrecioRepuestoActualizarFocusLost
+
+    private void txtNombreServicioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreServicioFocusGained
+        if (txtNombreServicio.getText().equals("Ingrese Servicio")) {
+            txtNombreServicio.setText("");
+            txtNombreServicio.setForeground(Color.white);
+        } else {
+            txtNombreServicio.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtNombreServicioFocusGained
+
+    private void txtNombreServicioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreServicioFocusLost
+        if (txtNombreServicio.getText().equals("")) {
+            txtNombreServicio.setText("Ingrese Servicio");
+            txtNombreServicio.setForeground(new Color(123, 123, 123));
+        } else {
+            txtNombreServicio.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtNombreServicioFocusLost
+
+    private void txtPrecioServicioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioServicioFocusGained
+        if (txtPrecioServicio.getText().equals("Ingrese Precio")) {
+            txtPrecioServicio.setText("");
+            txtPrecioServicio.setForeground(Color.white);
+        } else {
+            txtPrecioServicio.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtPrecioServicioFocusGained
+
+    private void txtPrecioServicioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioServicioFocusLost
+        if (txtPrecioServicio.getText().equals("")) {
+            txtPrecioServicio.setText("Ingrese Precio");
+            txtPrecioServicio.setForeground(new Color(123, 123, 123));
+        } else {
+            txtPrecioServicio.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtPrecioServicioFocusLost
+
+    private void txtCodServicioBuscarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCodServicioBuscarFocusGained
+        if (txtCodServicioBuscar.getText().equals("Ingrese Código de Servicio")) {
+            txtCodServicioBuscar.setText("");
+            txtCodServicioBuscar.setForeground(Color.white);
+        } else {
+            txtCodServicioBuscar.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtCodServicioBuscarFocusGained
+
+    private void txtCodServicioBuscarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCodServicioBuscarFocusLost
+        if (txtCodServicioBuscar.getText().equals("")) {
+            txtCodServicioBuscar.setText("Ingrese Código de Servicio");
+            txtCodServicioBuscar.setForeground(new Color(123, 123, 123));
+        } else {
+            txtCodServicioBuscar.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtCodServicioBuscarFocusLost
+
+    private void txtServicioNombreActualizarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtServicioNombreActualizarFocusGained
+        if (txtServicioNombreActualizar.getText().equals("Servicio")) {
+            txtServicioNombreActualizar.setText("");
+            txtServicioNombreActualizar.setForeground(Color.white);
+        } else {
+            txtServicioNombreActualizar.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtServicioNombreActualizarFocusGained
+
+    private void txtServicioNombreActualizarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtServicioNombreActualizarFocusLost
+        if (txtServicioNombreActualizar.getText().equals("")) {
+            txtServicioNombreActualizar.setText("Servicio");
+            txtServicioNombreActualizar.setForeground(new Color(123, 123, 123));
+        } else {
+            txtServicioNombreActualizar.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtServicioNombreActualizarFocusLost
+
+    private void txtServicioPrecioActualizarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtServicioPrecioActualizarFocusGained
+        if (txtServicioPrecioActualizar.getText().equals("Precio")) {
+            txtServicioPrecioActualizar.setText("");
+            txtServicioPrecioActualizar.setForeground(Color.white);
+        } else {
+            txtServicioPrecioActualizar.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtServicioPrecioActualizarFocusGained
+
+    private void txtServicioPrecioActualizarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtServicioPrecioActualizarFocusLost
+        if (txtServicioPrecioActualizar.getText().equals("")) {
+            txtServicioPrecioActualizar.setText("Precio");
+            txtServicioPrecioActualizar.setForeground(new Color(123, 123, 123));
+        } else {
+            txtServicioPrecioActualizar.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtServicioPrecioActualizarFocusLost
+
+    private void txtDniClienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniClienteFocusLost
+        if (txtDniCliente.getText().equals("")) {
+            txtDniCliente.setText("Ingrese DNI");
+            txtDniCliente.setForeground(new Color(123, 123, 123));
+        } else {
+            txtDniCliente.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtDniClienteFocusLost
+
+    private void txtApellidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtApellidoFocusLost
+        if (txtApellido.getText().equals("")) {
+            txtApellido.setText("Ingrese Apellido");
+            txtApellido.setForeground(new Color(123, 123, 123));
+        } else {
+            txtApellido.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtApellidoFocusLost
+
+    private void txtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusLost
+        if (txtNombre.getText().equals("")) {
+            txtNombre.setText("Ingrese Nombre");
+            txtNombre.setForeground(new Color(123, 123, 123));
+        } else {
+            txtNombre.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtNombreFocusLost
+
+    private void txtTelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoFocusLost
+        if (txtTelefono.getText().equals("")) {
+            txtTelefono.setText("Ingrese Telefono");
+            txtTelefono.setForeground(new Color(123, 123, 123));
+        } else {
+            txtTelefono.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtTelefonoFocusLost
+
+    private void txtDomicilioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDomicilioFocusLost
+        if (txtDomicilio.getText().equals("")) {
+            txtDomicilio.setText("Ingrese Domicilio");
+            txtDomicilio.setForeground(new Color(123, 123, 123));
+        } else {
+            txtDomicilio.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtDomicilioFocusLost
+
+    private void txtColorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtColorFocusGained
+        if (txtColor.getText().equals("Ingrese Color")) {
+            txtColor.setText("");
+            txtColor.setForeground(Color.white);
+        } else {
+            txtColor.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtColorFocusGained
+
+    private void txtColorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtColorFocusLost
+        if (txtColor.getText().equals("")) {
+            txtColor.setText("Ingrese Color");
+            txtColor.setForeground(new Color(123, 123, 123));
+        } else {
+            txtColor.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtColorFocusLost
+
+    private void txtMarcaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtMarcaFocusGained
+        if (txtMarca.getText().equals("Ingrese Marca")) {
+            txtMarca.setText("");
+            txtMarca.setForeground(Color.white);
+        } else {
+            txtMarca.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtMarcaFocusGained
+
+    private void txtMarcaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtMarcaFocusLost
+        if (txtMarca.getText().equals("")) {
+            txtMarca.setText("Ingrese Marca");
+            txtMarca.setForeground(new Color(123, 123, 123));
+        } else {
+            txtMarca.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtMarcaFocusLost
+
+    private void txtNumSerieBicicletaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNumSerieBicicletaFocusGained
+        if (txtNumSerieBicicleta.getText().equals("Ingrese N° de Serie")) {
+            txtNumSerieBicicleta.setText("");
+            txtNumSerieBicicleta.setForeground(Color.white);
+        } else {
+            txtNumSerieBicicleta.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtNumSerieBicicletaFocusGained
+
+    private void txtNumSerieBicicletaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNumSerieBicicletaFocusLost
+        if (txtNumSerieBicicleta.getText().equals("")) {
+            txtNumSerieBicicleta.setText("Ingrese N° de Serie");
+            txtNumSerieBicicleta.setForeground(new Color(123, 123, 123));
+        } else {
+            txtNumSerieBicicleta.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtNumSerieBicicletaFocusLost
+
+    private void txtBuscarxNumSertieBicicletaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarxNumSertieBicicletaFocusGained
+        if (txtBuscarxNumSertieBicicleta.getText().equals("Ingrese N° de Serie")) {
+            txtBuscarxNumSertieBicicleta.setText("");
+            txtBuscarxNumSertieBicicleta.setForeground(Color.white);
+        } else {
+            txtBuscarxNumSertieBicicleta.setForeground(Color.white);
+        }
+    }//GEN-LAST:event_txtBuscarxNumSertieBicicletaFocusGained
+
+    private void txtBuscarxNumSertieBicicletaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarxNumSertieBicicletaFocusLost
+        if (txtBuscarxNumSertieBicicleta.getText().equals("")) {
+            txtBuscarxNumSertieBicicleta.setText("Ingrese N° de Serie");
+            txtBuscarxNumSertieBicicleta.setForeground(new Color(123, 123, 123));
+        } else {
+            txtBuscarxNumSertieBicicleta.setForeground(new Color(123, 123, 123));
+        }
+    }//GEN-LAST:event_txtBuscarxNumSertieBicicletaFocusLost
+
+    private void radioBtnNuevaReparacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnNuevaReparacionActionPerformed
+        if (radioBtnNuevaReparacion.isSelected()) {
+            comboReparacionXitemRepuesto.setEnabled(false);
+        }else if(!radioBtnNuevaReparacion.isSelected()){
+            comboReparacionXitemRepuesto.setEnabled(true);
+        }
+    }//GEN-LAST:event_radioBtnNuevaReparacionActionPerformed
 
     private void llenarCombo() {
         List<Cliente> listaCliente = cData.obtenerClientes();
@@ -3041,7 +3618,34 @@ public class MainForm extends javax.swing.JFrame {
             filas[2] = aux.getId_servicio().getDescripcion();
             filas[3] = aux.getId_bicicleta().getNumSerie();
             filas[4] = aux.getFecha_entrada();
-            filas[5] = aux.getCosto()*1.15;
+            filas[5] = aux.getCosto() * 1.15;
+            filas[6] = x;
+            tableReparaciones.addRow(filas);
+        }
+        tablaReparaciones.setModel(tableReparaciones);
+    }
+
+    public void cargarTablaReparacionesXdni(String dni) {
+        borrarFilasTabla(tableReparaciones);
+        String x;
+        ArrayList<Reparacion> lsitaRepuesto = reparacionData.filtrarReparacionPorDNI(dni);
+
+        for (Reparacion aux : lsitaRepuesto) {
+            Object[] filas = new Object[7];
+
+            if (!aux.isEstado()) {
+                x = "Finalizada";
+            } else if (aux.isEstado()) {
+                x = "No Finalizada";
+            } else {
+                x = "Entregada";
+            }
+            filas[0] = aux.getId_reparacion();
+            filas[1] = aux.getId_bicicleta().getDniDuenio().getDni();
+            filas[2] = aux.getId_servicio().getDescripcion();
+            filas[3] = aux.getId_bicicleta().getNumSerie();
+            filas[4] = aux.getFecha_entrada();
+            filas[5] = aux.getCosto() * 1.15;
             filas[6] = x;
             tableReparaciones.addRow(filas);
         }
@@ -3288,6 +3892,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator35;
     private javax.swing.JSeparator jSeparator36;
     private javax.swing.JSeparator jSeparator37;
+    private javax.swing.JSeparator jSeparator38;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
@@ -3321,6 +3926,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel panelBuscarRepuesto;
     private javax.swing.JPanel panelBuscarServicio;
     private javax.swing.JPanel panelFinalizarReparacion;
+    private javax.swing.JRadioButton radioBtnNuevaReparacion;
     private javax.swing.JRadioButton radioBtnRepEntregada;
     private javax.swing.JRadioButton radioBtnRepTerminada;
     private javax.swing.JLabel reparacionBtn;
