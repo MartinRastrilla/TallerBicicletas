@@ -102,6 +102,7 @@ public class MainForm extends javax.swing.JFrame {
         btnBuscarReparacionxDNI = new javax.swing.JLabel();
         panelBtnRefreshReparacion = new javax.swing.JPanel();
         btnRefreshReparacion = new javax.swing.JLabel();
+        radioReparacioneNoTerminadas = new javax.swing.JRadioButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -210,7 +211,6 @@ public class MainForm extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tablaListaRepuestos = new javax.swing.JTable();
-        radioBtnRepTerminada = new javax.swing.JRadioButton();
         jPanel23 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
@@ -316,7 +316,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel1.setText("El Pepe");
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 120, 40));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 50));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 70));
 
         jTabbedPane1.setBackground(new java.awt.Color(35, 35, 35));
         jTabbedPane1.setForeground(new java.awt.Color(35, 35, 35));
@@ -378,7 +378,7 @@ public class MainForm extends javax.swing.JFrame {
         btnFinalizarReparacion.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         btnFinalizarReparacion.setForeground(new java.awt.Color(255, 255, 255));
         btnFinalizarReparacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnFinalizarReparacion.setText("Finalizar\nReparación");
+        btnFinalizarReparacion.setText("Finalizar Reparación");
         btnFinalizarReparacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnFinalizarReparacionMouseClicked(evt);
@@ -390,9 +390,9 @@ public class MainForm extends javax.swing.JFrame {
                 btnFinalizarReparacionMouseExited(evt);
             }
         });
-        panelFinalizarReparacion.add(btnFinalizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 30));
+        panelFinalizarReparacion.add(btnFinalizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 30));
 
-        jPanel3.add(panelFinalizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 150, 30));
+        jPanel3.add(panelFinalizarReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 160, 30));
 
         txtBuscarDNIduenioRep.setBackground(new java.awt.Color(51, 51, 51));
         txtBuscarDNIduenioRep.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -475,6 +475,17 @@ public class MainForm extends javax.swing.JFrame {
         panelBtnRefreshReparacion.add(btnRefreshReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
 
         jPanel3.add(panelBtnRefreshReparacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 310, 50, 40));
+
+        radioReparacioneNoTerminadas.setBackground(new java.awt.Color(51, 51, 51));
+        radioReparacioneNoTerminadas.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        radioReparacioneNoTerminadas.setForeground(new java.awt.Color(255, 255, 255));
+        radioReparacioneNoTerminadas.setText("Reparaciones no Terminadas");
+        radioReparacioneNoTerminadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioReparacioneNoTerminadasActionPerformed(evt);
+            }
+        });
+        jPanel3.add(radioReparacioneNoTerminadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 210, 30));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 790, 410));
 
@@ -1434,16 +1445,6 @@ public class MainForm extends javax.swing.JFrame {
         jPanel26.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 470, 160));
 
         jPanel19.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 470, 190));
-
-        radioBtnRepTerminada.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        radioBtnRepTerminada.setForeground(new java.awt.Color(255, 255, 255));
-        radioBtnRepTerminada.setText("Reparación Terminada");
-        radioBtnRepTerminada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioBtnRepTerminadaActionPerformed(evt);
-            }
-        });
-        jPanel19.add(radioBtnRepTerminada, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 60, -1));
 
         jTabbedPane1.addTab("tab4", jPanel19);
 
@@ -2949,16 +2950,8 @@ public class MainForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnActualizarReparacionMouseClicked
 
-    private void radioBtnRepTerminadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnRepTerminadaActionPerformed
-        if (radioBtnRepTerminada.isSelected()) {
-            radioBtnRepEntregada.setSelected(false);
-        }
-    }//GEN-LAST:event_radioBtnRepTerminadaActionPerformed
-
     private void radioBtnRepEntregadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBtnRepEntregadaActionPerformed
-        if (radioBtnRepEntregada.isSelected()) {
-            radioBtnRepTerminada.setSelected(false);
-        }
+        
     }//GEN-LAST:event_radioBtnRepEntregadaActionPerformed
 
     private void btnFinalizarReparacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinalizarReparacionMouseClicked
@@ -2971,6 +2964,8 @@ public class MainForm extends javax.swing.JFrame {
             reparacion.setEstado(false);
             reparacionData.actualizarReparacion(reparacion, idReparacion, reparacion.getId_servicio().getCodigo());
             cargarTablaReparaciones();
+            radioReparacioneNoTerminadas.setSelected(false);
+            txtBuscarDNIduenioRep.setEnabled(true);
         }
     }//GEN-LAST:event_btnFinalizarReparacionMouseClicked
 
@@ -2984,6 +2979,8 @@ public class MainForm extends javax.swing.JFrame {
 
     private void btnRefreshReparacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshReparacionMouseClicked
         cargarTablaReparaciones();
+        radioReparacioneNoTerminadas.setSelected(false);
+        txtBuscarDNIduenioRep.setEnabled(true);
     }//GEN-LAST:event_btnRefreshReparacionMouseClicked
 
     private void btnRefreshReparacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRefreshReparacionMouseEntered
@@ -3440,6 +3437,17 @@ public class MainForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarReparacionKeyPressed
 
+    private void radioReparacioneNoTerminadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioReparacioneNoTerminadasActionPerformed
+        if (radioReparacioneNoTerminadas.isSelected()) {
+            txtBuscarDNIduenioRep.setText("Ingrese el DNI del dueño");
+            txtBuscarDNIduenioRep.setEnabled(false);
+            cargarTablaReparacionesNoTerminadas();
+        } else if(!radioReparacioneNoTerminadas.isSelected()){
+            cargarTablaReparaciones();
+            txtBuscarDNIduenioRep.setEnabled(true);
+        }
+    }//GEN-LAST:event_radioReparacioneNoTerminadasActionPerformed
+
     private void llenarCombo() {
         List<Cliente> listaCliente = cData.obtenerClientes();
         comboDuenioBici.removeAllItems();
@@ -3572,6 +3580,33 @@ public class MainForm extends javax.swing.JFrame {
         borrarFilasTabla(tableReparaciones);
         String x;
         ArrayList<Reparacion> lsitaRepuesto = reparacionData.obtenerReparaciones();
+
+        for (Reparacion aux : lsitaRepuesto) {
+            Object[] filas = new Object[7];
+
+            if (!aux.isEstado()) {
+                x = "Finalizada";
+            } else if (aux.isEstado()) {
+                x = "No Finalizada";
+            } else {
+                x = "Entregada";
+            }
+            filas[0] = aux.getId_reparacion();
+            filas[1] = aux.getId_bicicleta().getDniDuenio().getDni();
+            filas[2] = aux.getId_servicio().getDescripcion();
+            filas[3] = aux.getId_bicicleta().getNumSerie();
+            filas[4] = aux.getFecha_entrada();
+            filas[5] = aux.getCosto() * 1.15;
+            filas[6] = x;
+            tableReparaciones.addRow(filas);
+        }
+        tablaReparaciones.setModel(tableReparaciones);
+    }
+    
+    public void cargarTablaReparacionesNoTerminadas() {
+        borrarFilasTabla(tableReparaciones);
+        String x;
+        ArrayList<Reparacion> lsitaRepuesto = reparacionData.obtenerReparacionesNoTerminadas();
 
         for (Reparacion aux : lsitaRepuesto) {
             Object[] filas = new Object[7];
@@ -3897,7 +3932,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel panelFinalizarReparacion;
     private javax.swing.JRadioButton radioBtnNuevaReparacion;
     private javax.swing.JRadioButton radioBtnRepEntregada;
-    private javax.swing.JRadioButton radioBtnRepTerminada;
+    private javax.swing.JRadioButton radioReparacioneNoTerminadas;
     private javax.swing.JLabel reparacionBtn;
     private javax.swing.JLabel repuestoBtn;
     private javax.swing.JLabel servicioBtn;

@@ -137,6 +137,30 @@ public class ReparacionData {
         return listaReparacion;
     }
     
+    public ArrayList<Reparacion> obtenerReparacionesNoTerminadas() {
+        ArrayList<Reparacion> listaReparacion = new ArrayList();
+        String sql = "SELECT * FROM reparacion WHERE activo = 1 AND estado = 1";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Reparacion r = new Reparacion();
+                r.setId_reparacion(rs.getInt("id_reparacion"));
+                r.setId_servicio(sData.obtenerServicio(rs.getInt("id_servicio")));
+                r.setId_bicicleta(bData.buscarBiciNumSerie(rs.getString("id_bicicleta")));
+                r.setFecha_entrada(rs.getDate("fecha_entrada").toLocalDate());
+                r.setCosto(rs.getFloat("costo"));
+                r.setEstado(rs.getBoolean("estado"));
+                r.setActivo(rs.getBoolean("activo"));
+                listaReparacion.add(r);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Sentencia SQL errónea-obtenerReparaciones ");
+        }
+        return listaReparacion;
+    }
+    
     public ArrayList<Reparacion> filtrarReparacionPorDNI(String dni){
         ArrayList<Reparacion> listaDuenios = new ArrayList();
         String sql = "SELECT r.id_reparacion, r.id_servicio, r.id_bicicleta, r.fecha_entrada, r.costo, r.estado, r.activo FROM cliente AS c, reparacion AS r, bicicleta AS b WHERE c.dni=? AND b.dni_duenio = c.dni AND b.num_serie = r.id_bicicleta;";
