@@ -1364,7 +1364,6 @@ public class MainForm extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tablaItemRepuesto.setEnabled(false);
         tablaItemRepuesto.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(tablaItemRepuesto);
         if (tablaItemRepuesto.getColumnModel().getColumnCount() > 0) {
@@ -1374,7 +1373,7 @@ public class MainForm extends javax.swing.JFrame {
             tablaItemRepuesto.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jPanel22.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 470, 170));
+        jPanel22.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 470, 180));
 
         jLabel14.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -1423,6 +1422,7 @@ public class MainForm extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tablaListaRepuestos.setEnabled(false);
         jScrollPane5.setViewportView(tablaListaRepuestos);
         if (tablaListaRepuestos.getColumnModel().getColumnCount() > 0) {
             tablaListaRepuestos.getColumnModel().getColumn(0).setResizable(false);
@@ -3423,8 +3423,8 @@ public class MainForm extends javax.swing.JFrame {
             Repuesto repuesto = (Repuesto) comboItemRepuesto.getSelectedItem();
             float precio = reparacion.getCosto();
             precio += repuesto.getPrecio() * cantidad;
+            reparacion.setCosto(precio);
             reparacionData.actualizarReparacion(reparacion, reparacion.getId_reparacion(), reparacion.getId_servicio().getCodigo());
-            //reparacion.setCosto(precio);
             ItemRepuesto item = new ItemRepuesto(repuesto, reparacion, cantidad, true);
             itemData.ingresarItems(item);
             comboItemRepuesto.setSelectedIndex(-1);
